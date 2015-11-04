@@ -1,5 +1,5 @@
 require "sinatra"
-#put something here later
+require "./lib/database"
 
 class TaskList < Sinatra::Base
 
