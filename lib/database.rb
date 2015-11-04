@@ -21,8 +21,15 @@ module TaskList
   class TaskManager < Database
     def new_task(task_name, task_description, completed_date)
       @db.execute('
-        INSERT INTO tasks (name, nil, nil) VALUES (?, ?, ?);
-      ', task_name, task_description, completed_date)    
+        INSERT INTO tasks (name, description, completed_date) VALUES (?, ?, ?);
+      ', task_name, task_description, completed_date)
+    end
+
+    #right now this selects all of the tasks
+    def select_tasks
+      @db.execute('
+        SELECT name, description, completed_date
+        FROM tasks;')
     end
   end
 end
