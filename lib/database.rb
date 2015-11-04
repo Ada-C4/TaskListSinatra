@@ -13,8 +13,8 @@ module TaskList
        id INTEGER PRIMARY KEY,
        name TEXT NOT NULL,
        description TEXT NULL,
-       completed-date TEXT NULL,
-      ;)')
+       completed TEXT NULL
+      );')
     end
   end
 end
