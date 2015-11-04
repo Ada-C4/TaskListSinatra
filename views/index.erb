@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Task List</title>
+  </head>
+  <body>
+    <h1>Shit to get done</h1>
+
+    <ul>
+    <% @tasks.each do |task| %>
+      <li><%= task[0] %> <%= task[1] %> <%= task[2] %></li>
+    <% end %>
+    </ul>
+  </body>
+</html>
