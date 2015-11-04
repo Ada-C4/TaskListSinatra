@@ -1,4 +1,4 @@
 require "./lib/database"
 
-db = TaskList.new("tasklist.db")
+db = TaskList::Database.new("tasklist.db")
 db.create_schema
