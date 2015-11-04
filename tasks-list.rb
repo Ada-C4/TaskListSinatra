@@ -1,9 +1,10 @@
 require "sinatra"
+require "./lib/task_actions"
 
 class TasksList < Sinatra::Base
 
   def current_db
-    @curr_db ||= TaskList::Database.new("allofthetasks.db")
+    @curr_db ||= TaskList::TaskActions.new("allofthetasks.db")
   end
 
   get "/" do

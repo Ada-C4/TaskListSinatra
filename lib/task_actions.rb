@@ -1,13 +1,14 @@
 require "./database.rb"
 
 module TaskList
-  class RowPersistence < TaskList::Database
+  class TaskActions < TaskList::Database
 
-    def initialize(db_name)
-      #not sure if it's passing an instance of database class the correct way
-
-      @db = SQLite3::Database.new(db_name)
-    end
+    # Ricky - I commented this out because it is redundant - will inherit this from parent class
+    # def initialize(db_name)
+    #   #not sure if it's passing an instance of database class the correct way
+    #
+    #   @db = SQLite3::Database.new(db_name)
+    # end
 
     def new_task(name, description=nil, done_date=nil)
 
