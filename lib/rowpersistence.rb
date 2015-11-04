@@ -13,8 +13,8 @@ module TaskList
 
       @db.execute('
       INSERT INTO tasks (name, description, done_date)
-      Values(?, ?, ?, ?)
-      ;' name, description, done_date)
+      Values(?, ?, ?)
+      ;', name, description, done_date)
     end
 
     def existing_task
@@ -22,6 +22,6 @@ module TaskList
 
     def show_tasks
     end
-    
+
   end
 end
