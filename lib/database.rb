@@ -12,9 +12,9 @@ module TaskList
       # to setup your schema in the databas.
       @db.execute('
       CREATE TABLE tasks (
-      id INTEGER PRIMARY KEY
-      name TEXT NOT NULL
-      description TEXT NULL
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      description TEXT NULL,
       completed_date TEXT NULL
       );')
     end

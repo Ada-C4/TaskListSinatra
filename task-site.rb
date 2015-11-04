@@ -1,10 +1,10 @@
 require "sinatra"
 require "./lib/database"
 
-class TaskList < Sinatra::Base
+class TaskSite < Sinatra::Base
 
   get "/" do
-    
+
   end
 
 end
