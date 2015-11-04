@@ -17,4 +17,12 @@ module TaskList
         );')
     end
   end
+
+  class TaskManager < Database
+    def new_task(task_name, task_description, completed_date)
+      @db.execute('
+        INSERT INTO tasks (name, nil, nil) VALUES (?, ?, ?);
+      ', task_name, task_description, completed_date)    
+    end
+  end
 end
