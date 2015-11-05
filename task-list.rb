@@ -33,6 +33,11 @@ class	TaskSite < Sinatra::Base
 		current_db.create_task(task_name, task_descr)
 	end
 
+	def delete_task
+		@checked = params[:checked]
+		delete_checked(@checked)
+	end
+
 	def motivation
 		motivation = ["You Can Do It!", "You're The Best!", "You're Great!", "Rock On, Cowgirl!", "Work It Out!", "Keep Pushing!", "Yes!", "C'mon Now!", "I Believe in You!", "Work It!", "Movin' and Shakin'!", "Bang!"]
 		mot_rand = motivation.length - 1
@@ -50,10 +55,7 @@ class	TaskSite < Sinatra::Base
 		new_task if params[:submit] == "Add to List"
 		current_list
 		@title = motivation
-		@checked = params[:checked]
-		unless @checked.empty?
-			delete_checked(@checked)
-		end
+		delete_task if params[:submit] == "delete"
 		erb :index
 	end
 
