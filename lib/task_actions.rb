@@ -1,4 +1,4 @@
-require "./database.rb"
+require "./lib/database"
 
 module TaskList
   class TaskActions < TaskList::Database
