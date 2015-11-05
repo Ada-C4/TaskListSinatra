@@ -1,6 +1,6 @@
 body{
-    background-color: #7A0673;
-    color: #F7E6F6;
+    background-color: #472194;
+    color: #FFB5FA;
     font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
     font-size: 22px;
     line-height: 25px;
@@ -15,10 +15,11 @@ h1 {
     line-height: 100px;
 }
 img{
-  	width: 275px;
+  	width: 220px;
+    border-radius: 50%;
 }
 .todo{
-  vertical-align: middle;
   text-align: left;
-  margin: 0
+  margin: auto;
+  width: 50%;
 }
