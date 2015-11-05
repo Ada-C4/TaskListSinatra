@@ -1,18 +1,18 @@
-require "/lib/database"
+require "./lib/database.rb"
 
 module TaskList
   class UseDatabase < Database
 
-  def add_task(task_name)
+  def add_task(task_name, task_description, completed_task_date)
     @db.execute('
-    INSERT INTO tasks_table (name)
-    VALUES(?);
-    ', task_name)
+    INSERT INTO tasks_table (name, description, completed_date)
+    VALUES(?, ?, ?);
+    ', task_name, task_description, completed_task_date)
   end
 
   def get_tasks
     @db.execute('
-    SELECT id, name FROM tasks_table;
+    SELECT name, description, completed_date FROM tasks_table;
     ')
   end
 
