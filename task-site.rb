@@ -1,6 +1,7 @@
 require "sinatra"
 require "./lib/database"
 require "./lib/taskbase"
+require "pry"
 
 class TaskSite < Sinatra::Base
 
@@ -19,6 +20,16 @@ class TaskSite < Sinatra::Base
     #     @completed.push(task)
     #   end
     # end
+    erb :index
+  end
+
+  post "/" do
+    # does some delete stuff
+    @to_delete = params[:tasks_to_delete]
+    @to_delete.each do |task|
+      current_db.delete_task(task.to_i)
+    end
+    @tasks = current_db.get_tasks
     erb :index
   end
 

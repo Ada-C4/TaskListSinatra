@@ -6,33 +6,43 @@
   </head>
   <body>
     <h1>Here's a list of tasks</h1>
-    <table>
-      <tr>
-        <th>
-          Name
-        </th>
-        <th>
-          Description
-        </th>
-        <th>
-          Date
-        </th>
-      </tr>
-      <% @tasks.each do |task| %>
+    <form method="post">
+      <table>
         <tr>
-          <td>
-            <%= task[1] %>
-          </td>
-          <td>
-            <%= task[2] %>
-          </td>
-          <td>
-            <%= task[3] %>
-          </td>
+          <th>
+            Name
+          </th>
+          <th>
+            Description
+          </th>
+          <th>
+            Date
+          </th>
+          <th>
+            Delete?
+          </th>
         </tr>
-      <% end %>
-    </table>
-
+        <% @tasks.each do |task| %>
+          <tr>
+            <td>
+              <%= task[1] %>
+            </td>
+            <td>
+              <%= task[2] %>
+            </td>
+            <td>
+              <%= task[3] %>
+            </td>
+            <td>
+                <label><input type="checkbox" name="tasks_to_delete[]" value="<%= task[0] %>"></label>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+      <p>
+        <input type="submit" name="submit" value="Delete Checked">
+      </p>
+    </form>
     <p>
       <a href="new">To add a new task, go here</a>
     </p>
