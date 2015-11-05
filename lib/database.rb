@@ -1,4 +1,5 @@
 require "sqlite3"
+require "pry"
 
 module TaskList
   class Database
@@ -19,6 +20,7 @@ module TaskList
   end
 
   class TaskManager < Database
+
     def new_task(task_name, task_description, completed_date)
       @db.execute('
         INSERT INTO tasks (name, description, completed_date) VALUES (?, ?, ?);
@@ -33,9 +35,11 @@ module TaskList
     end
 
     def completed_tasks(task_id)
+      d = Time.now.strftime("%m/%d/%Y")
        @db.execute('
-       INSERT 
+       UPDATE tasks SET completed_date="?" WHERE id=task_id;
        ')
+       binding.pry
     end
 
   end

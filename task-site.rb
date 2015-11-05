@@ -18,7 +18,6 @@ class ListofTasks < Sinatra::Base
   end
 
   post "/" do
-    binding.pry
     @task = params[:task]
     @description = params[:description]
     @completed_date = params[:completed_date]
@@ -33,7 +32,10 @@ class ListofTasks < Sinatra::Base
   end
 
   post "/modify" do
-    #something using database...
+    params[:completed].each do |id|
+      current_db.completed_tasks(id)
+    end
+    @tasks = current_db.select_tasks
   end
 
 end
