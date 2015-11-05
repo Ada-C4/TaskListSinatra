@@ -17,5 +17,11 @@ module TaskList
       ')
     end
 
+    def delete_task(id)
+      @db.execute('
+      DELETE FROM tasks WHERE id = ?;
+      ', id)
+    end
+
   end
 end

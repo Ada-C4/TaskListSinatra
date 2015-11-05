@@ -9,7 +9,16 @@ class TaskSite < Sinatra::Base
   end
 
   get "/" do
+    @in_progress = []
+    @completed = []
     @tasks = current_db.get_tasks
+    # @tasks.each do |task|
+    #   if task[3] = ""
+    #     @in_progress.push(task)
+    #   else
+    #     @completed.push(task)
+    #   end
+    # end
     erb :index
   end
 
