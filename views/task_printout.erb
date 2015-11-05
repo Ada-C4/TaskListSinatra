@@ -1,10 +1,12 @@
-<form method="post">
+<form method="post"
+  <% if @method == :delete %>
+    action="/delete_confirmation"
+  <% end %>
+>
   <table>
     <thead>
       <tr>
-        <% if @method != :delete %>
           <td>Done</td>
-        <% end %>
         <td>Task</td>
         <td>Description</td>
         <td>Completed Date</td>
@@ -13,10 +15,8 @@
     <tbody>
       <% @task_array.each do |task| %>
       <tr>
-        <% if @method != :delete %>
           <td><label>
           <input type="checkbox" name = "ids[]" value="<%= task[0] %>"></label></td>
-        <% end %>
         <td><%= task[1] %></td>
         <td><%= task[2] %></td>
         <td><%= task[3] %></td>
