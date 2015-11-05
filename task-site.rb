@@ -4,7 +4,7 @@ require "./lib/database"
 class ListofTasks < Sinatra::Base
 
   def current_db
-    @curr_db ||= TaskList::Database.new("taskbase.db")
+    @curr_db ||= TaskList::TaskManager.new("taskbase.db")
   end
 
   get "/" do
