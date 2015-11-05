@@ -8,13 +8,21 @@ class TasksList < Sinatra::Base
     @curr_db ||= TaskList::TaskActions.new("allofthetasks.db")
   end
 
+  def delete_task(ids_array)
+    ids_array.each { |id| current_db.remove_task(id.to_i) }
+    return params
+  end
+
   get "/" do
     @task_array = current_db.show_tasks
     erb :index
   end
 
   post "/" do
-    params.keys.each { |key| current_db.remove_task(key.to_i) if key != "submit" }
+    if params[:submit] == "delete" && params[:ids].length > 0
+      delete_task(params[:ids])
+    end
+
     @task_array = current_db.show_tasks
     erb :index
   end
