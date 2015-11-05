@@ -1,14 +1,6 @@
-<html>
-  <head>
-    <title>Task List</title>
-  </head>
-  <body>
-    <h1>Task List</h1>
-    <ul>
-      <% @tasks.each do |task| %>
-        <li><%= task[0] %>: <%= task[1] %></li>
-      <% end %>
-    </ul>
-    <a href="/new">Add Task</a>
-  </body>
-</html>
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task[0] %>: <%= task[1] %></li>
+  <% end %>
+</ul>
+<a href="/new">Add Task</a>
