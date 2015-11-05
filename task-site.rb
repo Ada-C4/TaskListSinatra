@@ -36,6 +36,7 @@ class ListofTasks < Sinatra::Base
       current_db.completed_tasks(id)
     end
     @tasks = current_db.select_tasks
+    erb :modify
   end
 
 end

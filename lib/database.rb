@@ -34,12 +34,14 @@ module TaskList
         FROM tasks;')
     end
 
+
+
+
     def completed_tasks(task_id)
-      d = Time.now.strftime("%m/%d/%Y")
-       @db.execute('
-       UPDATE tasks SET completed_date="?" WHERE id=task_id;
-       ')
-       binding.pry
+       d = Time.now.strftime("%m/%d/%Y")
+       @db.execute("
+       UPDATE tasks SET completed_date='#{d}' WHERE id=?;
+       ", task_id)
     end
 
   end
