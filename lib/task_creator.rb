@@ -17,6 +17,18 @@ module TaskList
   			')
   	end
 
+    def delete_task
+
+    end
+
+    def complete_task
+
+    end
+
+    def modify_task
+
+    end
+
   end
 
 end

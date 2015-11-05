@@ -1,14 +1,16 @@
-<h1></h1>
+<form>
+  <div id="tasklist">
+    <h2> <%= @title%> </h2>
+    <ul>
+      <% @all_tasks.each do |task| %>
+      <div>
+        <label><input type="checkbox" name="checked[]" value="<%= task[:id] %>"><%= task[:name] %> <%= task[:description] %></label>
+      </div>
+      <% end %>
+    </ul>
+  </div>
 
-<div id="tasklist">
-  <h2> <%= @title%> </h2>
-  <ul>
-    <% @all_tasks.each do |task| %>
-    <li><%= task[:name] %> <%= task[:description] %> <%= task[:completed_date] %> </li>
-    <% end %>
-  </ul>
-</div>
+  <a href="/add_task">Add a new task!</a>
 
-<a href="/add_task">Add a new task!</a>
-
-<img id="poodle" src="http://i.imgur.com/j87CGL1.gif">
+  <img id="poodle" src="http://i.imgur.com/j87CGL1.gif">
+</form>
