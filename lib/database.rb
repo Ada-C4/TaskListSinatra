@@ -28,8 +28,15 @@ module TaskList
     #right now this selects all of the tasks
     def select_tasks
       @db.execute('
-        SELECT name, description, completed_date
+        SELECT id, name, description, completed_date
         FROM tasks;')
     end
+
+    def completed_tasks(task_id)
+       @db.execute('
+       INSERT 
+       ')
+    end
+
   end
 end

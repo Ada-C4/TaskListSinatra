@@ -1,5 +1,6 @@
 require "sinatra"
 require "./lib/database"
+require "pry"
 
 class ListofTasks < Sinatra::Base
 
@@ -17,6 +18,7 @@ class ListofTasks < Sinatra::Base
   end
 
   post "/" do
+    binding.pry
     @task = params[:task]
     @description = params[:description]
     @completed_date = params[:completed_date]
@@ -25,5 +27,13 @@ class ListofTasks < Sinatra::Base
     erb :index
   end
 
+  get "/modify" do
+    @tasks = current_db.select_tasks
+    erb :modify
+  end
+
+  post "/modify" do
+    #something using database...
+  end
 
 end

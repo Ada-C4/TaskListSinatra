@@ -3,12 +3,16 @@
     <ul>
       <% @tasks.each do |task| %>
         <li>
-          task: <%= task[0] %> description: <%= task[1] %> completed: <%= task[2] %>
+          task: <%= task[1] %> description: <%= task[2] %> completed: <%= task[3] %>
         </li>
       <% end %>
     </ul>
 
-    <a href="./new">Add a task here</a>
-    <a href="./modify">Edit a task here</a>
+    <nav>
+      <ul>
+        <li><a href="./new">Add a task here</a></li>
+        <li><a href="./modify">Edit a task here</a></li>
+      </ul>
+    </nav
 
 </div>
