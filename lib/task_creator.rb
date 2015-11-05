@@ -2,7 +2,7 @@ require './lib/database.rb'
 
 module TaskList
   class	TaskCreator < Database
-  	
+
   	def create_task(task_name, description = nil, com_date = nil)
   		@db.execute('
   			INSERT INTO tasks (name, description, completed_date)

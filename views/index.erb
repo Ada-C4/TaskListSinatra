@@ -1,0 +1,9 @@
+<h1></h1>
+
+<div>
+  <ul>
+    <% @all_tasks.each do |task| %>
+    <li><%= task[:name] %> <%= task[:description] %> <%= task[:completed_date] %> </li>
+    <% end %>
+  </ul>
+</div>
