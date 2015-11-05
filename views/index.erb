@@ -19,10 +19,10 @@
             Date
           </th>
           <th>
-            Delete?
+            <input type="submit" name="submit" value="Delete Checked" onclick="return confirm('Are you sure? Deleting is permanent!')">
           </th>
           <th>
-            Edit?
+            <input type="submit" name="submit" value="Update Selected">
           </th>
         </tr>
         <% @tasks.each do |task| %>
@@ -45,12 +45,6 @@
           </tr>
         <% end %>
       </table>
-      <p>
-        <input type="submit" name="submit" value="Delete Checked" onclick="return confirm('Are you sure you want to delete this task?')">
-      </p>
-      <p>
-        <input type="submit" name="submit" value="Edit Selected">
-      </p>
     </form>
     <p>
       <a href="new">To add a new task, go here</a>
