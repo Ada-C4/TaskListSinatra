@@ -15,6 +15,7 @@ class TaskSite < Sinatra::Base
   end
 
   get "/add_task" do
+    @title = "Write That Shit Down!"
     erb :add_task
   end
 

@@ -6,12 +6,12 @@
   <header>
     <h1><%= @title %></h1>
   </header>
-  <body>
+  <section>
     <%= yield %>
-  </body>
+  </section>
   <footer>
     <p>
-      Shit you should be doing | copyright <% #{Time.now.year} %>
+      <%= "Shit you should be doing 💩 copyright #{Time.now.year}" %>
     </p>
   </footer>
 </html>
