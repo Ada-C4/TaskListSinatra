@@ -52,10 +52,11 @@ class TaskSite < Sinatra::Base
   end
 
   get "/edit" do
-    binding.pry
-    # @name =
-    # @description =
-    # @date =
+    @id = params[:id]
+    @single_task = current_db.get_single_task(@id.to_i).flatten
+    @name = @single_task[1]
+    @description = @single_task[2]
+    @date = @single_task[3]
     erb :edit
   end
 
