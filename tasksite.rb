@@ -10,6 +10,7 @@ class TaskSite < Sinatra::Base
 
   get "/" do
     @tasks = current_db.get_tasks
+    @title = "Shit You Should Be Doing"
     erb :index
   end
 

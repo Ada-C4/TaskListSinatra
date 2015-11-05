@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria Hallelujah|sans-serif');
+
+* {
+  font-family: Gloria Hallelujah, sans-serif;
+  color: #656551;
+  /*background-color: #E3EEF4;*/
+}
+
+body {
+  background-color: #E3EEF4;
+}
+
+header, footer {
+  background-color: #BDBDA2;
+}
