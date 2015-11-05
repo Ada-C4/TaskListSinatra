@@ -17,6 +17,19 @@ module TaskList
       )')
     end
 
+    def create_task(name, description = nil)
+      @db.execute('
+      INSERT INTO tasks (name, description)
+      VALUES(?, ?)
+      ;', name, description)
+    end
+
+    def get_tasks
+      @db.execute('
+      SELECT name, description
+      FROM tasks;')
+    end
+
 
   end
 end
