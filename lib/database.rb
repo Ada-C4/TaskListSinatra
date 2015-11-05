@@ -29,5 +29,13 @@ module TaskList
       SELECT name, description, completed
       FROM tasks;')
     end
+
+    def add_completion(completed)
+      @db.execute('
+      INSERT INTO tasks (completed)
+      VALUES(?)
+      ;', completed)
+    end
+
   end
 end

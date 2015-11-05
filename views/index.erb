@@ -2,8 +2,18 @@
 
 <div class="list">
   <% @tasks.each do |task| %>
-    <div class="task"><%= task[0] %></div><div class="description"><%= task[1] %></div>
+    <div class="everything">
+      <form action="#" method="get">
+        <input class="checkbox" type="checkbox" name="completed">
+      </form>
+      <div class="task-descr">
+        <div class="task"><%= task[0] %></div>
+        <div class="description"><%= task[1] %></div>
+        <!-- <div class="completed">Date completed: <%= task[2] %></div> -->
+      </div>
+    </div>
   <% end %>
 </div>
+
 
 <a class="button" href= "/new">Create a new task</a>

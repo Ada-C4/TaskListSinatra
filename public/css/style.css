@@ -47,3 +47,11 @@ h1 {
 .description {
   margin-bottom: 15px;
 }
+
+.checkbox {
+  float: left;
+}
+
+.task-descr {
+  float: left;
+}
