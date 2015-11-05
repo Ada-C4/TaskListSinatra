@@ -23,5 +23,11 @@ module TaskList
       ', id)
     end
 
+    def edit_task(id)
+      @db.execute('
+      UPDATE tasks SET something WHERE something = somethingelse;
+      ')
+    end
+
   end
 end

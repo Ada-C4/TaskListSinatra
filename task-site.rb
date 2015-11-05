@@ -26,9 +26,12 @@ class TaskSite < Sinatra::Base
   post "/" do
     # does some delete stuff
     @to_delete = params[:tasks_to_delete]
-    @to_delete.each do |task|
-      current_db.delete_task(task.to_i)
+    if !@to_delete.nil?
+      @to_delete.each do |task|
+        current_db.delete_task(task.to_i)
+      end
     end
+    @to_edit = params[:task_to_edit]
     @tasks = current_db.get_tasks
     erb :index
   end

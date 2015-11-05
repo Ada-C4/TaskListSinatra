@@ -21,6 +21,9 @@
           <th>
             Delete?
           </th>
+          <th>
+            Edit?
+          </th>
         </tr>
         <% @tasks.each do |task| %>
           <tr>
@@ -36,11 +39,17 @@
             <td>
                 <label><input type="checkbox" name="tasks_to_delete[]" value="<%= task[0] %>"></label>
             </td>
+            <td>
+                <label><input type="radio" name="task_to_edit" value="<%= task[0] %>"></label>
+            </td>
           </tr>
         <% end %>
       </table>
       <p>
         <input type="submit" name="submit" value="Delete Checked" onclick="return confirm('Are you sure you want to delete this task?')">
+      </p>
+      <p>
+        <input type="submit" name="submit" value="Edit Selected">
       </p>
     </form>
     <p>
