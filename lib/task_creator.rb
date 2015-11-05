@@ -17,15 +17,15 @@ module TaskList
   			')
   	end
 
-    def delete_task
+    def delete_task(id)
 
     end
 
-    def complete_task
+    def complete_task(id)
 
     end
 
-    def modify_task
+    def modify_task(id)
 
     end
 

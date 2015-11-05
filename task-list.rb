@@ -20,6 +20,13 @@ class	TaskSite < Sinatra::Base
 			@all_tasks.push(one_task)
 		end
 	end
+
+	def deleted_checked(ids_array)
+		ids_array.each do |id|
+			current_db.delete_task(id)
+		end
+	end
+
 	def motivation
 		motivation = ["You Can Do It!", "You're The Best!", "You're Great!", "Rock On, Cowgirl!", "Work It Out!", "Keep Pushing!", "Yes!", "C'mon Now!", "I Believe in You!", "Work It!", "Movin' and Shakin'!", "Bang!"]
 		mot_rand = motivation.length - 1
