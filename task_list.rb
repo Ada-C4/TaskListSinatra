@@ -1,7 +1,7 @@
 require "sinatra"
 require "./lib/database"
 
-class TaskList < Sinatra::Base
+class TaskSite < Sinatra::Base
 
   def current_db
     @curr_db ||= TaskList::Database.new("tasks.db")
