@@ -13,7 +13,7 @@
       <% @task_array.each do |task| %>
       <tr>
         <td><label name="checkbox<%= task[0] %>"></label>
-          <input type="checkbox" id="checkbox<%= task[0] %>" name="checkbox<%= task[0] %>"></td>
+          <input type="checkbox" id="checkbox<%= task[0] %>" name="<%= task[0] %>"></td>
         <td><%= task[1] %></td>
         <td><%= task[2] %></td>
         <td><%= task[3] %></td>

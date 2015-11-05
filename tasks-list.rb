@@ -13,8 +13,9 @@ class TasksList < Sinatra::Base
   end
 
   post "/" do
-    @params = params
-    erb :params
+    params.keys.each { |key| current_db.remove_task(key.to_i) }
+    @task_array = current_db.show_tasks
+    erb :index
   end
 
   get "/new" do
