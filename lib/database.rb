@@ -26,15 +26,14 @@ module TaskList
 
     def get_tasks
       @db.execute('
-      SELECT name, description, completed
+      SELECT id, name, description, completed
       FROM tasks;')
     end
 
-    def add_completion
-      time = Time.now
+    def add_completion(checkbox_id)
       @db.execute('
-      UPDATE tasks SET completed=(time) WHERE id=1
-      ;')
+      UPDATE tasks SET completed="dunzo" WHERE id=(?)
+      ;', checkbox_id)
     end
 
   end

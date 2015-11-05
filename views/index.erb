@@ -3,20 +3,20 @@
 <div class="list">
   <% @tasks.each do |task| %>
     <div class="everything">
-      <form action="#" method="get">
-        <input class="checkbox" type="checkbox" name="completed[]" value="done">
+      <form action="#" method="post">
+        <input class="checkbox" type="checkbox" name="completed[]" value="<%= task[0] %>" >
+        <input class="button" type="submit" name="submit" value="Mark complete">
       </form>
       <div class="task-descr">
-        <div class="task"><%= task[0] %></div>
-        <div class="description"><%= task[1] %></div>
+        <div class="task"><%= task[1] %></div>
+        <div class="description"><%= task[2] %></div>
       </div>
-      <form action ="#" method="post">
-        <label class="completed" for="completed_date">Date completed:  </label><input class="completed" type="text" name="completed_date">
-      </form>
-        <%= task[2] %>
+        <%= task[3] %>
     </div>
   <% end %>
 </div>
+
+
 
 <div class="button">
   <a href= "/new">Create a new task</a>
