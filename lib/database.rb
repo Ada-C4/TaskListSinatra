@@ -4,7 +4,7 @@ module TaskList
   class Database
 
     def initialize(db_name)
-      @db ||= SQLite3::Database.new(db_name)
+      @db = SQLite3::Database.new(db_name)
     end
 
     def create_schema
