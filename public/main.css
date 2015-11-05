@@ -2,4 +2,68 @@ body {
   width: 750px;
   margin-left:auto;
   margin-right:auto;
+  font-family: Roboto, sans-serif;
+}
+
+h1 {
+  text-align: center;
+
+}
+
+ul {
+  margin-left: 200px;
+}
+
+li {
+  padding: 10px;
+}
+
+ #add_task {
+  text-align: center;
+  margin-top: 75px;
+}
+
+input {
+  display: block;
+  margin: 15px;
+}
+
+fieldset {
+  padding: 40px;
+  background-color: #99FF99;
+}
+
+legend {
+  font-size: 30px;
+  text-align: center;
+}
+
+#name_label {
+    margin-left: 280px;
+}
+.form {
+  text-align: center;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#description {
+  margin-bottom: 100px;
+}
+
+#submit {
+  display: block;
+  font-size: 25px;
+  width: 180px;
+  height: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFCC99;
+}
+
+#index {
+  background-color: #99FF99;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }

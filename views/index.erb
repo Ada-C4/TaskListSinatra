@@ -1,12 +1,19 @@
+<div id="index">
+
 <h1>Tasks</h1>
-<p>
+
   <ul>
    <% @tasks.each do |task| %>
    <li> <%= task[0] %> : <%= task[1] %></li>
    <% end %>
    </ul>
+
+
+<p id="add_task">
+  <form action="new">
+    <button type="submit" href="new" name="submit" id="submit" value="New Task">New Task</button>
+  <!-- <a href="new">Add a new task</a> -->
+  </form>
 </p>
 
-<p>
-  <a href="new">Add a new task</a>
-</p>
+</div>
