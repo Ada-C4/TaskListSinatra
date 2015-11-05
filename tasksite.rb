@@ -12,4 +12,14 @@ class TaskSite < Sinatra::Base
     @tasks = current_db.get_tasks
     erb :index
   end
+
+  get "/add_task" do
+    erb :add_task
+  end
+
+  post "/" do
+    current_db.add_task(params[:name], params[:description])
+    @tasks = current_db.get_tasks
+    erb :index
+  end
 end

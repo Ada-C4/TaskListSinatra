@@ -3,7 +3,7 @@ require "./lib/database"
 module TaskList
   class UseDatabase < Database
 
-  def add_task(task_name, task_description, completed_task_date)
+  def add_task(task_name, task_description=nil, completed_task_date=nil)
     @db.execute('
     INSERT INTO tasks_table (name, description, completed_date)
     VALUES(?, ?, ?);
