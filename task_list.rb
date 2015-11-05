@@ -20,6 +20,7 @@ class TaskSite < Sinatra::Base
     @new_name = params[:name]
     @descr = params[:description]
     current_db.create_task(@new_name, @descr)
+    @tasks = current_db.get_tasks
     erb :index
   end
 
