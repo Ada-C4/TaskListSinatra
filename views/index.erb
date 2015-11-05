@@ -2,6 +2,7 @@
 <table>
   <thead>
     <tr>
+      <td>Done</td>
       <td>Task</td>
       <td>Description</td>
       <td>Completed Date</td>
@@ -10,13 +11,17 @@
   <tbody>
     <% @task_array.each do |task| %>
     <tr>
-      <td><%= task[0] %></td>
+      <td><input type="checkbox" id="<%= task[0] %>"></td>
       <td><%= task[1] %></td>
       <td><%= task[2] %></td>
+      <td><%= task[3] %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+<button type="submit" name="delete">Delete Tasks</button>
+<!-- <button type="button" name="complete">Complete Tasks</button> -->
+
 <p>
   <a href="new">Add a new task</a>
 </p>
