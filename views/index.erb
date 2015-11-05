@@ -6,10 +6,11 @@
   </head>
   <body>
     <h1>Shit to get done</h1>
+    <a href= "/new">Create a new task</a>
 
     <ul>
     <% @tasks.each do |task| %>
-      <li><%= task[0] %> <%= task[1] %> <%= task[2] %></li>
+      <li><%= task[0] %> <%= task[1] %> </li>
     <% end %>
     </ul>
   </body>

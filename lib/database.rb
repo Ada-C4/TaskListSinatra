@@ -17,11 +17,11 @@ module TaskList
       );')
     end
 
-    def create_task(task_name, task_descr, task_comp)
+    def create_task(task_name, task_descr)
       @db.execute('
-      INSERT INTO tasks (name, description, completed)
-      VALUES(?, ?, ?)
-      ;', task_name, task_descr, task_comp)
+      INSERT INTO tasks (name, description)
+      VALUES(?, ?)
+      ;', task_name, task_descr)
     end
 
     def get_tasks
