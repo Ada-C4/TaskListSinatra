@@ -21,10 +21,16 @@ class	TaskSite < Sinatra::Base
 		end
 	end
 
-	def deleted_checked(ids_array)
+	def delete_checked(ids_array)
 		ids_array.each do |id|
 			current_db.delete_task(id)
 		end
+	end
+
+	def new_task
+		task_name = params[:name]
+		task_descr = params[:description]
+		current_db.create_task(task_name, task_descr)
 	end
 
 	def motivation
@@ -41,11 +47,13 @@ class	TaskSite < Sinatra::Base
 	end
 
 	post '/' do
-		task_name = params[:name]
-		task_descr = params[:description]
-		current_db.create_task(task_name, task_descr)
+		new_task if params[:submit] == "Add to List"
 		current_list
 		@title = motivation
+		@checked = params[:checked]
+		unless @checked.empty?
+			delete_checked(@checked)
+		end
 		erb :index
 	end
 
