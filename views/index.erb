@@ -3,16 +3,21 @@
 <h1>Tasks</h1>
 
   <ul>
-   <% @tasks.each do |task| %>
-   <li> <%= task[0] %> : <%= task[1] %></li>
-   <% end %>
+  <% if @tasks == nil %>
+    <p>
+       You haven't set any tasks.
+    </p>
+  <% else %>
+    <% @tasks.each do |task| %>
+      <li> <%= task[0] %> : <%= task[1] %></li>
+    <% end %>
+  <% end %>
    </ul>
 
 
 <p id="add_task">
   <form action="new">
     <button type="submit" href="new" name="submit" id="submit" value="New Task">New Task</button>
-  <!-- <a href="new">Add a new task</a> -->
   </form>
 </p>
 

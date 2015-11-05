@@ -24,5 +24,14 @@ class TaskSite < Sinatra::Base
     erb :index
   end
 
+  get "/delete" do
+    erb :delete
+  end
+
+  post "/delete" do
+    current_db.delete_tasks
+    erb :index
+  end
+
 
 end

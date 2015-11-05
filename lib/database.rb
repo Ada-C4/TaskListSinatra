@@ -30,6 +30,11 @@ module TaskList
       FROM tasks;')
     end
 
+    def delete_tasks
+      @db.execute('
+      DELETE FROM tasks;
+      ')
+    end
 
   end
 end
