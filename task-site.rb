@@ -61,7 +61,13 @@ class TaskSite < Sinatra::Base
   end
 
   post "/edit" do
-
+    @edited_name = params[:name]
+    @edited_descr = params[:description]
+    @edited_date = params[:date_completed]
+    @id = params[:id]
+    current_db.edit_task(@id, @edited_name, @edited_descr, @edited_date)
+    @tasks = current_db.get_tasks
+    redirect to('/')
   end
 
 end
