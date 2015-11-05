@@ -19,12 +19,16 @@ class TasksList < Sinatra::Base
   end
 
   post "/" do
-    if params[:submit] == "delete" && params[:ids].length > 0
-      delete_task(params[:ids])
+    if params[:submit] == "delete" && params[:ids] != nil
+      @method = :delete
+      ids = params[:ids]
+      @task_array = ids.map{ |id| current_db.get_task(id.to_i)}
+      erb :delete_confirmation
+      # delete_task(params[:ids])
+    else
+      @task_array = current_db.show_tasks
+      erb :index
     end
-
-    @task_array = current_db.show_tasks
-    erb :index
   end
 
   get "/new" do

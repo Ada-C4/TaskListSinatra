@@ -1,27 +1,7 @@
 <h1>Task List</h1>
-<form method="post">
-  <table>
-    <thead>
-      <tr>
-        <td>Done</td>
-        <td>Task</td>
-        <td>Description</td>
-        <td>Completed Date</td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @task_array.each do |task| %>
-      <tr>
-        <td><label>
-          <input type="checkbox" name = "ids[]" value="<%= task[0] %>"></label></td>
-        <td><%= task[1] %></td>
-        <td><%= task[2] %></td>
-        <td><%= task[3] %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <%= erb(:task_printout) %>
   <button type="submit" name="submit" value="delete">Delete Tasks</button>
+  <button type="submit" name="submit" value="complete">Mark Tasks as Complete</button>
 </form>
 
 <p>
