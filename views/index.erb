@@ -1,6 +1,9 @@
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= task[0] %>: <%= task[1] %></li>
-  <% end %>
-</ul>
+<img src="unicorn.jpg">
+<div class ="todo">
+  <ul>
+    <% @tasks.each do |task| %>
+      <li><%= task[0] %>: <%= task[1] %></li>
+    <% end %>
+  </ul>
+</div>
 <a href="/new">Add Task</a>
