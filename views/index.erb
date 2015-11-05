@@ -1,4 +1,8 @@
-<h1>Test</h1>
+<h1>Tasks</h1>
 <p>
-   <%= @tasks %>
+  <ul>
+   <% @tasks.each do |task| %>
+   <li> <%= task[0] %> : <%= task[1] %></li>
+   <% end %>
+   </ul>
 </p>
