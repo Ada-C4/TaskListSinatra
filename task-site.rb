@@ -21,7 +21,6 @@ class TaskSite < Sinatra::Base
     @name = params[:name]
     @descr = params[:descr]
     current_db.create_task(@name, @descr) if !@name.nil?
-    binding.pry
     current_db.add_completion(params[:completed])
     @tasks = current_db.get_tasks
     erb :index

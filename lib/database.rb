@@ -31,10 +31,10 @@ module TaskList
     end
 
     def add_completion(checkbox_id)
-      @db.execute('
-      UPDATE tasks SET completed="dunzo" WHERE id=(?)
-      ;', checkbox_id)
-    end
 
+      @db.execute('
+      UPDATE tasks SET completed=(?) WHERE id=(?)
+      ;', Time.now.strftime("%b-%d-%Y").to_s, checkbox_id)
+    end
   end
 end
