@@ -36,10 +36,7 @@ class TaskSite < Sinatra::Base
   get "/delete/:name" do
     @delete_name = params[:name]
     current_db.delete_single_task(@delete_name)
-    # get "/" do
-    #   @tasks = current_db.get_tasks
-    #   erb :index
-    # end
+    redirect "/"
   end
 
 
