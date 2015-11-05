@@ -24,7 +24,6 @@ class TaskSite < Sinatra::Base
   end
 
   post "/" do
-    # does some delete stuff
     @to_delete = params[:tasks_to_delete]
     if !@to_delete.nil?
       @to_delete.each do |task|
@@ -32,6 +31,9 @@ class TaskSite < Sinatra::Base
       end
     end
     @to_edit = params[:task_to_edit]
+    if !@to_edit.nil?
+      redirect to("/edit?id=#{@to_edit}")
+    end
     @tasks = current_db.get_tasks
     erb :index
   end
@@ -47,6 +49,18 @@ class TaskSite < Sinatra::Base
     current_db.create_task(@new_name, @new_descr, @new_date)
     @tasks = current_db.get_tasks
     redirect to('/')
+  end
+
+  get "/edit" do
+    binding.pry
+    # @name =
+    # @description =
+    # @date =
+    erb :edit
+  end
+
+  post "/edit" do
+
   end
 
 end
