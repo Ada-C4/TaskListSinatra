@@ -1,3 +1,17 @@
-<form>
-  
+<form method="post">
+  <fieldset>
+    <legend>Mark Tasks Complete</legend>
+    <ul class="todo">
+    <% @tasks.each do |task| %>
+      <li>
+        <label>
+          <input type="checkbox" name="complete[]" value="complete">
+          <%= task[0] %>: <%= task[1] %>
+        </label>
+      </li>
+    <% end %>
+    </ul>
+  <div>
+    <input type="submit" name="submit" id="submit" value="Mark As Complete"
+  </div>
 </form>
