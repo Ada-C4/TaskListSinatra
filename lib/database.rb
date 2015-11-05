@@ -30,11 +30,11 @@ module TaskList
       FROM tasks;')
     end
 
-    def add_completion(completed)
+    def add_completion
+      time = Time.now
       @db.execute('
-      INSERT INTO tasks (completed)
-      VALUES(?)
-      ;', completed)
+      UPDATE tasks SET completed=(time) WHERE id=1
+      ;')
     end
 
   end
