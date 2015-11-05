@@ -25,6 +25,11 @@ class TaskSite < Sinatra::Base
     redirect to('/')
   end
 
+  get "/mark_complete" do
+    @title = "Complete Tasks"
+    erb :mark_complete
+  end
+
 
 
 end

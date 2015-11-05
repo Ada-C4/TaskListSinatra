@@ -23,3 +23,13 @@ img{
   margin: auto;
   width: 50%;
 }
+
+hr {
+ display: block;
+ height: 1px;
+ border: 0;
+ border-top: 5px solid;
+ border-color: #747070 ;
+ margin: 1em 0;
+ padding: 0;
+}

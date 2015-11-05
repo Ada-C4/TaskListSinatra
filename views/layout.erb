@@ -8,6 +8,12 @@
   </head>
   <body>
     <h1><%= @title %></h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/mark_complete">Complete Tasks</a>
+      <a href="/new">Add Task</a>
+    </nav>
+    <hr />
     <%= yield %>
   </body>
 </html>
