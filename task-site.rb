@@ -16,11 +16,12 @@ class ListofTasks < Sinatra::Base
     erb :new
   end
 
-  post "/new" do
+  post "/" do
     @task = params[:task]
     @description = params[:description]
     @completed_date = params[:completed_date]
     current_db.new_task(@task, @description, @completed_date)
+    @tasks = current_db.select_tasks
     erb :index
   end
 
