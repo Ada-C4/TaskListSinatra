@@ -1,0 +1,20 @@
+<h1>Task List</h1>
+<table>
+  <thead>
+    <tr>
+      <td>Task</td>
+      <td>Description</td>
+      <td>Completed Date</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @task_array.each do |task| %>
+    <tr>
+      <td><%= task[0] %></td>
+      <td><%= task[1] %></td>
+      <td><%= task[2] %></td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>

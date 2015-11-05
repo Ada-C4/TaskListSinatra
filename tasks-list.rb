@@ -8,7 +8,7 @@ class TasksList < Sinatra::Base
   end
 
   get "/" do
-    current_db
+    @task_array = current_db.show_tasks
     erb :index
   end
 
