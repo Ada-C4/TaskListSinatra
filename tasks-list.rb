@@ -16,6 +16,11 @@ class TasksList < Sinatra::Base
     erb :new
   end
 
+  post "/new" do
+    @task_array = current_db.show_tasks
+    erb :index
+  end
+
 
 
 end
