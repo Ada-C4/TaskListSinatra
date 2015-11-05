@@ -19,12 +19,10 @@ class TaskSite < Sinatra::Base
   end
 
   post "/new" do
-    @title = "Unicorn Task List"
     @name = params[:name]
     @description = params[:description]
     current_db.create_tasks(@name, @description)
-    @tasks = current_db.get_tasks
-    erb :index
+    redirect to('/')
   end
 
 
