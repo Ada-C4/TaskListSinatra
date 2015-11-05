@@ -43,7 +43,7 @@ class TaskSite < Sinatra::Base
     @new_date = params[:date_completed]
     current_db.create_task(@new_name, @new_descr, @new_date)
     @tasks = current_db.get_tasks
-    erb :index
+    redirect to('/')
   end
 
 end
