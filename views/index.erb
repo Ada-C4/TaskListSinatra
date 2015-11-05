@@ -1,9 +1,16 @@
 <img src="unicorn.jpg">
 <div class ="todo">
+  <h3> Tasks to Do:</h3>
   <ul>
     <% @tasks.each do |task| %>
       <li><%= task[0] %>: <%= task[1] %></li>
     <% end %>
+  </ul>
+</div>
+<div class = "completed">
+  <h3>Completed Tasks:</h3>
+  <ul>
+    
   </ul>
 </div>
 <a href="/new">Add Task</a>

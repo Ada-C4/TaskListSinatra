@@ -33,5 +33,13 @@ module TaskList
       FROM tasks;')
     end
 
+    def complete_tasks(completed_date)
+      @db.execute('
+      UPDATE tasks(completed_date)
+      VALUES(?)
+      WHERE id = ?
+      ;', completed_date, id)
+    end
+
   end
 end
