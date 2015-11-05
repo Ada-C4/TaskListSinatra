@@ -1,3 +1,8 @@
-<h1>Hello!!</h1>
-
-<%= @tasks %>
+<h1>Goddammit, you need to:</h1>
+<ul>
+<% @tasks.each do |task| %>
+  <li>
+    <%= task[0] %>
+  </li>
+  <% end %>
+</ul>
