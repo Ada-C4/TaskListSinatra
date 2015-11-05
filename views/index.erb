@@ -1,6 +1,7 @@
 <h1></h1>
 
-<div>
+<div id="tasklist">
+  <h2> <%= @title%> </h2>
   <ul>
     <% @all_tasks.each do |task| %>
     <li><%= task[:name] %> <%= task[:description] %> <%= task[:completed_date] %> </li>
@@ -9,3 +10,5 @@
 </div>
 
 <a href="/add_task">Add a new task!</a>
+
+<img id="poodle" src="http://i.imgur.com/j87CGL1.gif">

@@ -20,9 +20,16 @@ class	TaskSite < Sinatra::Base
 			@all_tasks.push(one_task)
 		end
 	end
+	def motivation
+		motivation = ["You Can Do It!", "You're The Best!", "You're Great!", "Rock On, Cowgirl!", "Work It Out!", "Keep Pushing!", "Yes!", "C'mon Now!"]
+		mot_rand = motivation.length - 1
+		quote = motivation[rand(0..mot_rand)]
+		return quote
+	end
 
 	get '/' do
 		current_list
+		@title = motivation
     erb :index
 	end
 
@@ -31,6 +38,7 @@ class	TaskSite < Sinatra::Base
 		task_descr = params[:description]
 		current_db.create_task(task_name, task_descr)
 		current_list
+		@title = motivation
 		erb :index
 	end
 
