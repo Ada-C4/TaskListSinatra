@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair Display|Open Sans');
+
+body {
+  margin: 0 auto;
+}
+
+
+h1 {
+  font-family: Playfair Display;
+  font-size: 1.4cm;
+  font-weight: normal;
+}
+
+h3 {
+  font-family: Playfair Display;
+  font-size: 0.8cm;
+  font-weight: normal;
+}
+
+ul {
+  font-family: Open Sans;
+  font-size: normal;
+  padding: 20px;
+  list-style-type: none;
+
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+  font-family: Open Sans;
+  font-size: 0.50cm;
+}
+
+a:visited {
+  text-decoration: none;
+  color: grey;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
