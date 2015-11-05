@@ -1,5 +1,5 @@
 body {
-  background-color: green;
+  background-color: white;
   width: 960px;
   margin: 0 auto;
   text-align: left;
@@ -14,11 +14,29 @@ header {  background-color: #EB1D34;
           font-size: 30pt
 }
 
+h1 {
+  padding: 10px;
+  margin: 10px;}
+
+fieldset {
+  padding: 50px;
+  margin: 10px;
+}
+
+fieldset input {
+  padding: 0 40px;
+  margin: 20px;
+}
+
 ul {
   list-style: none;
   padding: 10px;
   margin: 10px;
-  text-align: center;
+  text-align: left;
   font-size: 20pt;
   font-weight: 600;
+}
+
+li {
+  padding: 10px 0;
 }
