@@ -43,8 +43,8 @@ class TaskSite < Sinatra::Base
   end
 
   get "/complete" do
-    binding.pry
     @completed_task = params[:tasks]
+    
   end
 
 

@@ -43,5 +43,12 @@ module TaskList
       ')
     end
 
+    def completed_task
+      date = Time.now.strftime("%d/%m/%Y %H:%M")
+      @db.execute('
+      UPDATE tasks SET completed_date = ?;
+      ', date)
+    end
+
   end
 end
