@@ -12,7 +12,7 @@ module TaskList
 
   	def get_tasks
   		@db.execute('
-  			SELECT name, description, completed_date
+  			SELECT id, name, description, completed_date
   			FROM tasks;
   			')
   	end
