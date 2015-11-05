@@ -8,11 +8,16 @@
        You haven't set any tasks.
     </p>
   <% else %>
+    <form method="post">
     <% @tasks.each do |task| %>
       <li> <%= task[0] %> : <%= task[1] %></li>
       <a href="/delete/<%= task[0] %>">Delete Task</a>
+      <label><input type="checkbox" name="tasks[]" value="<%= task[0] %>">Complete Task</label>
     <% end %>
   <% end %>
+  <button type="submit" href="complete" name="completed_task" id="completed_task" value="completed task">New Task</button>
+
+  </form>
    </ul>
 
 

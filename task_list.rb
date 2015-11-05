@@ -1,5 +1,6 @@
 require "sinatra"
 require "./lib/database"
+require "pry"
 
 class TaskSite < Sinatra::Base
 
@@ -24,6 +25,8 @@ class TaskSite < Sinatra::Base
     erb :index
   end
 
+
+
   get "/delete_all" do
     erb :delete
   end
@@ -37,6 +40,11 @@ class TaskSite < Sinatra::Base
     @delete_name = params[:name]
     current_db.delete_single_task(@delete_name)
     redirect to("/")
+  end
+
+  get "/complete" do
+    binding.pry
+    @completed_task = params[:tasks]
   end
 
 
