@@ -5,6 +5,17 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+table {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: fixed;
+}
+
+th, td {
+  padding: 20px;
+}
+
 h1 {
   text-align: center;
 
@@ -53,12 +64,22 @@ legend {
 }
 
 #submit {
-  display: block;
   font-size: 25px;
-  width: 180px;
+  width: 200px;
   height: 90px;
+  display:block;
   margin-left: auto;
   margin-right: auto;
+  background-color: #FFCC99;
+}
+
+#completed_task {
+  font-size: 15px;
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 400px;
+  margin-bottom: 80px;
   background-color: #FFCC99;
 }
 

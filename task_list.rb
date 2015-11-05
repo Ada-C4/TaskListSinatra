@@ -22,7 +22,8 @@ class TaskSite < Sinatra::Base
     @descr = params[:description]
     current_db.create_task(@new_name, @descr)
     @tasks = current_db.get_tasks
-    erb :index
+    redirect to("/")
+    #erb :index
   end
 
 
@@ -33,7 +34,7 @@ class TaskSite < Sinatra::Base
 
   post "/delete_all" do
     current_db.delete_tasks
-    erb :index
+    redirect to("/")
   end
 
   get "/delete/:name" do

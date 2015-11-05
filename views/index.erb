@@ -2,7 +2,46 @@
 
 <h1>Tasks</h1>
 
-  <ul>
+
+<% if @tasks == [] %>
+  <p>
+     You haven't set any tasks.
+  </p>
+<% else %>
+  <table>
+    <col width="400">
+    <col width="150">
+    <col width="150">
+    <tr>
+      <th>Task</th>
+      <th>Completed?</th>
+      <th>Delete</th>
+    </tr>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td>
+          <%= task[0] %> : <%= task[1] %>
+      </td>
+      <td>
+        <form method="get" action="complete">
+          <% if task[2] != nil %>
+             <%= task[2] %>
+          <% else %>
+            <label><input type="checkbox" name="tasks[]" value="<%= task[0] %>"</label>
+          <% end %>
+
+      </td>
+      <td>
+        <a href="/delete/<%= task[0] %>">Delete Task</a>
+      </td>
+
+    </tr>
+    <% end %>
+  </table>
+
+
+
+  <!-- <ul>
   <% if @tasks == nil %>
     <p>
        You haven't set any tasks.
@@ -10,21 +49,36 @@
   <% else %>
     <form method="get" action="complete">
     <% @tasks.each do |task| %>
-      <li> <%= task[0] %> : <%= task[1] %> <%= task[2] %> </li>
-      <a href="/delete/<%= task[0] %>">Delete Task</a>
-      <label><input type="checkbox" name="tasks[]" value="<%= task[0] %>"</label>
+      <li>
+        <%= task[0] %> : <%= task[1] %>
+        <a href="/delete/<%= task[0] %>">Delete Task</a>
+
+        <% if task[2] != nil %>
+          Task completed <%= task[2] %>
+        <% else %>
+          <label><input type="checkbox" name="tasks[]" value="<%= task[0] %>"</label>
+        <% end %>
+
+      </li>
+
+
     <% end %>
   <% end %>
   <button type="submit" name="completed_task" id="completed_task" value="completed task">Update completed task</button>
 
   </form>
-   </ul>
+   </ul> -->
+
+  <button type="submit" name="completed_task" id="completed_task" value="completed task">Update completed task</button>
 
 
-<p id="add_task">
+</form>
+
+<% end %>
+<!-- <p id="add_task"> -->
   <form action="new">
-    <button type="submit" href="new" name="submit" id="submit" value="New Task">New Task</button>
+    <button type="submit" href="new" name="submit" id="submit" value="New Task">Add a new task</button>
   </form>
-</p>
+<!-- </p> -->
 
 </div>
