@@ -12,6 +12,11 @@ class TasksList < Sinatra::Base
     erb :index
   end
 
+  post "/" do
+    @params = params
+    erb :params
+  end
+
   get "/new" do
     erb :new
   end
