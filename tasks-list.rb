@@ -1,4 +1,5 @@
 require "sinatra"
+require "pry"
 require "./lib/task_actions"
 
 class TasksList < Sinatra::Base
@@ -13,7 +14,7 @@ class TasksList < Sinatra::Base
   end
 
   post "/" do
-    params.keys.each { |key| current_db.remove_task(key.to_i) }
+    params.keys.each { |key| current_db.remove_task(key.to_i) if key != "submit" }
     @task_array = current_db.show_tasks
     erb :index
   end
