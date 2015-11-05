@@ -26,5 +26,12 @@ module TaskList
       ;', task, descr)
     end
 
+    def get_tasks
+      @db.execute('
+      SELECT name, description
+      FROM tasks;
+      ')
+    end
+
   end
 end

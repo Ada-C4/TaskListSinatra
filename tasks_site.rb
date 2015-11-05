@@ -7,7 +7,13 @@ end
 
 class Tasks < Sinatra::Base
   get "/" do
-    "Hello"
+    @tasks = current_db.get_tasks
+    erb :index
+  end
+
+  post "/" do
+    @tasks = current_db.get_tasks
+    erb :index
   end
 
   get "/new" do
@@ -19,6 +25,6 @@ class Tasks < Sinatra::Base
     @descr = params[:description]
     @date = params[:date]
     current_db.create_task(@new_task, @descr)
-    erb :new
+    redirect to('/')
   end
 end
