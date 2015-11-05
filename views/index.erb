@@ -69,7 +69,11 @@
   </form>
    </ul> -->
 
-  <button type="submit" name="completed_task" id="completed_task" value="completed task">Update completed task</button>
+   <% uncompleted = @tasks.find {|task| task[2] == nil} %>
+   <% if uncompleted != nil %>
+    <button type="submit" name="completed_task" id="completed_task" value="completed task">Update completed task</button>
+  <% end %>
+
 
 
 </form>
