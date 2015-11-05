@@ -1,9 +1,22 @@
-<h1>MY TASKS</h1>
+<html>
+  <head>
+    <title>Task</title>
+    <meta charset="utf-8">
+    <link href="/css/layout.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+  </head>
 
-<a href="/newtask">Add a new task</a>
+  <body>
+    <div class="main">
+      <h1>to do list</h1>
+      <a href="/newtask">Add a new task</a>
+      <ul>
+      <% @all_tasks.each do |task| %>
+      <li><h3><%= task[0] %></h3><p><%= task[1] %><br>Completed on: <strong><%= task[2] %></strong></p></li>
+      <% end %>
+      </ul>
+    </div>
+  </body>
 
-<ul>
-  <% @all_tasks.each do |task| %>
-  <li><h3><%= task[0] %></h3><p><%= task[1] %><br>Completed on: <strong><%= task[2] %></strong></p></li>
-  <% end %>
-</ul>
+</html>

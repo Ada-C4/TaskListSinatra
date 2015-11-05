@@ -1,0 +1,49 @@
+/*styles for main body */
+body {
+  margin: 0 auto;
+  background-image: url("/paper.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 960px;
+}
+
+.main {
+  text-align: center;
+}
+
+/* styles for content */
+h1 {
+  font-family: "Pacifico", sans-serif;
+  font-size: 3.5em;
+  border: dashed black;
+  width:600px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+a{
+  text-decoration: none;
+  font-size: 1.5em;
+  font-family: "Coming Soon", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+
+
+}
+
+a:hover {
+  color: orange;
+}
+
+a:visited {
+  color: green;
+}
+
+ul li {
+  list-style-type: none;
+  font-family: "Coming Soon", sans-serif;
+  font-size: 1.5em;
+  margin-left: 300px;
+  text-align: justify;
+}
