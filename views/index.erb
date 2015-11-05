@@ -1,0 +1,13 @@
+<div>
+  <h1>Task List:</h1>
+    <ul>
+      <% @tasks.each do |task| %>
+        <li>
+          task: <%= task[0] %> description: <%= task[1] %> completed: <%= task[2] %>
+        </li>
+      <% end %>
+    </ul>
+
+    <a href="./new">Add a task here</a>
+    
+</div>
