@@ -1,33 +1,38 @@
-<h1>Here's a list of tasks</h1>
-<!-- <p>
-  <%= @tasks %>
-</p> -->
-<table>
-  <tr>
-    <th>
-      Name
-    </th>
-    <th>
-      Description
-    </th>
-    <th>
-      Date
-    </th>
-  </tr>
-  <% @tasks.each do |task| %>
-    <tr>
-      <td>
-        <%= task[1] %>
-      </td>
-      <td>
-        <%= task[2] %>
-      </td>
-      <td>
-        <%= task[3] %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-<p>
-  <a href="new">To add a new task, go here</a>
-</p>
+<html>
+  <head>
+    <link href="css/main.css" rel="stylesheet">
+    <title>Tasks!</title>
+  </head>
+  <body>
+    <h1>Here's a list of tasks</h1>
+    <table>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Date
+        </th>
+      </tr>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td>
+            <%= task[1] %>
+          </td>
+          <td>
+            <%= task[2] %>
+          </td>
+          <td>
+            <%= task[3] %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <p>
+      <a href="new">To add a new task, go here</a>
+    </p>
+  </body>
+</html>
