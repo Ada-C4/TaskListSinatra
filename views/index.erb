@@ -4,13 +4,16 @@
   <% @tasks.each do |task| %>
     <div class="everything">
       <form action="#" method="get">
-        <input class="checkbox" type="checkbox" name="completed">
+        <input class="checkbox" type="checkbox" name="completed[]" value="done">
       </form>
       <div class="task-descr">
         <div class="task"><%= task[0] %></div>
         <div class="description"><%= task[1] %></div>
-        <!-- <div class="completed">Date completed: <%= task[2] %></div> -->
       </div>
+      <form action ="#" method="get">
+        <label class="completed" for="completed_date">Date completed:  </label><input class="completed" type="text" name="completed_date">
+      </form>
+        <%= task[2] %>
     </div>
   <% end %>
 </div>
