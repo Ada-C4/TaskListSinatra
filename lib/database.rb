@@ -26,7 +26,7 @@ module TaskList
 
     def get_tasks
       @db.execute('
-      SELECT name, description
+      SELECT name, description, completed_date
       FROM tasks;')
     end
 
@@ -43,11 +43,11 @@ module TaskList
       ')
     end
 
-    def completed_task
+    def completed_task(task_name)
       date = Time.now.strftime("%d/%m/%Y %H:%M")
       @db.execute('
-      UPDATE tasks SET completed_date = ?;
-      ', date)
+      UPDATE tasks SET completed_date = ?
+      WHERE name = ?;', date, task_name)
     end
 
   end

@@ -10,7 +10,7 @@
   <% else %>
     <form method="get" action="complete">
     <% @tasks.each do |task| %>
-      <li> <%= task[0] %> : <%= task[1] %></li>
+      <li> <%= task[0] %> : <%= task[1] %> <%= task[2] %> </li>
       <a href="/delete/<%= task[0] %>">Delete Task</a>
       <label><input type="checkbox" name="tasks[]" value="<%= task[0] %>"</label>
     <% end %>
