@@ -20,6 +20,7 @@ class TaskSite < Sinatra::Base
   end
 
   post "/" do
+    @title = "Shit You Should Be Doing"
     current_db.add_task(params[:name], params[:description])
     @tasks = current_db.get_tasks
     erb :index
