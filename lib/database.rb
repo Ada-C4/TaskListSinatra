@@ -3,7 +3,6 @@ require "pry"
 
 module TaskList
   class Database
-
     def initialize(db_name)
       @db = SQLite3::Database.new(db_name)
     end
@@ -30,7 +29,7 @@ module TaskList
 
     def get_tasks
       @db.execute('
-      SELECT name, description, id
+      SELECT name, description, id, completed_date
       FROM tasks;')
     end
 
