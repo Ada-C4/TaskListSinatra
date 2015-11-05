@@ -2,7 +2,13 @@
 <ul>
 <% @tasks.each do |task| %>
   <li>
-    <%= task[0] %>
+    <% if task[1] == "Type here, genius" || task[1] == nil || task[1] == "" %>
+      <%= task[0] %>
+    <% else %>
+     <%= task[0] %>: <%= task[1] %>
+    <% end %>
   </li>
   <% end %>
 </ul>
+
+<a href="/add_task">add more stuff to do</a>
