@@ -35,12 +35,12 @@ module TaskList
     end
 
     def complete_task(id)
-      binding.pry
+      date = Time.now.strftime("%m/%d/%Y")
       @db.execute('
       UPDATE tasks SET comp_date=
-      "2018-12-15"
+      ?
       WHERE id= ?
-      ;', id)
+      ;',date, id)
     end
 
   end
