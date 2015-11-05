@@ -24,4 +24,12 @@ class	TaskSite < Sinatra::Base
     erb :index
 	end
 
+	post '/' do
+		
+	end
+
+	get "/add_task" do
+		erb :add_task
+	end
+
 end
