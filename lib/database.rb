@@ -16,5 +16,6 @@ module TaskList
         date_completed TEXT NULL
       );')
     end
+
   end
 end
