@@ -1,4 +1,5 @@
 require "sqlite3"
+require 'pry'
 
 module TaskList
   class Database
@@ -34,11 +35,12 @@ module TaskList
     end
 
     def complete_task(id)
+      binding.pry
       @db.execute('
       UPDATE tasks SET comp_date=
-      "2015-11-05"
-      WHERE id="1"
-      ;')
+      "2018-12-15"
+      WHERE id= ?
+      ;', id)
     end
 
   end
