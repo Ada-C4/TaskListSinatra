@@ -6,5 +6,13 @@ class TaskList < Sinatra::Base
     erb :index
   end
 
+  get "/new" do
+    erb :new
+  end
+
+  post "/new" do
+    erb :index
+  end
+
 
 end
