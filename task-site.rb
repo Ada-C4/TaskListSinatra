@@ -7,6 +7,13 @@ class TaskSite < Sinatra::Base
     @curr_db ||= TaskList::Database.new("tasks.db")
   end
 
+  def mark_complete(ids)
+    completed_date = Time.now.to_s
+    ids.each do |id|
+      current_db.complete_tasks(completed_date, id)
+    end
+  end
+
   get "/" do
     @title = "Unicorn Task List"
     @tasks = current_db.get_tasks
@@ -31,6 +38,10 @@ class TaskSite < Sinatra::Base
     erb :mark_complete
   end
 
+  post "/mark_complete" do
+    mark_complete(params[:complete])
+    redirect to('/')
+  end
 
 
 end

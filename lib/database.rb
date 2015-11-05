@@ -1,4 +1,5 @@
 require "sqlite3"
+require "pry"
 
 module TaskList
   class Database
@@ -29,14 +30,14 @@ module TaskList
 
     def get_tasks
       @db.execute('
-      SELECT name, description
+      SELECT name, description, id
       FROM tasks;')
     end
 
-    def complete_tasks(completed_date)
+    def complete_tasks(completed_date, id)
       @db.execute('
-      UPDATE tasks(completed_date)
-      VALUES(?)
+      UPDATE tasks
+      SET completed_date=?
       WHERE id = ?
       ;', completed_date, id)
     end
