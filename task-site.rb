@@ -19,7 +19,9 @@ class TaskSite < Sinatra::Base
   post "/" do
     @name = params[:name]
     @descr = params[:descr]
-    current_db.create_task(@name, @descr)
+    current_db.create_task(@name, @descr) if !@name.nil?
+    @completed = params[:completed_date]
+    current_db.add_completion(@completed)
     @tasks = current_db.get_tasks
     erb :index
   end
