@@ -15,10 +15,10 @@ class Tasks < Sinatra::Base
   end
 
   post "/new" do
-    @new_task = parms[:task]
+    @new_task = params[:task]
     @descr = params[:description]
     @date = params[:date]
-    current_db.create_task(@new_task, @descr, @date)
+    current_db.create_task(@new_task, @descr)
     erb :new
   end
 end
