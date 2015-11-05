@@ -1,12 +1,9 @@
 <h1>Shit to get done</h1>
 
 <div class="list">
-  <ul>
   <% @tasks.each do |task| %>
-    <li><%= task[0] %> <%= task[1] %> </li>
+    <div class="task"><%= task[0] %></div><div class="description"><%= task[1] %></div>
   <% end %>
-  </ul>
 </div>
-
 
 <a class="button" href= "/new">Create a new task</a>

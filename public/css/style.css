@@ -9,7 +9,6 @@ form {
 }
 
 .button {
-  display: block;
   background-color: #009999;
   color: white;
   width: 100;
@@ -39,4 +38,12 @@ h1 {
 .list {
   margin: auto;
   width: 300px;
+}
+
+.task {
+  font-weight: bolder;
+}
+
+.description {
+  margin-bottom: 15px;
 }
