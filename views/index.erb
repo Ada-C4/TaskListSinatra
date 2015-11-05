@@ -10,6 +10,7 @@
   <% else %>
     <% @tasks.each do |task| %>
       <li> <%= task[0] %> : <%= task[1] %></li>
+      <a href="/delete/<%= task[0] %>">Delete Task</a>
     <% end %>
   <% end %>
    </ul>
