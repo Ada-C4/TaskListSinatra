@@ -28,9 +28,17 @@ module TaskList
 
     def get_tasks
       @db.execute('
-      SELECT name, description
+      SELECT name, description, id, comp_date
       FROM tasks;
       ')
+    end
+
+    def complete_task(id)
+      @db.execute('
+      UPDATE tasks SET comp_date=
+      "2015-11-05"
+      WHERE id="1"
+      ;')
     end
 
   end

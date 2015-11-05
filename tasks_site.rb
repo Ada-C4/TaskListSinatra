@@ -13,9 +13,11 @@ class Tasks < Sinatra::Base
   end
 
   post "/" do
-    @title = "Your Task List"
-    @tasks = current_db.get_tasks
-    erb :index
+    complete_ids = params[:completed]
+    complete_ids.each do |id|
+      current_db.complete_task(id)
+    end
+    redirect to('/')
   end
 
   get "/new" do

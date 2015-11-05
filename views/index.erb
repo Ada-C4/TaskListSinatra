@@ -1,8 +1,11 @@
 <h1>Tasks</h1>
-<ul>
+<form method="post">
 <% @tasks.each do |task| %>
-  <li><%= task[0] %>: <%= task[1] %></li>
+  <input type="checkbox" name="completed[]" value="<%= task[2].to_i %>">
+  <%= task[0] %>: <%= task[1] %> <%= task[3] %>
+  <br>
 <% end %>
+<input type="submit" value="Complete Tasks">
+</form>
 <br>
 <a href="/new" >Add Task </a>
-</ul>
