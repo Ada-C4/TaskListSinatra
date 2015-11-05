@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/task_creator.rb'
+require 'pry'
 
 class	TaskSite < Sinatra::Base
 
@@ -9,7 +10,7 @@ class	TaskSite < Sinatra::Base
 
 	def current_list
 		task_array = current_db.get_tasks
-		@all_tasks = []
+		@all_tasks = {completed: [], todo: []}
 		task_array.each do |task|
 			one_task = {
 				id: task[0],
@@ -17,13 +18,22 @@ class	TaskSite < Sinatra::Base
 				description: task[2],
 				completed_date: task[3]
 			}
-			@all_tasks.push(one_task)
+
+			@all_tasks[:completed] << one_task if !one_task[:completed_date].nil?
+			@all_tasks[:todo] << one_task if one_task[:completed_date].nil?
 		end
 	end
 
 	def delete_checked(ids_array)
 		ids_array.each do |id|
 			current_db.delete_task(id)
+		end
+	end
+
+	def complete_checked(ids_array)
+		completed_time = Time.now
+		ids_array.each do |id|
+			current_db.complete_task(id, completed_time)
 		end
 	end
 
@@ -36,6 +46,11 @@ class	TaskSite < Sinatra::Base
 	def delete_task
 		@checked = params[:checked]
 		delete_checked(@checked)
+	end
+
+	def complete_task
+		@complete = params[:checked]
+		complete_checked(@complete)
 	end
 
 	def motivation
@@ -53,9 +68,12 @@ class	TaskSite < Sinatra::Base
 
 	post '/' do
 		new_task if params[:submit] == "Add to List"
-		current_list
-		@title = motivation
 		delete_task if params[:submit] == "delete"
+		complete_task if params[:submit] == "complete"
+
+		@title = motivation
+		current_list
+
 		erb :index
 	end
 

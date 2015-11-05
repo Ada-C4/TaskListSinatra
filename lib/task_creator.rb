@@ -24,8 +24,11 @@ module TaskList
     		;', task_id)
     end
 
-    def complete_task(id)
-
+    def complete_task(task_id, completed_time)
+      task_id = task_id.to_i
+      @db.execute('
+        UPDATE tasks SET completed_date = ? WHERE id = ?
+      ;', completed_time.to_s, task_id)
     end
 
     def modify_task(id)

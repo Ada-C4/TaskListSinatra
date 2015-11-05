@@ -2,17 +2,30 @@
   <div id="tasklist">
     <h2> <%= @title%> </h2>
     <ul>
-      <% @all_tasks.each do |task| %>
-      <div>
-        <label><input type="checkbox" name="checked[]" value="<%= task[:id] %>"><%= task[:name] %> <%= task[:description] %></label>
-      </div>
+      <% unless @all_tasks[:todo].nil? %>
+        <% @all_tasks[:todo].each do |task| %>
+          <div>
+            <label><input type="checkbox" name="checked[]" value="<%= task[:id] %>"><%= task[:name] %> - <%= task[:description] %></label>
+          </div>
+        <% end %>
       <% end %>
     </ul>
   </div>
-  <input type="submit" value="delete">
+  <input type="submit" name="submit" value="delete">
+  <input type="submit" name="submit" value="complete">
   </form>
+
+  <div id="tasklist">
+    <h2>Good job!</h2>
+    <% unless @all_tasks[:completed].nil? %>
+      <% @all_tasks[:completed].each do |task| %>
+        <div>
+          <%= task[:name] %> - <%= task[:description] %> - <%= Time.parse(task[:completed_date]).to_date %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
   <a href="/add_task">Add a new task!</a>
 
   <img id="poodle" src="http://i.imgur.com/j87CGL1.gif">
-
