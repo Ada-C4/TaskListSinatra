@@ -1,5 +1,9 @@
 <h1>MY TASKS</h1>
 
+<a href="/newtask">Add a new task</a>
+
 <ul>
-  <% #make a loop to list content from database %>
+  <% @all_tasks.each do |task| %>
+  <li><h3><%= task[0] %></h3><p><%= task[1] %><br>Completed on: <strong><%= task[2] %></strong></p></li>
+  <% end %>
 </ul>
