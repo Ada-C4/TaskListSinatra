@@ -12,13 +12,13 @@
       <fieldset>
         <legend>Task information</legend>
         <label for="name">Task name:</label>
-        <input type="text" id="name" name="name" value="<%= @name %>" required>
+        <input class="input_box" type="text" id="name" name="name" value="<%= @name %>" required>
 
         <label for="description">Task description: </label>
-        <input type="text" id="description" name="description" value="<%= @description %>">
+        <input class="input_box" type="text" id="description" name="description" value="<%= @description %>">
 
         <label for="date_completed">Date completed: </label>
-        <input type="date" id="date_completed" name="date_completed" value="<%= @date %>">
+        <input class="input_box" type="date" id="date_completed" name="date_completed" value="<%= @date %>">
 
         <input type="submit" name="submit" id="submit" value="Update Task!" class="form_button">
       </fieldset>

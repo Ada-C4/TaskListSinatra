@@ -47,6 +47,7 @@ td, th {
 
 th {
   background-color: #EBDDEB;
+  border-bottom: 4px #B2A2C6 solid;
 }
 
 td {
@@ -78,4 +79,9 @@ a:hover {
   font-size: 18px;
   background-color: #B2A2C6;
   margin: 0px 10px;
+}
+
+.input_box {
+  font-family: 'Gudea', sans-serif;
+  font-size: 18px;
 }
