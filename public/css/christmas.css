@@ -1,0 +1,87 @@
+/*
+font-family: 'Architects Daughter', cursive;
+font-family: 'Gudea', sans-serif;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Reenie Beanie', cursive;*/
+
+body {
+  background-color: #FCF0E4;
+}
+
+#container {
+  width: 80%;
+  margin: auto;
+}
+
+h1, form {
+  text-align: center;
+  font-family: 'Gudea', sans-serif;
+
+}
+
+fieldset {
+  border: 4px #336633 solid;
+  font-size: 18px;
+}
+
+legend {
+  font-size: 20px;
+}
+
+table {
+  margin: auto;
+  border: 8px #336633 solid;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  text-align: left;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+}
+
+td, th {
+  padding: 5px 10px;
+  border-bottom: 2px #FFE5E5 solid;
+}
+
+th {
+  background-color: #FFE5E5;
+  border-bottom: 4px #336633 solid;
+}
+
+td {
+  background-color: #fffcff;
+}
+
+p {
+  text-align: center;
+  font-family: 'Gudea', sans-serif;
+  font-size: 18px;
+}
+
+a {
+  color: #D987C8;
+}
+
+a:hover {
+  color: #94CDDB;
+}
+
+.table_button {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+  background-color: #336633;
+}
+
+.form_button {
+  font-family: 'Gudea', sans-serif;
+  font-size: 18px;
+  background-color: #336633;
+  margin: 0px 10px;
+}
+
+.input_box {
+  font-family: 'Gudea', sans-serif;
+  font-size: 18px;
+}
