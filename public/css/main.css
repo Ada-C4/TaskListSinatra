@@ -4,15 +4,28 @@ font-family: 'Gudea', sans-serif;
 font-family: 'Gloria Hallelujah', cursive;
 font-family: 'Reenie Beanie', cursive;*/
 
+body {
+  background-color: #F2F2F2;
+}
+
 #container {
   width: 80%;
   margin: auto;
 }
 
-h1 {
+h1, form {
   text-align: center;
   font-family: 'Gudea', sans-serif;
 
+}
+
+fieldset {
+  border: 4px #B2A2C6 solid;
+  font-size: 18px;
+}
+
+legend {
+  font-size: 20px;
 }
 
 table {
@@ -24,6 +37,7 @@ table, th, td {
   border-collapse: collapse;
   text-align: left;
   font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
 }
 
 td, th {
@@ -33,6 +47,14 @@ td, th {
 
 p {
   text-align: center;
+  font-family: 'Gudea', sans-serif;
+  font-size: 18px;
 }
 
-/*B2A2C6*/
+a {
+  color: #D987C8;
+}
+
+a:hover {
+  color: #94CDDB;
+}
