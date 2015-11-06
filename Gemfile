@@ -4,6 +4,14 @@ source "https://rubygems.org"
 ruby "2.2.3"
 
 gem 'sinatra'
-gem 'sqlite3'
-gem 'pry'
-gem 'rspec'
+
+group :development do
+  gem 'sqlite3'
+  gem 'pry'
+end
+
+group :production do
+  if ENV["DATABASE_URL"]
+    gem "pg"
+  end
+end
