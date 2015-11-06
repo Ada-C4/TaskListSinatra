@@ -48,30 +48,20 @@ class	TaskSite < Sinatra::Base
 		end
 	end
 
-	def new_task
-		task_name = params[:name]
-		task_descr = params[:description]
+	def new_task(task_name, task_descr)
 		current_db.create_task(task_name, task_descr)
 	end
 
-	def update_task_name(id)
-		task_name = params[:name]
+	def update_task_name(id, name)
 		current_db.modify_task_name(id, task_name)
 	end
 
-	def update_task_description(id)
-		task_descr = params[:description]
+	def update_task_description(id, task_descr)
 		current_db.modify_task_description(id, task_descr)
 	end
 
-	def delete_task
-		@checked = params[:checked]
-		delete_checked(@checked)
-	end
-
-	def complete_task
-		@complete = params[:checked]
-		complete_checked(@complete)
+	def delete_completed
+		current_db.delete_complete
 	end
 
 	def motivation
@@ -83,7 +73,7 @@ class	TaskSite < Sinatra::Base
 
 	get '/' do
 		@title = motivation
-		# current_db.delete_complete if params[:delete] == "all-the-things"
+		# 
 
 		current_list
 
@@ -92,8 +82,10 @@ class	TaskSite < Sinatra::Base
 
 	post "/" do
 		@title = motivation
-		delete_task if params[:submit] == "Delete"
-		complete_task if params[:submit] == "Complete"
+		checked = params[:checked]
+		delete_checked(checked) if params[:submit] == "Delete"
+		complete_checked(checked) if params[:submit] == "Complete"
+		delete_completed if params[:submit] == "Delete All Completed Tasks"
 
 		current_list
 
@@ -107,7 +99,9 @@ class	TaskSite < Sinatra::Base
 	end
 
 	post '/add_task' do
-		new_task
+		task_name = params[:name]
+		task_descr = params[:description]
+		new_task(task_name, task_descr)
 		redirect to("/")
 	end
 
@@ -121,9 +115,10 @@ class	TaskSite < Sinatra::Base
 	post "/modify" do
 		task_id = params[:task]
 		task = get_task(task_id)
-
-		update_task_name(task_id) if task[:name] != params[:name]
-		update_task_description(task_id) if task[:description] != params[:description]
+		task_name = params[:name]
+		task_descr = params[:description]
+		update_task_name(task_id, task_name) if task_name != params[:name]
+		update_task_description(task_id, task_descr) if task_descr != params[:description]
 
 		redirect to("/")
 	end

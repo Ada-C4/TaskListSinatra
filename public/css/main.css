@@ -1,6 +1,6 @@
 body {
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 800px;
   font-family: "comic sans ms";
   background-color: #D9B3FF;
 }
@@ -15,12 +15,21 @@ h1 {
 h2 {
   color: #008066;
   font-family: "Crafty Girls", sans-serif;
+  text-align: center;
 }
 
  #tasklist {
   background-color: #FF3385;
   margin: 15px;
-  padding: 15px;
+  padding: 10px;
+  border: 2px black solid;
+}
+
+#list {
+  display: inline-block;
+  width: 48%;
+  margin: 0 auto;
+  float: left;
 }
 
 #submit {
@@ -28,9 +37,14 @@ h2 {
   margin-left: 15px;
 }
 
+#simmons {
+  display: inline-block;
+  margin: 0 auto;
+  width: 48%;
+}
+
 #poodle {
   display: block;
   margin: 0 auto;
-  width: 400px;
-  margin-top: 50px;
+  margin-top: 40px;
 }

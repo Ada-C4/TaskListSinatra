@@ -1,31 +1,32 @@
-<form action="#" method="post">
+<form method="post">
   <div id="tasklist">
     <h2> <%= @title%> </h2>
-    <ul>
+      <div id="list">
       <% unless @all_tasks[:todo].nil? %>
         <% @all_tasks[:todo].each do |task| %>
           <div>
-            <label><input type="checkbox" name="checked[]" value="<%= task[:id] %>"><%= task[:name] %> - <%= task[:description] %></label>
+            <label><input type="checkbox" name="checked[]" value="<%= task[:id] %>"><strong><%= task[:name] %></strong> - <%= task[:description] %></label>
             <a href="/modify?task=<%= task[:id] %>">Modify</a>
           </div>
         <% end %>
       <% end %>
-    </ul>
+      </div>
+      <img id="simmons" src="images/richard_simmons.gif">
   </div>
   <input type="submit" id="submit" name="submit" value="Complete">
   <input type="submit" id="submit" name="submit" onclick="return confirm('Are you sure?')" value="Delete">
+  <input type="submit" id="submit" name="submit" onclick="return confirm('Are you sure?')" value="Delete All Completed Tasks">
   </form>
 
   <div id="tasklist">
-    <h2>Good job!</h2>
+    <h2>Good job! You've Completed These Tasks!</h2>
     <% unless @all_tasks[:completed].nil? %>
       <% @all_tasks[:completed].each do |task| %>
         <div>
-          <%= task[:name] %> - <%= task[:description] %> - <%= Time.parse(task[:completed_date]).to_date %>
+          <strong><%= task[:name] %></strong> - <%= task[:description] %> - <%= Time.parse(task[:completed_date]).to_date %>
         </div>
       <% end %>
     <% end %>
-    <!-- <a href="?delete=all-the-things"><h4>&#x2764; Clear all the things?</h4></a> -->
   </div>
 
   <a href="/add_task"><h1>Add a new task!</h1></a>
