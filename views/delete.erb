@@ -1,0 +1,17 @@
+<form method="post">
+  <fieldset>
+    <legend>Delete Tasks</legend>
+    <ul class="tasks">
+    <% @tasks.each do |task| %>
+      <li>
+        <label>
+          <input type="checkbox" name="delete[]" value="delete">
+          <%= task[0] %>: <%= task[1] %>
+        </label>
+      </li>
+    <% end %>
+    </ul>
+  <div>
+    <input type="submit" name="submit" id="submit" value="Delete Tasks">
+  </div>
+</form>
