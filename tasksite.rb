@@ -1,6 +1,6 @@
 require "sinatra"
 require "./lib/use_database"
-# require "./lib/database"
+require "pry"
 
 class TaskSite < Sinatra::Base
 
@@ -25,4 +25,12 @@ class TaskSite < Sinatra::Base
     @tasks_info = current_db.get_tasks
     erb :index
   end
+
+  post "/complete" do
+    binding.pry
+    current_db.complete_tasks(params[:completed])
+    binding.pry
+    redirect to ('/')
+  end
+
 end

@@ -1,3 +1,5 @@
+<% require "pry" %>
+
 <h2>Goddammit, you need to:</h2>
 <table align="center">
   <thead>
@@ -10,16 +12,27 @@
       </th>
     </tr>
   </thead>
+  <form id="check_complete" action="/complete" method="post">
+  <tbody>
 <% @tasks_info.each do |info| %>
   <tr>
     <% if info[1] == nil || info[1] == "" %>
-    <td> <%= info[0] %>  </td>
+      <td> <%= info[0] %>  </td>
     <% else %>
-    <td><%= info[0] %>: <%= info[1] %></td>
+      <td><%= info[0] %> >> <%= info[1] %></td>
     <% end %>
-    <td><%= info[2] %></td>
-  </tr>
+    <% if info[2] == nil %>
+      <td>
+          <input type="checkbox" name="completed[]" value=<% "#{info[0]}" %>>
+      </td>
+    <% else %>
+      <td><%= info[2] %></td>
+    <% end %>
+  </tr></form>
   <% end %>
+  </tbody>
 </table>
 
 <a href="/add_task" class="button">got more shit to do?</a>
+
+<input class="button" type="submit" value="complete!" form="check_complete">

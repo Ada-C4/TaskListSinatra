@@ -16,14 +16,16 @@ module TaskList
       ')
     end
 
-    def complete_tasks(task_name)
+    def complete_tasks(task_name_array)
       completed_task_date = Time.now
-      @db.execute('
-      UPDATE tasks_table
-      SET completed_date = completed_task_date
-      WHERE name = task_name
-      VALUES(?);
-      ', task_name)
+      task_name_array.each do |info|
+        @db.execute('
+        UPDATE tasks_table
+        SET completed_date = completed_task_date
+        WHERE name = task_name
+        VALUES(?);
+        ', task_name)
+      end
     end
   end
 end
