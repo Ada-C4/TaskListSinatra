@@ -56,8 +56,15 @@ module TaskList
         UPDATE tasks SET comp_date=
         ?
         WHERE id= ?
-        ;',date, id)
+        ;', date, id)
       end
+    end
+
+    def delete_task(id)
+      @db.execute('
+      DELETE FROM tasks
+      WHERE id= ?
+      ;', id)
     end
   end
 end

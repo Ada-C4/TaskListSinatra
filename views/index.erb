@@ -1,21 +1,21 @@
 <h1>Current Tasks</h1>
 <form method="post">
 <% @current_tasks.each do |task| %>
-  <input type="checkbox" name="completed[]" value="<%= task[2] %>">
+  <input type="checkbox" name="checked[]" value="<%= task[2] %>">
   <%= task[0] %>: <%= task[1] %> <%= task[3] %>
   <br>
 <% end %>
 <h1>Completed Tasks</h1>
 <% @completed_tasks.each do |task| %>
-  <input type="checkbox" name="completed[]" value="<%= task[2] %>">
+  <input type="checkbox" name="checked[]" value="<%= task[2] %>">
   <%= task[0] %>: <%= task[1] %> <%= task[3] %>
   <br>
 <% end %>
 <br>
-<input type="submit" value="Complete Task(s)">
+<input type="submit" name="submit" value="Complete Task(s)">
 <br>
 <br>
-<input type="submit" value="Delete Task(s)">
+<input type="submit" name="submit" value="Delete Task(s)">
 </form>
 <br>
 

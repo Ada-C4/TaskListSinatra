@@ -15,16 +15,24 @@ class Tasks < Sinatra::Base
   end
 
   post "/" do
-    complete_ids = params[:completed]
-    complete_ids.each do |id|
-      current_db.complete_task(id)
+    @submit = params[:submit]
+    if @submit == "Complete Task(s)"
+      complete_ids = params[:checked]
+      complete_ids.each do |id|
+        current_db.complete_task(id)
+      end
+    else
+      delete_ids = params[:checked]
+      delete_ids.each do |id|
+        current_db.delete_task(id)
+      end
     end
     redirect to('/')
     # for tomorrow selves: in index.erb, can add name attributes to each
     # of the submit buttons (so name="complete" and name="delete")
     # then, in this method, capture those values as params[:complete] and params[:delete]
     # use those values in if then statement to tell this method whether to complete a task
-    # or to delete a task.  
+    # or to delete a task.
   end
 
   get "/new" do
