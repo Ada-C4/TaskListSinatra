@@ -26,7 +26,7 @@ class TasksList < Sinatra::Base
       erb :delete_confirmation
     elsif params[:submit] == "complete" && ids != nil
       ids.each { |id| current_db.complete_task(id.to_i)}
-      display_tasks
+      redirect to('/')
     elsif params[:submit] == "edit" && ids != nil && ids.length == 1
       @task = current_db.get_task(params[:ids][0].to_i)
       @update = true
