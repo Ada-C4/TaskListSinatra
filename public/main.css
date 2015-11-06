@@ -35,8 +35,34 @@ td {
 h1 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 50px;
+  border-bottom: 1px solid rgb(77, 77, 77);
+}
+
+.centered {
+  margin: auto;
+  padding: auto;
+}
+
+.centered-btn {
+  margin: 20px;
 }
 
 .strikethru {
   text-decoration: line-through;
+}
+
+.btn {
+  width: 175px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5em;
+  background: white;
+  color: #333;
+  transition: all 0.5s ease-out;
+  border: 1px solid black;
+}
+
+.btn:hover {
+  background: rgb(77, 77, 77);
+  color: white;
+  transition: all 0.5s ease-out;
 }

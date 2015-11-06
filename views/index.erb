@@ -1,10 +1,11 @@
-<h1 class="text-center">Task List</h1>
+<div class="row">
+  <h1 class="text-center">Task List</h1>
+</div>
   <%= erb(:task_printout) %>
-  <button class="btn btn-primary btn-lg" type="submit" name="submit" value="delete">Delete Tasks</button>
-  <button class="btn btn-primary btn-lg" type="submit" name="submit" value="complete">Mark Tasks as Complete</button>
-  <button class="btn btn-primary btn-lg" type="submit" name="submit" value="edit">Edit task (one at a time)</button>
+  <div class="centered-btn">
+    <button class="btn btn-lg" type="submit" name="submit" value="delete">Delete Tasks</button>
+    <button class="btn btn-lg" type="submit" name="submit" value="complete">Complete Tasks</button>
+    <button class="btn btn-lg" type="submit" name="submit" value="edit">Edit a task</button>
+    <a class="btn btn-lg" role="button" href="new">Add a new task</a>
+  </div>
 </form>
-
-<p>
-  <a class="btn btn-primary btn-lg" role="button" href="new">Add a new task</a>
-</p>
