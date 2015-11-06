@@ -1,11 +1,11 @@
 <div>
   <h1>Task List</h1>
-  <form class="modifiers" method="post">
+  <form method="post">
     <ul>
       <% @tasks.each do |task| %>
         <li>
           <label><input type="checkbox" name="deleted[]" value="<%= task[0] %>" >Delete</label>
-          <p class="modifiers">task: <%= task[1] %> description: <%= task[2] %> completed: <%= task[3] %></p>
+          <p>task: <%= task[1] %> description: <%= task[2] %> completed: <%= task[3] %></p>
         </li>
       <% end %>
       <input type="submit" onclick="return confirm('Are you sure?')" name="submit" value="Delete Task(s)">

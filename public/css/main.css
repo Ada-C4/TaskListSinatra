@@ -2,6 +2,7 @@
 
 body {
   margin: 0 auto;
+  text-align: center;
 }
 
 
@@ -25,7 +26,12 @@ ul {
 
 }
 
-.modifiers {
+form {
+  display: inline;
+  color: blue;
+}
+
+form {
   display: inline;
 }
 
@@ -33,7 +39,7 @@ a:link {
   text-decoration: none;
   color: black;
   font-family: Open Sans;
-  font-size: 0.50cm;
+  font-size: 0.40cm;
 }
 
 a:visited {
