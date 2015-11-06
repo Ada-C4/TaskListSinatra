@@ -10,29 +10,49 @@ class Tasks < Sinatra::Base
     @title = "Your Task List"
     @current_tasks = current_db.get_current_tasks
     @completed_tasks = current_db.get_completed_tasks
-
     erb :index
   end
 
   post "/" do
     @submit = params[:submit]
     if @submit == "Complete Task(s)"
+      puts "the complete part of the if"
       complete_ids = params[:checked]
       complete_ids.each do |id|
         current_db.complete_task(id)
       end
-    else
+      redirect to('/')
+    elsif @submit == "Delete Task(s)"
+      puts "the delete part of the if"
       delete_ids = params[:checked]
       delete_ids.each do |id|
         current_db.delete_task(id)
       end
+      redirect to('/')
+    else
+      puts "first part of edit"
+      @edit_id = params[:checked]
+      puts "second part of edit"
+      redirect to('/edit')
     end
+  end
+
+  get "/edit" do
+    @title = "Edit task"
+    edit_ids = params[:checked]
+    edit_ids.each do |id|
+      current_db.edit_task(id)
+    end
+    erb :edit
+  end
+
+  post "/edit" do
+    @title = "Add a new task"
+    @new_task = params[:task]
+    @descr = params[:description]
+    @date = params[:date]
+    current_db.edit_task(id)
     redirect to('/')
-    # for tomorrow selves: in index.erb, can add name attributes to each
-    # of the submit buttons (so name="complete" and name="delete")
-    # then, in this method, capture those values as params[:complete] and params[:delete]
-    # use those values in if then statement to tell this method whether to complete a task
-    # or to delete a task.
   end
 
   get "/new" do

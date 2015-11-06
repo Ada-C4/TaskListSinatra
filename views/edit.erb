@@ -1,0 +1,11 @@
+<form method=post >
+  <fieldset>
+    <legend> Edit task</legend>
+    <label for="task">Task name: </label>
+    <input type="text" id="task" name="task" required >
+    <label for= "description">Description:</label>
+    <input type= "text" id = "description" name = "description">
+    <input type="hidden" name="task_id" id="task_id" value="<%= @edit_id%>">
+    <input type="submit" name="submit" id="submit" value="Edit Task">
+  </fieldset>
+</form>
