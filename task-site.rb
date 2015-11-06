@@ -1,4 +1,3 @@
-require 'pry'
 require 'sinatra'
 require './lib/database'
 
@@ -20,7 +19,6 @@ class TaskSite < Sinatra::Base
 
   post "/edit" do
     @title = "Edit your shit"
-    binding.pry
     @id = params[:completed]
     @name = current_db.get_name(@id)
     @descr = current_db.get_descr(@id)
