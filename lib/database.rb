@@ -29,5 +29,24 @@ module TaskList
       SELECT name, description, completed_date
       FROM tasks;')
     end
+
+    def update_tasks(tasks_to_update)
+      completed_date=Time.now.to_s
+      tasks_to_update.each do |task_name|
+        @db.execute('
+        UPDATE tasks SET completed_date=?
+        WHERE name=?;
+        ', completed_date, task_name)
+      end
+    end
+
+    def get_completed_tasks
+      @db.execute('
+      SELECT name, completed_date
+      FROM tasks WHERE completed_date IS NOT NULL
+      OR completed_date !="";')
+    end
+
+
   end
 end

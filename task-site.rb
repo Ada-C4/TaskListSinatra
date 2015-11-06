@@ -11,6 +11,12 @@ class Tasks < Sinatra::Base
     erb :index
   end
 
+  post "/" do
+    tasks_to_complete = params[:tasks]
+    current_db.update_tasks(tasks_to_complete)
+    redirect to("/completed")
+  end
+
   get "/newtask" do
     erb :newtask
   end
@@ -23,4 +29,11 @@ class Tasks < Sinatra::Base
     current_db.create_task(@new_task, @description, @date)
     redirect to("/")
   end
+
+  get "/completed" do
+    @completed_tasks = current_db.get_completed_tasks
+    erb :completed
+  end
+
+
 end

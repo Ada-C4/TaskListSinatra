@@ -9,17 +9,13 @@
 
   <body>
     <div class="main">
-      <h1>to do list</h1>
+      <h1>done, done, & done</h1>
       <a href="/newtask">Add a new task</a>
-      <form method="post">
         <ul>
-        <% @all_tasks.each do |task| %>
-        <label><input type="checkbox" name="tasks[]" value="<%= task[0] %>"></label>
-        <li><h3><%= task[0] %></h3><p><%= task[1] %><br>Completed on: <strong><%= task[2] %></strong></p></li>
+        <% @completed_tasks.each do |task| %>
+        <li><h3><%= task[0] %></h3><p>Completed on: <strong><%= task[1] %></strong></p></li>
         <% end %>
         </ul>
-        <input type="submit" name="submit_task" value="Update List">
-      </form>
     </div>
   </body>
 
