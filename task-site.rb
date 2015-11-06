@@ -1,7 +1,6 @@
 require "sinatra"
 require "./lib/database"
 require "./lib/taskbase"
-require "pry"
 
 class TaskSite < Sinatra::Base
 
