@@ -17,15 +17,21 @@ module TaskList
     end
 
     def complete_tasks(task_name_array)
-      completed_task_date = Time.now.to_s
+      completed_task_date = "#{Time.now.month}/#{Time.now.day}/#{Time.now.year}"
       task_name_array.each do |info|
         @db.execute('
         UPDATE tasks_table
         SET completed_date = ?
         WHERE name = ?;
         ', completed_task_date, info)
-
       end
+    end
+
+    def delete_tasks(task_name)
+      @db.execute('
+      DELETE tasks_table
+      WHERE name = ?;
+      ', task_name)
     end
   end
 end

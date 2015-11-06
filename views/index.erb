@@ -1,15 +1,16 @@
-<% require "pry" %>
-
 <h2>Goddammit, you need to:</h2>
 <form id="check_complete" action="/complete" method="post">
 <table align="center">
   <thead>
     <tr>
       <th>
-        Shit
+        Shit!
       </th>
       <th>
         Done?
+      </th>
+      <th>
+      Delete?
       </th>
     </tr>
   </thead>
@@ -17,9 +18,9 @@
 <% @tasks_info.each do |info| %>
   <tr>
     <% if info[1] == nil || info[1] == "" %>
-      <td> <%= info[0] %>  </td>
+      <td> <%= info[0] %> </td>
     <% else %>
-      <td><%= info[0] %> >> <%= info[1] %></td>
+      <td><%= info[0] %> >> <%= info[1] %> </td>
     <% end %>
     <% if info[2] == nil %>
       <td>
@@ -28,6 +29,9 @@
     <% else %>
       <td><%= info[2] %></td>
     <% end %>
+    <td>
+      <label for="delete_ask"><input type="submit" value="💩" id="delete_ask" action="/delete_confirmation" method="post"></label>
+    </td>
   </tr>
   <% end %>
   </tbody>
