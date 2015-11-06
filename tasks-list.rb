@@ -1,5 +1,4 @@
 require "sinatra"
-require "pry"
 require "./lib/task_actions"
 
 class TasksList < Sinatra::Base
