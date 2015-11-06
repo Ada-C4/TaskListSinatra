@@ -20,6 +20,11 @@ class TaskSite < Sinatra::Base
     end
   end
 
+  # def update(ids)
+  #   ids.each do  |id|
+  #     current_db.edit_tasks(id)
+  # end
+
   get "/" do
     @title = "Unicorn Task List"
     @tasks = current_db.get_tasks

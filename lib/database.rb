@@ -36,7 +36,7 @@ module TaskList
     def complete_tasks(completed_date, id)
       @db.execute('
       UPDATE tasks
-      SET completed_date=?
+      SET completed_date = ?
       WHERE id = ?
       ;', completed_date, id)
     end
@@ -48,5 +48,12 @@ module TaskList
       ;', id)
     end
 
+    def edit_tasks(name, description, id)
+      @db.execute('
+      UPDATE tasks
+      SET name = ?, description = ?
+      WHERE id = ?
+      ;', name, description, id)
+    end
   end
 end
