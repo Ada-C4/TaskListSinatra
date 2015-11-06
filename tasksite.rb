@@ -27,9 +27,7 @@ class TaskSite < Sinatra::Base
   end
 
   post "/complete" do
-    binding.pry
     current_db.complete_tasks(params[:completed])
-    binding.pry
     redirect to ('/')
   end
 
