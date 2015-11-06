@@ -83,7 +83,7 @@ class	TaskSite < Sinatra::Base
 
 	get '/' do
 		@title = motivation
-		current_db.delete_complete if params[:delete] == "all-the-things"
+		# current_db.delete_complete if params[:delete] == "all-the-things"
 
 		current_list
 
