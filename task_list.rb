@@ -10,11 +10,12 @@ class TaskSite < Sinatra::Base
 
   get "/" do
     @tasks = current_db.get_tasks
+    @@is_update = false
     erb :index
   end
 
   get "/new" do
-    @is_update1 = @@is_update
+    @is_update = @@is_update
     erb :new
   end
 
