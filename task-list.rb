@@ -8,6 +8,14 @@ class	TaskSite < Sinatra::Base
 		@curr_db ||= TaskList::TaskCreator.new("task-list.db")
 	end
 
+	def task_ids
+		task_ids = []
+		@all_tasks[:todo].each do |task|
+			task_ids.push(task[:id])
+		end
+		return task_ids
+	end
+
 	def current_list
 		task_array = current_db.get_tasks
 		@all_tasks = {completed: [], todo: []}
@@ -67,14 +75,23 @@ class	TaskSite < Sinatra::Base
 	end
 
 	post '/' do
-		new_task if params[:submit] == "Add to List"
-		delete_task if params[:submit] == "delete"
-		complete_task if params[:submit] == "complete"
-
-		@title = motivation
 		current_list
+		ids_array = task_ids
+		ids_array.each do |id|
+			@match = params.keys.find {|key| key == id.to_s}
+			break if @match != nil
+		end
+		if !@match.nil?
+			erb :add_task
+		else
+			new_task if params[:submit] == "Create/Modify"
+			delete_task if params[:submit] == "delete"
+			complete_task if params[:submit] == "complete"
 
-		erb :index
+			@title = motivation
+			current_list
+			erb :index
+		end
 	end
 
 	get "/add_task" do
