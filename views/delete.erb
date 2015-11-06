@@ -8,7 +8,7 @@
           <p class="modifiers">task: <%= task[1] %> description: <%= task[2] %> completed: <%= task[3] %></p>
         </li>
       <% end %>
-      <input type="submit" name="submit" id="submit" value="Submit Change">
+      <input type="submit" onclick="return confirm('Are you sure?')" name="submit" value="Delete Task(s)">
     </ul>
   </form>
   <a href="./">Back to Tasks</a>
