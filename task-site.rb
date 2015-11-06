@@ -23,7 +23,7 @@ class ListofTasks < Sinatra::Base
     @completed_date = params[:completed_date]
     current_db.new_task(@task, @description, @completed_date)
     @tasks = current_db.select_tasks
-    erb :index
+    redirect to"/"
   end
 
   get "/task/complete" do
@@ -36,7 +36,7 @@ class ListofTasks < Sinatra::Base
       current_db.completed_tasks(id)
     end
     @tasks = current_db.select_tasks
-    erb :index
+    redirect to"/"
   end
 
   get "/task/delete" do
@@ -49,7 +49,7 @@ class ListofTasks < Sinatra::Base
       current_db.delete_tasks(id)
     end
     @tasks = current_db.select_tasks
-    erb :index
+    redirect to"/"
   end
 
   get "/edit_choice" do
