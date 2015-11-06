@@ -14,14 +14,13 @@ class TaskSite < Sinatra::Base
   end
 
   get "/new" do
+    @is_update1 = @@is_update
     erb :new
   end
 
   post "/new" do
     @new_name = params[:name]
     @descr = params[:description]
-    @is_update1 = @@is_update
-    binding.pry
     if @@is_update
       current_db.update_task(@@update_name, @new_name, @descr)
     else
