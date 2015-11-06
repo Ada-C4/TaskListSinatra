@@ -9,7 +9,11 @@
       <label for="description">Description: </label>
       <input class="form-control" type="text" id="description" name="description">
       <br>
-      <button class="btn" type="submit">Submit</button>
+      <% if @update %>
+        <button class="btn" type="submit" name ="submit" value="update">Update</button>
+      <% else %>
+        <button class="btn" type="submit" name ="submit" value="new">Submit</button>
+      <% end %>
     </fieldset>
   </div>
 </form>

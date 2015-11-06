@@ -32,8 +32,8 @@ class TasksList < Sinatra::Base
       ids.each { |id| current_db.complete_task(id.to_i)}
       display_tasks
     elsif params[:submit] == "edit" && ids != nil && ids.length == 1
-
-
+      @id = params[:ids][0].to_i
+      erb :new
     else
       display_tasks
     end
@@ -47,11 +47,21 @@ class TasksList < Sinatra::Base
   end
 
   get "/new" do
+    if @id
+      @task_info = current_db.get_task
+      @update = true
+    else
+      @update = false
+    end
     erb :new
   end
 
   post "/new" do
-    current_db.new_task(params[:task_name], params[:description])
+    if params[:submit] == "update"
+      current_db.edit_task(     )
+    elsif params[:submit] == "new"
+      current_db.new_task(params[:task_name], params[:description])
+    end
     display_tasks
   end
 
