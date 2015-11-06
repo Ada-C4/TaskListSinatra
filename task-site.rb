@@ -53,13 +53,17 @@ class ListofTasks < Sinatra::Base
   end
 
   get "/edit_choice" do
+    @tasks = current_db.select_tasks
     erb :edit_choice
   end
 
   get "/:task" do
+    @tasks = current_db.select_tasks
     erb :edit
   end
 
-
-
+  post "/edit_choice" do
+    @tasks = current_db.select_tasks
+    erb :index
+  end
 end

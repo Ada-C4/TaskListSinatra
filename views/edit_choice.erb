@@ -4,11 +4,10 @@
     <ul>
       <% @tasks.each do |task| %>
         <li>
-          <label><input type="checkbox" name="completed[]" value="<%= task[0] %>" >Completed</label>
           <p class="modifiers">task: <%= task[1] %> description: <%= task[2] %> completed: <%= task[3] %></p>
+          <a href="/<%= task[1] %>">Edit</a>
         </li>
       <% end %>
-      <input type="submit" name="submit" id="submit" value="Submit Change">
     </ul>
   </form>
 
