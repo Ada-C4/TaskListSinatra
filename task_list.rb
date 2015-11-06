@@ -14,6 +14,7 @@ class TaskSite < Sinatra::Base
   end
 
   get "/new" do
+    @is_update1 = @@is_update
     erb :new
   end
 
