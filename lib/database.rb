@@ -27,7 +27,6 @@ module TaskList
       ', task_name, task_description, completed_date)
     end
 
-    #right now this selects all of the tasks
     def select_tasks
       @db.execute('
         SELECT id, name, description, completed_date

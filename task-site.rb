@@ -20,7 +20,7 @@ class ListofTasks < Sinatra::Base
   post "/task/new" do
     @task = params[:task]
     @description = params[:description]
-    @completed_date = params[:completed_date]
+    @completed_date = params[:date]
     current_db.new_task(@task, @description, @completed_date)
     redirect to"/"
   end

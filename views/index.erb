@@ -1,12 +1,31 @@
 <div>
   <h1>Task List</h1>
-    <ul>
+    <table>
+      <tr>
+        <th>
+          task
+        </th>
+        <th>
+          description
+        </th>
+        <th>
+          completed
+        </th>
+      </tr>
       <% @tasks.each do |task| %>
-        <li>
-          task: <%= task[1] %> description: <%= task[2] %> completed: <%= task[3] %>
-        </li>
+      <tr>
+         <td>
+          <%= task[1] %>
+         </td>
+         <td>
+          <%= task[2] %>
+         </td>
+         <td>
+          <%= task[3] %>
+         </td>
+       </tr>
       <% end %>
-    </ul>
+    </table>
 
     <nav>
       <ul>
