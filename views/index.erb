@@ -8,43 +8,34 @@
 
 <div class="list">
   <% @tasks.each do |task| %>
-    <div class="everything">
-      <div class="task-descr">
-        <% if task[3].nil? %>
-          <div class="task"><%= task[1].upcase %></div>
-        <% end %>
-
-        <% if task[3].nil? %>
-          <div class="description"><%= task[2] %></div>
-        <% end %>
-      </div>
-
-      <% if task[3].nil? %>
-        <form action="#" method="post">
-          <!-- <input class="checkbox" type="checkbox" name="completed[]" value="<%= task[0] %>" > -->
-          <input class="mark-complete" type="submit" name="submit" value="Complete?">
-        </form>
-      <% end %>
-    </div>
-    <% end %>
-
-    <% @tasks.each do |task| %>
+    <% if task[3].nil? %>
       <div class="everything">
         <div class="task-descr">
-          <% if !task[3].nil? %>
-            <div class="done" class="task"><%= task[1].upcase %></div>
-          <% end %>
-
-          <% if !task[3].nil? %>
-            <div class="done" class="description"><%= task[2] %></div>
-          <% end %>
+            <div class="task"><%= task[1].upcase %></div>
+          <!-- <% if task[3].nil? %> -->
+            <div class="description"><%= task[2] %></div>
+          <!-- <% end %> -->
         </div>
 
-        <% if !task[3].nil? %>
-          <div class="date">
-              Date completed: <%= task[3] %>
-          </div>
-        <% end %>
-      </div>
+        <form action="#" method="post">
+          <input class="checkbox" type="checkbox" name="completed[]" value="<%= task[0] %>" >
+          <input class="mark-complete" type="submit" name="submit" value="Complete?">
+        </form>
+    </div>
+    <% end %>
   <% end %>
-</div>
+
+    <% @tasks.each do |task| %>
+      <% if !task[3].nil? %>
+        <div class="everything">
+          <div class="task-descr">
+              <div class="done" class="task"><%= task[1].upcase %></div>
+              <div class="done" class="description"><%= task[2] %></div>
+          </div>
+            <div class="date">
+                Date completed: <%= task[3] %>
+            </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
