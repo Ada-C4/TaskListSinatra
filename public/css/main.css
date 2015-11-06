@@ -45,6 +45,14 @@ td, th {
   border-bottom: 2px #E5DFEC solid;
 }
 
+th {
+  background-color: #EBDDEB;
+}
+
+td {
+  background-color: #fffcff;
+}
+
 p {
   text-align: center;
   font-family: 'Gudea', sans-serif;
@@ -57,4 +65,17 @@ a {
 
 a:hover {
   color: #94CDDB;
+}
+
+.table_button {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+  background-color: #B2A2C6;
+}
+
+.form_button {
+  font-family: 'Gudea', sans-serif;
+  font-size: 18px;
+  background-color: #B2A2C6;
+  margin: 0px 10px;
 }
