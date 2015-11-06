@@ -91,6 +91,7 @@ class	TaskSite < Sinatra::Base
 	end
 
 	post "/" do
+		@title = motivation
 		delete_task if params[:submit] == "Delete"
 		complete_task if params[:submit] == "Complete"
 
