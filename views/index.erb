@@ -10,14 +10,14 @@
       </th>
     </tr>
   </thead>
-<% @tasks.each do |task| %>
+<% @tasks_info.each do |info| %>
   <tr>
-    <% if task[1] == nil || task[1] == "" %>
-    <td> <%= task[0] %>  </td>
+    <% if info[1] == nil || info[1] == "" %>
+    <td> <%= info[0] %>  </td>
     <% else %>
-    <td><%= task[0] %>: <%= task[1] %></td>
+    <td><%= info[0] %>: <%= info[1] %></td>
     <% end %>
-    <td>Button that completes</td>
+    <td><%= info[2] %></td>
   </tr>
   <% end %>
 </table>

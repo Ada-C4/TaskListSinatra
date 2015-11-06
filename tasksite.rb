@@ -9,7 +9,7 @@ class TaskSite < Sinatra::Base
   end
 
   get "/" do
-    @tasks = current_db.get_tasks
+    @tasks_info = current_db.get_tasks
     @title = "Shit You Should Be Doing"
     erb :index
   end
@@ -21,8 +21,8 @@ class TaskSite < Sinatra::Base
 
   post "/" do
     @title = "Shit You Should Be Doing"
-    current_db.add_task(params[:name], params[:description])
-    @tasks = current_db.get_tasks
+    current_db.add_task(params[:name], params[:description], params[:completed_date])
+    @tasks_info = current_db.get_tasks
     erb :index
   end
 end
