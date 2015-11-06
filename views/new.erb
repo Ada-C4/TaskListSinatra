@@ -3,11 +3,20 @@
 <form method="post">
   <div class="form-group">
     <fieldset>
+      <% if !@task.nil? %>
+        <input type="hidden" name="id" value="<%= @task[0] %>">
+      <% end %>
       <label for="task_name">Task: </label>
-      <input class="form-control" type="text" id="task_name" name="task_name">
+      <input class="form-control" type="text" id="task_name" name="task_name"
+      <% if !@task.nil? %>
+        value="<%=@task[1]%>"
+      <% end %>>
       <br>
       <label for="description">Description: </label>
-      <input class="form-control" type="text" id="description" name="description">
+      <input class="form-control" type="text" id="description" name="description"
+      <% if !@task.nil? %>
+        value="<%=@task[2]%>"
+      <% end %>>
       <br>
       <% if @update %>
         <button class="btn" type="submit" name ="submit" value="update">Update</button>
