@@ -8,7 +8,9 @@ end
 class Tasks < Sinatra::Base
   get "/" do
     @title = "Your Task List"
-    @tasks = current_db.get_tasks
+    @current_tasks = current_db.get_current_tasks
+    @completed_tasks = current_db.get_completed_tasks
+
     erb :index
   end
 

@@ -27,20 +27,42 @@ module TaskList
       ;', task, descr)
     end
 
-    def get_tasks
+    def get_current_tasks
       @db.execute('
       SELECT name, description, id, comp_date
-      FROM tasks;
+      FROM tasks
+      WHERE comp_date is NULL;
       ')
     end
 
-    def complete_task(id)
-      date = Time.now.strftime("%m/%d/%Y")
+    def get_completed_tasks
       @db.execute('
-      UPDATE tasks SET comp_date=
-      ?
-      WHERE id= ?
-      ;',date, id)
+      SELECT name, description, id, comp_date
+      FROM tasks
+      WHERE comp_date IS NOT NULL;
+      ')
+    end
+
+    def return_date(id)
+      @db.execute('
+      SELECT comp_date
+      FROM tasks
+      WHERE id= ?;
+      ',id)
+
+    end
+
+    def complete_task(id)
+    if return_date(id) == [[nil]]
+        puts "inside if statement"
+
+        date = "1897"
+        @db.execute('
+        UPDATE tasks SET comp_date=
+        ?
+        WHERE id= ?
+        ;',date, id)
+      end
     end
 
   end
