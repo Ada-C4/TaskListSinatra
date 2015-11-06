@@ -76,10 +76,12 @@ h1 {
 
 .checkbox {
   float: left;
+  margin-top: 5px;
 }
 
 .task-descr {
-  margin-left: 17px;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
 .everything {
@@ -94,14 +96,13 @@ h1 {
 }
 
 .date {
-  padding-left: 17px;
-  padding-bottom: 15px;
+  padding-left: 30px;
   font-size: 10px;
 }
 
 /*button for completed task submit*/
 .mark-complete {
-
+  margin-left: 10px;
 }
 
 .done {
