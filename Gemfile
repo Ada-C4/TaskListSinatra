@@ -13,7 +13,5 @@ group :test do
 end
 
 group :production do
-  if ENV["DATABASE_URL"]
   gem "pg"
-  end
 end
