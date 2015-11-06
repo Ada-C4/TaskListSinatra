@@ -32,6 +32,7 @@ class Tasks < Sinatra::Base
     else
       puts "first part of edit"
       @edit_id = params[:checked]
+      binding.pry
       puts "second part of edit"
       redirect to('/edit')
     end
@@ -39,19 +40,16 @@ class Tasks < Sinatra::Base
 
   get "/edit" do
     @title = "Edit task"
-    edit_ids = params[:checked]
-    edit_ids.each do |id|
-      current_db.edit_task(id)
-    end
     erb :edit
   end
 
   post "/edit" do
     @title = "Add a new task"
-    @new_task = params[:task]
-    @descr = params[:description]
-    @date = params[:date]
-    current_db.edit_task(id)
+    id = params[:task_id]
+    binding.pry
+    name = params[:task]
+    description = params[:description]
+    current_db.edit_task(id, name, description)
     redirect to('/')
   end
 

@@ -67,12 +67,12 @@ module TaskList
       ;', id)
     end
 
-    def edit_task(id)
+    def edit_task(id, name, description)
       @db.execute('
       UPDATE tasks
       SET name = ?, description = ?
       WHERE id= ?
-      ;', task,descr,id)
+      ;', name,description,id)
     end
   end
 end
