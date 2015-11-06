@@ -30,11 +30,34 @@ module TaskList
       FROM tasks;')
     end
 
-    def add_completion(checkbox_id)
+    def get_name(checkbox_id)
+      @db.execute('
+      SELECT name WHERE id=(?)
+      ;', checkbox_id)
+    end
 
+    def get_descr(checkbox_id)
+      @db.execute('
+      SELECT description WHERE id=(?)
+      ;', checkbox_id)
+    end
+
+    def add_completion(checkbox_id)
       @db.execute('
       UPDATE tasks SET completed=(?) WHERE id=(?)
       ;', Time.now.strftime("%b-%d-%Y").to_s, checkbox_id)
+    end
+
+    def delete_task(checkbox_id)
+      @db.execute('
+      DELETE FROM tasks WHERE id=(?)
+      ;', checkbox_id)
+    end
+
+    def update_task(name, descr, checkbox_id)
+      @db.execute('
+      UPDATE tasks SET name=(?) descr=(?) WHERE id=(?)
+      ;', name, descr, checkbox_id)
     end
   end
 end

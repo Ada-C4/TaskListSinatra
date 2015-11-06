@@ -1,4 +1,4 @@
-<h1>Enter your shit</h1>
+<h1><%= @title %></h1>
 
 <div class="new-task"><a href= "/">RETURN TO TASK LIST</a></div>
 
@@ -8,12 +8,14 @@
   <form id="task_list" action="/" method="post">
     <p>
       <label for="name">Task Name:</label>
-      <input class="input-task" type="text" name="name">
+      <input class="input-task" type="text" name="name" value="<%= @name %>" >
     </p>
     <p>
       <label for "descr">Description:</label>
-      <textarea class="input-descr" cols="30" rows="10" name="descr"></textarea>
+      <textarea class="input-descr" cols="30" rows="10" name="descr" value="<%= @descr %>"></textarea>
     </p>
       <input id="submit-task" type="submit" name="submit" value="Submit">
+
+      <input type="hidden" name="id" value="<%= @id %>">
   </form>
 </div>
