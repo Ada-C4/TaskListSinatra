@@ -3,7 +3,9 @@
   <h3> Tasks to Do:</h3>
   <ul>
     <% @tasks.each do |task| %>
-      <li><%= task[0] %>: <%= task[1] %></li>
+      <% if task[3] == nil %>
+        <li><%= task[0] %>: <%= task[1] %></li>
+      <% end %>
     <% end %>
   </ul>
 </div>

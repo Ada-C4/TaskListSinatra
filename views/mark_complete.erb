@@ -3,12 +3,14 @@
     <legend>Mark Tasks Complete</legend>
     <ul class="todo">
     <% @tasks.each do |task| %>
-      <li>
-        <label>
-          <input type="checkbox" name="complete[]" value="<%= task[2] %>">
-          <%= task[0] %>: <%= task[1] %>
-        </label>
-      </li>
+      <% if task[3] == nil %>
+        <li>
+          <label>
+            <input type="checkbox" name="complete[]" value="complete">
+            <%= task[0] %>: <%= task[1] %>
+          </label>
+        </li>
+      <% end %>
     <% end %>
     </ul>
   <div>
