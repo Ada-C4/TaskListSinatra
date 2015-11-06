@@ -55,8 +55,10 @@ class TaskSite < Sinatra::Base
 
   get "/complete" do
     @completed_task = params[:tasks_id]
-    @completed_task.each do |task_id|
-      current_db.completed_task(task_id)
+    if @completed_task != nil
+      @completed_task.each do |task_id|
+        current_db.completed_task(task_id)
+      end
     end
     redirect to ("/")
   end
