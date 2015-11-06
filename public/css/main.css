@@ -1,6 +1,6 @@
 body {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 700px;
   font-family: "comic sans ms";
   background-color: #D9B3FF;
 }
@@ -9,13 +9,12 @@ body {
 h1 {
   color: #FF0066;
   font-family: "Crafty Girls", sans-serif;
-
+  text-align: center;
 }
 
 h2 {
   color: #008066;
   font-family: "Crafty Girls", sans-serif;
-
 }
 
  #tasklist {
@@ -26,10 +25,12 @@ h2 {
 
 #submit {
   background-color: #00E6B8;
+  margin-left: 15px;
 }
 
 #poodle {
   display: block;
   margin: 0 auto;
   width: 400px;
+  margin-top: 50px;
 }

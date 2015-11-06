@@ -12,8 +12,8 @@
       <% end %>
     </ul>
   </div>
-  <input type="submit" name="submit" value="delete">
-  <input type="submit" name="submit" value="complete">
+  <input type="submit" id="submit" name="submit" value="Complete">
+  <input type="submit" id="submit" name="submit" value="Delete">
   </form>
 
   <div id="tasklist">
@@ -25,8 +25,7 @@
         </div>
       <% end %>
     <% end %>
+    <a href="?delete=all-the-things"><h4>&#x2764; Clear all the things?</h4></a>
   </div>
 
-  <a href="/add_task">Add a new task!</a>
-
-  <img id="poodle" src="http://i.imgur.com/j87CGL1.gif">
+  <a href="/add_task"><h1>Add a new task!</h1></a>

@@ -12,15 +12,13 @@ module TaskList
 
   	def get_tasks
   		@db.execute('
-  			SELECT id, name, description, completed_date
-  			FROM tasks;
+  			SELECT id, name, description, completed_date FROM tasks;
   			')
   	end
 
     def get_task(task_id)
       @db.execute('
-        SELECT id, name, description, completed_date
-        FROM tasks WHERE id = ?
+        SELECT id, name, description, completed_date FROM tasks WHERE id = ?
         ;', task_id).first
     end
 
@@ -29,6 +27,12 @@ module TaskList
     	@db.execute('
 				DELETE FROM tasks WHERE id = ?
     		;', task_id)
+    end
+
+    def delete_complete
+      @db.execute('
+        DELETE FROM tasks WHERE completed_date IS NOT NULL;
+        ')
     end
 
     def complete_task(task_id, completed_time)
