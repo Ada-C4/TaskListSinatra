@@ -9,8 +9,13 @@ body {
 }
 
 #container {
-  width: 80%;
+ margin: auto;
+ width: 80%;
+}
+
+.pusheen {
   margin: auto;
+  width: 63%;
 }
 
 h1, form {
@@ -31,6 +36,7 @@ legend {
 table {
   margin: auto;
   border: 6px #4D2A0A solid;
+  display: inline;
 }
 
 table, th, td {
@@ -42,16 +48,16 @@ table, th, td {
 
 td, th {
   padding: 5px 10px;
-  border-bottom: 2px #FFE5E5 solid;
+  border-bottom: 2px #FE4455 solid;
 }
 
 th {
-  background-color: #FFE5E5;
+  background-color: #FE4455;
   border-bottom: 4px #4D2A0A solid;
 }
 
 td {
-  background-color: #EFFBEF;
+  background-color: #A9E3A2;
 }
 
 p {
@@ -61,7 +67,7 @@ p {
 }
 
 a {
-  color: #D987C8;
+  color: #4079BF;
 }
 
 a:hover {
@@ -87,6 +93,6 @@ a:hover {
 }
 
 #header_image {
-  margin: auto;
   display: block;
+  margin: auto;
 }
