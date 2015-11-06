@@ -2,16 +2,42 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.new-task {
+  margin: auto;
+  text-align: center;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid;
+  border-color: #747070;
+  text-align: center;
+  width: 700px;
+  padding: 0px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+a {
+  text-decoration: none;
+  margin:auto;
+  text-align: center;
+  color: #009999;
+}
+
+a:hover { color: #747070}
+
 .task-box {
   margin: auto;
   width: 300px;
 }
 
-
 .button {
   background-color: #009999;
   color: white;
-  width: 120px;
+  width: 130px;
   height: 40px;
   margin: auto;
   font-size: 14px;
@@ -20,13 +46,6 @@ body {
   -webkit-border-radius: 10px 10px 10px 10px;
   line-height: 40px;
   text-align: center;
-}
-
-a {
-  text-decoration: none;
-  margin:auto;
-  text-align: center;
-  color: white;
 }
 
 h1 {
@@ -48,6 +67,7 @@ h1 {
 .list {
   margin: auto;
   width: 300px;
+  /*padding-top: 20px;*/
 }
 
 .task {
@@ -87,4 +107,16 @@ h1 {
 .done {
   color: #666666;
   text-decoration: line-through;
+}
+
+#submit-task {
+  background-color: #009999;
+  color: white;
+  width: 70px;
+  height: 30px;
+  margin: auto;
+  font-size: 14px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  text-align: center;
+  padding-bottom: 3px;
 }
