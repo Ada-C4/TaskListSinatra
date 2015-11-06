@@ -51,8 +51,6 @@ module TaskList
 
     def complete_task(id)
       if return_date(id) == [[nil]]
-        puts "inside if statement"
-
         date = Time.now.strftime("%m/%d/%Y")
         @db.execute('
         UPDATE tasks SET comp_date=

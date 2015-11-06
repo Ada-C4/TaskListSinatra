@@ -20,6 +20,11 @@ class Tasks < Sinatra::Base
       current_db.complete_task(id)
     end
     redirect to('/')
+    # for tomorrow selves: in index.erb, can add name attributes to each
+    # of the submit buttons (so name="complete" and name="delete")
+    # then, in this method, capture those values as params[:complete] and params[:delete]
+    # use those values in if then statement to tell this method whether to complete a task
+    # or to delete a task.  
   end
 
   get "/new" do
