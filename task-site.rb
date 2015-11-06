@@ -52,4 +52,14 @@ class ListofTasks < Sinatra::Base
     erb :delete
   end
 
+  get "/edit_choice" do
+    erb :edit_choice
+  end
+
+  get "/:task" do
+    erb :edit
+  end
+
+
+
 end
