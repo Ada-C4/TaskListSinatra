@@ -57,10 +57,11 @@ h2 {
   width: 175px;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5em;
-  background: white;
+  /*background: white;*/
+  background: none;
   color: #333;
   transition: all 0.5s ease-out;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 
 .btn:hover {

@@ -3,9 +3,9 @@
 </div>
   <%= erb(:task_printout) %>
   <div class="centered-btn">
-    <button class="btn btn-lg" type="submit" name="submit" value="delete">Delete Tasks</button>
-    <button class="btn btn-lg" type="submit" name="submit" value="complete">Complete Tasks</button>
-    <button class="btn btn-lg" type="submit" name="submit" value="edit">Edit a task</button>
-    <a class="btn btn-lg" role="button" href="new">Add a new task</a>
+    <a class="btn btn-lg" role="button" href="new"><span class="fa fa-square-o"></span> New</a>
+    <button class="btn btn-lg" type="submit" name="submit" value="edit"><span class="fa fa-edit"></span>  Edit</button>
+    <button class="btn btn-lg" type="submit" name="submit" value="complete"><span class="fa fa-check-square-o"></span> Complete</button>
+    <button class="btn btn-lg" type="submit" name="submit" value="delete"><span class="fa fa-trash-o"></span> Delete</button>
   </div>
 </form>
