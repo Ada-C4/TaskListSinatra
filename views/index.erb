@@ -8,29 +8,41 @@
   <% @tasks.each do |task| %>
     <div class="everything">
       <div class="task-descr">
-        <% if !task[3].nil? %>
-          <div class="done" class="task"><%= task[1].upcase %></div>
-        <% else %>
+        <% if task[3].nil? %>
           <div class="task"><%= task[1].upcase %></div>
         <% end %>
 
-        <% if !task[3].nil? %>
-          <div class="done" class="description"><%= task[2] %></div>
-        <% else %>
+        <% if task[3].nil? %>
           <div class="description"><%= task[2] %></div>
         <% end %>
       </div>
 
       <% if task[3].nil? %>
         <form action="#" method="post">
-          <input class="checkbox" type="checkbox" name="completed[]" value="<%= task[0] %>" >
+          <!-- <input class="checkbox" type="checkbox" name="completed[]" value="<%= task[0] %>" > -->
           <input class="mark-complete" type="submit" name="submit" value="Complete?">
         </form>
-      <% else %>
-        <div class="date">
-            Date completed: <%= task[3] %>
-        </div>
       <% end %>
     </div>
+    <% end %>
+
+    <% @tasks.each do |task| %>
+      <div class="everything">
+        <div class="task-descr">
+          <% if !task[3].nil? %>
+            <div class="done" class="task"><%= task[1].upcase %></div>
+          <% end %>
+
+          <% if !task[3].nil? %>
+            <div class="done" class="description"><%= task[2] %></div>
+          <% end %>
+        </div>
+
+        <% if !task[3].nil? %>
+          <div class="date">
+              Date completed: <%= task[3] %>
+          </div>
+        <% end %>
+      </div>
   <% end %>
 </div>

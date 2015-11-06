@@ -80,7 +80,7 @@ h1 {
 }
 
 .task-descr {
-  margin-left: 30px;
+  /*margin-left: 30px;*/
   margin-top: 20px;
 }
 
@@ -96,13 +96,13 @@ h1 {
 }
 
 .date {
-  padding-left: 30px;
+  /*padding-left: 30px;*/
   font-size: 10px;
 }
 
 /*button for completed task submit*/
 .mark-complete {
-  margin-left: 10px;
+  /*margin-left: 10px;*/
 }
 
 .done {
