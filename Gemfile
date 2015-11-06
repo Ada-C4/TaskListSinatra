@@ -4,9 +4,7 @@ ruby "2.2.3"
 gem "sinatra"
 
 group :production do
-  if ENV["DATABASE_URL"]
-    gem "pg"
-  end
+  gem "pg"
 end
 
 group :development do
