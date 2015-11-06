@@ -30,7 +30,7 @@ legend {
 
 table {
   margin: auto;
-  border: 8px #336633 solid;
+  border: 6px #4D2A0A solid;
 }
 
 table, th, td {
@@ -47,11 +47,11 @@ td, th {
 
 th {
   background-color: #FFE5E5;
-  border-bottom: 4px #336633 solid;
+  border-bottom: 4px #4D2A0A solid;
 }
 
 td {
-  background-color: #fffcff;
+  background-color: #EFFBEF;
 }
 
 p {
@@ -71,7 +71,7 @@ a:hover {
 .table_button {
   font-family: 'Architects Daughter', cursive;
   font-size: 20px;
-  background-color: #336633;
+  background-color: #80C576;
 }
 
 .form_button {
