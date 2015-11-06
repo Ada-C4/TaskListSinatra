@@ -41,6 +41,8 @@ h1 {
 .input-descr {
   width: 300px;
   height: 100px;
+  padding-top: 0;
+  padding-left: 0;
 }
 
 .list {
@@ -69,4 +71,20 @@ h1 {
   font-size: 12px;
   margin-top: 10px;
   margin-bottom: 25px;
+}
+
+.date {
+  padding-left: 17px;
+  padding-bottom: 15px;
+  font-size: 10px;
+}
+
+/*button for completed task submit*/
+.mark-complete {
+
+}
+
+.done {
+  color: #666666;
+  text-decoration: line-through;
 }

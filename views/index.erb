@@ -5,13 +5,25 @@
     <div class="everything">
       <form action="#" method="post">
         <input class="checkbox" type="checkbox" name="completed[]" value="<%= task[0] %>" >
-        <input class="button" type="submit" name="submit" value="Mark complete">
+        <input class="mark-complete" type="submit" name="submit" value="Mark complete">
       </form>
       <div class="task-descr">
-        <div class="task"><%= task[1] %></div>
-        <div class="description"><%= task[2] %></div>
+        <% if !task[3].nil? %>
+          <div class="done" class="task"><%= task[1] %></div>
+        <% else %>
+          <div class="task"><%= task[1] %></div>
+        <% end %>
+
+        <% if !task[3].nil? %>
+          <div class="done" class="description"><%= task[2] %></div>
+        <% else %>
+          <div class="description"><%= task[2] %></div>
+        <% end %>
+
       </div>
-        <%= task[3] %>
+      <div class="date">
+          Date completed: <%= task[3] %>
+      </div>
     </div>
   <% end %>
 </div>
