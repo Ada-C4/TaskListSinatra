@@ -21,58 +21,6 @@ h1 {
 
 }
 
-/*ul {
-  margin-left: 200px;
-}
-
-li {
-  padding: 10px;
-}*/
-
- #add_task {
-  text-align: center;
-  margin-top: 75px;
-}
-
-textarea {
-  display: block;
-  margin: 15px;
-}
-
-fieldset {
-  padding: 40px;
-  background-color: #99FF99;
-}
-
-legend {
-  font-size: 30px;
-  text-align: center;
-}
-
-#name_label {
-    margin-left: 280px;
-}
-.form {
-  text-align: center;
-  width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#description {
-  margin-bottom: 100px;
-}
-
-#submit {
-  font-size: 25px;
-  width: 200px;
-  height: 90px;
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #FFCC99;
-}
-
 #completed_task {
   font-size: 15px;
   width: 150px;
@@ -87,4 +35,70 @@ legend {
   background-color: #99FF99;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+
+
+
+ /*#add_task {
+  text-align: center;
+  margin-top: 75px;
+}
+
+*/
+
+textarea {
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#description {
+  margin-bottom: 100px;
+}
+
+#name {
+  margin-bottom: 40px;
+}
+
+
+
+fieldset {
+  padding: 40px;
+  background-color: #99FF99;
+}
+
+legend {
+  font-size: 30px;
+  text-align: center;
+}
+
+
+
+#name_label {
+    display: block;
+    margin-left: 280px;
+}
+
+
+/*.form {
+  text-align: center;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+
+
+
+
+
+#submit {
+  font-size: 25px;
+  width: 200px;
+  height: 90px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFCC99;
 }
