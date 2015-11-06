@@ -14,7 +14,9 @@
   <ul>
     <% @tasks.each do |task| %>
       <% if task[3] != nil %>
-        <li><%= task[0] %>: <%= task[1] %></li>
+        <li><%= task[0] %>: <%= task[1] %>
+          <br>
+           Completed <%= task[3] %></li>
       <% end %>
     <% end %>
   </ul>
