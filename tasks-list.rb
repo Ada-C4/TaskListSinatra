@@ -13,13 +13,9 @@ class TasksList < Sinatra::Base
     return params
   end
 
-  def display_tasks
+  get "/" do
     @task_array = current_db.show_tasks
     erb :index
-  end
-
-  get "/" do
-    display_tasks
   end
 
   post "/" do
@@ -35,7 +31,7 @@ class TasksList < Sinatra::Base
       @id = params[:ids][0].to_i
       erb :new
     else
-      display_tasks
+      redirect to('/')
     end
   end
 
@@ -62,7 +58,7 @@ class TasksList < Sinatra::Base
     elsif params[:submit] == "new"
       current_db.new_task(params[:task_name], params[:description])
     end
-    display_tasks
+    redirect to('/')
   end
 
 end
