@@ -10,7 +10,7 @@ class Tasks < Sinatra::Base
     @all_tasks = current_db.get_tasks
     erb :index
   end
-
+  #To give the submit button to go to the completed tasks page
   post "/" do
     tasks_to_complete = params[:tasks]
     current_db.update_tasks(tasks_to_complete)

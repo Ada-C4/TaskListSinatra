@@ -2,7 +2,7 @@
   <head>
     <title>Task</title>
     <meta charset="utf-8">
-    <link href="/css/layout.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
   </head>
@@ -10,7 +10,7 @@
   <body>
     <div class="main">
       <h1>done, done, & done</h1>
-      <a href="/newtask">Add a new task</a>
+      <a href="/newtask">add a new task</a>
         <ul>
         <% @completed_tasks.each do |task| %>
         <li><h3><%= task[0] %></h3><p>Completed on: <strong><%= task[1] %></strong></p></li>

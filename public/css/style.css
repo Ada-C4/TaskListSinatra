@@ -8,6 +8,13 @@ body {
   width: 960px;
 }
 
+.main label {
+  font-family: "Coming Soon", sans-serif;
+  font-size: 1.5em;
+  color: black;
+
+}
+
 .main {
   text-align: center;
 }
@@ -22,22 +29,20 @@ h1 {
   margin-bottom: 20px;
 }
 
+legend {
+  font-family: "Pacifico", sans-serif;
+  font-size: 2em;
+}
+
 a{
   text-decoration: none;
-  font-size: 1.5em;
-  font-family: "Coming Soon", sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-
-
+  color: red;
+  font-size: 2em;
+  font-family: "Pacifico", sans-serif;
 }
 
 a:hover {
   color: orange;
-}
-
-a:visited {
-  color: green;
 }
 
 ul li {
@@ -46,4 +51,21 @@ ul li {
   font-size: 1.5em;
   margin-left: 300px;
   text-align: justify;
+}
+
+.check {
+  float: left;
+  margin-right: 20px;
+   ;
+}
+
+.button {
+  color: red;
+  font-size: 1.5em;
+  padding: 2px 15px;
+  border-radius: 100px;
+  border: dashed black;
+  font-family: "Pacifico", sans-serif;
+  background-color: transparent;
+  cursor: pointer;
 }
