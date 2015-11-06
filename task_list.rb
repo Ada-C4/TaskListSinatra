@@ -16,6 +16,16 @@ class TaskSite < Sinatra::Base
 
   get "/new" do
     @is_update = @@is_update
+    if @is_update
+      task_info = current_db.return_task_info(@@update_id).flatten
+      @name_content = task_info[0]
+      @descr_content = task_info[1]
+    else
+      @name_content = ""
+      @descr_content= ""
+    end
+
+
     erb :new
   end
 
