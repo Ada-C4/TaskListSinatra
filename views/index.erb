@@ -22,14 +22,14 @@
     <% @tasks.each do |task| %>
     <tr>
       <td>
-          <%= task[0] %> : <%= task[1] %>
+          <%= task[1] %> : <%= task[2] %>
       </td>
       <td>
         <form method="get" action="complete">
-          <% if task[2] != nil %>
-             <%= task[2] %>
+          <% if task[3] != nil %>
+             <%= task[3] %>
           <% else %>
-            <label><input type="checkbox" name="tasks[]" value="<%= task[0] %>"</label>
+            <label><input type="checkbox" name="tasks_id[]" value="<%= task[0] %>"</label>
           <% end %>
 
       </td>
@@ -74,7 +74,7 @@
   </form>
    </ul> -->
 
-   <% uncompleted = @tasks.find {|task| task[2] == nil} %>
+   <% uncompleted = @tasks.find {|task| task[3] == nil} %>
    <% if uncompleted != nil %>
     <button type="submit" name="completed_task" id="completed_task" value="completed task">Update completed task</button>
   <% end %>

@@ -22,7 +22,7 @@ class TaskSite < Sinatra::Base
     @new_name = params[:name]
     @descr = params[:description]
     if @@is_update
-      current_db.update_task(@@update_name, @new_name, @descr)
+      current_db.update_task(@@update_id, @new_name, @descr)
     else
       current_db.create_task(@new_name, @descr)
     end
@@ -40,22 +40,22 @@ class TaskSite < Sinatra::Base
     redirect to("/")
   end
 
-  get "/delete/:name" do
-    @delete_name = params[:name]
-    current_db.delete_single_task(@delete_name)
+  get "/delete/:id" do
+    @delete_id = params[:id]
+    current_db.delete_single_task(@delete_id)
     redirect to("/")
   end
 
-  get "/update/:name" do
+  get "/update/:id" do
     @@is_update = true
-    @@update_name = params[:name]
+    @@update_id = params[:id]
   redirect to("/new")
   end
 
   get "/complete" do
-    @completed_task = params[:tasks]
-    @completed_task.each do |task|
-      current_db.completed_task(task)
+    @completed_task = params[:tasks_id]
+    @completed_task.each do |task_id|
+      current_db.completed_task(task_id)
     end
     redirect to ("/")
   end

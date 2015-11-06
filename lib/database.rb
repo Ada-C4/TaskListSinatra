@@ -26,15 +26,15 @@ module TaskList
 
     def get_tasks
       @db.execute('
-      SELECT name, description, completed_date
+      SELECT id, name, description, completed_date
       FROM tasks;')
     end
 
-    def delete_single_task(name)
+    def delete_single_task(id)
       @db.execute('
       DELETE FROM tasks
-      WHERE name = ?;
-      ', name)
+      WHERE id = ?;
+      ', id)
     end
 
     def delete_tasks
@@ -43,17 +43,17 @@ module TaskList
       ')
     end
 
-    def completed_task(task_name)
+    def completed_task(task_id)
       date = Time.now.strftime("%d/%m/%Y %H:%M")
       @db.execute('
       UPDATE tasks SET completed_date = ?
-      WHERE name = ?;', date, task_name)
+      WHERE id = ?;', date, task_id)
     end
 
-    def update_task(task_name, new_name, new_description)
+    def update_task(task_id, new_name, new_description)
       @db.execute('
-      UPDATE tasks SET name = ?, description = ? WHERE name = ?;
-      ',new_name, new_description, task_name)
+      UPDATE tasks SET name = ?, description = ? WHERE id = ?;
+      ',new_name, new_description, task_id)
     end
   end
 end
