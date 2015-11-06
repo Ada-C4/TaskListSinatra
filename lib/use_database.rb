@@ -22,9 +22,10 @@ module TaskList
         @db.execute('
         UPDATE tasks_table
         SET completed_date = completed_task_date
-        WHERE name = task_name
-        VALUES(?);
-        ', task_name)
+        WHERE name = info
+        VALUES(?, ?);
+        ', completed_task_date, info)
+
       end
     end
   end

@@ -23,7 +23,7 @@
     <% end %>
     <% if info[2] == nil %>
       <td>
-          <input type="checkbox" name="completed[]" value="nothing">
+          <input type="checkbox" name="completed[]" value="<%= info[0] %>">
       </td>
     <% else %>
       <td><%= info[2] %></td>
