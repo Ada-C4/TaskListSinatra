@@ -22,7 +22,6 @@ class ListofTasks < Sinatra::Base
     @description = params[:description]
     @completed_date = params[:completed_date]
     current_db.new_task(@task, @description, @completed_date)
-    @tasks = current_db.select_tasks
     redirect to"/"
   end
 
@@ -35,7 +34,6 @@ class ListofTasks < Sinatra::Base
     params[:completed].each do |id|
       current_db.completed_tasks(id)
     end
-    @tasks = current_db.select_tasks
     redirect to"/"
   end
 
@@ -48,7 +46,6 @@ class ListofTasks < Sinatra::Base
     params[:deleted].each do |id|
       current_db.delete_tasks(id)
     end
-    @tasks = current_db.select_tasks
     redirect to"/"
   end
 
