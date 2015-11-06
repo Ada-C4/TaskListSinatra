@@ -20,15 +20,20 @@ class TaskSite < Sinatra::Base
     end
   end
 
-  # def update(ids)
-  #   ids.each do  |id|
-  #     current_db.edit_tasks(id)
-  # end
+  def update(id)
+
+  end
 
   get "/" do
     @title = "Unicorn Task List"
     @tasks = current_db.get_tasks
     erb :index
+  end
+
+  post "/" do
+    id = params[:id].to_i
+    @task = current_db.get_task(id)
+    erb :update
   end
 
   get "/new" do
@@ -65,5 +70,16 @@ class TaskSite < Sinatra::Base
     redirect to('/')
   end
 
+  get "/update" do
+    binding.pry
+    @task = current_db.get_task
+    @title = "Update A Task"
+    erb :update
+  end
+
+  post "/update" do
+    update(params[:update])
+    redirect to('/')
+  end
 
 end

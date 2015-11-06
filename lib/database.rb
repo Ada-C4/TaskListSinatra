@@ -26,6 +26,14 @@ module TaskList
       ;', name, description)
     end
 
+    def get_task(id)
+      task = @db.execute('
+      SELECT name, description, id, completed_date
+      FROM tasks
+      WHERE id = ?
+      ;', id)
+      return task[0]
+    end
 
     def get_tasks
       @db.execute('
