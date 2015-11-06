@@ -2,15 +2,31 @@
   <fieldset>
     <legend>Delete Tasks</legend>
     <ul class="tasks">
+    <h4>Task to Do:</h4>
     <% @tasks.each do |task| %>
-      <li>
-        <label>
-          <input type="checkbox" name="delete[]" value= <%= task[2] %> >
-          <%= task[0] %>: <%= task[1] %>
-        </label>
-      </li>
+      <% if task[3] == nil %>
+        <li>
+          <label>
+            <input type="checkbox" name="delete[]" value= <%= task[2] %> >
+            <%= task[0] %>: <%= task[1] %>
+          </label>
+        </li>
+      <% end %>
+    <% end %>
+    <h4>Completed Tasks:</h4>
+    <% @tasks.each do |task| %>
+      <% if task[3] != nil %>
+        <li>
+          <label>
+            <input type="checkbox" name="delete[]" value= <%= task[2] %> >
+            <%= task[0] %>: <%= task[1] %>
+          </label>
+        </li>
+      <% end %>
     <% end %>
     </ul>
+
+
   <div>
     <input type="submit" name="submit" id="submit" value="Delete Tasks">
   </div>
