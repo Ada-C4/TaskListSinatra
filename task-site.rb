@@ -14,6 +14,12 @@ class TaskSite < Sinatra::Base
     end
   end
 
+  def delete(ids)
+    ids.each do |id|
+      current_db.delete_tasks(id)
+    end
+  end
+
   get "/" do
     @title = "Unicorn Task List"
     @tasks = current_db.get_tasks
@@ -47,6 +53,11 @@ class TaskSite < Sinatra::Base
     @tasks = current_db.get_tasks
     @title = "Delete A Task"
     erb :delete
+  end
+
+  post "/delete" do
+    delete(params[:delete])
+    redirect to('/')
   end
 
 
