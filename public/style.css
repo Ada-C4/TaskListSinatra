@@ -78,3 +78,8 @@ th {
 td {
   padding: 0 20;
 }
+
+a {
+  text-decoration: none;
+  font-size: 25;
+}

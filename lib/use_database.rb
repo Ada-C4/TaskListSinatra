@@ -27,9 +27,9 @@ module TaskList
       end
     end
 
-    def delete_tasks(task_name)
+    def delete_task(task_name)
       @db.execute('
-      DELETE tasks_table
+      DELETE FROM tasks_table
       WHERE name = ?;
       ', task_name)
     end

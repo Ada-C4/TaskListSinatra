@@ -30,7 +30,7 @@
       <td><%= info[2] %></td>
     <% end %>
     <td>
-      <label for="delete_ask"><input type="submit" value="💩" id="delete_ask" action="/delete_confirmation" method="post"></label>
+      <a href="/delete_confirmation?name=<%= info[0] %>">💩</a>
     </td>
   </tr>
   <% end %>

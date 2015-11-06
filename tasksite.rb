@@ -31,14 +31,15 @@ class TaskSite < Sinatra::Base
     redirect to ('/')
   end
 
-  post "/delete_confirmation" do
+  get "/delete_confirmation" do
     @title = "Clean That Shit?"
-    @to_delete = params[:task_name]
+    @to_delete = params[:name]
     erb :delete_confirmation
   end
 
   post "/delete" do
-    current_db.delete_tasks(@to_delete)
+    to_delete = params[:task_name]
+    current_db.delete_task(to_delete)
     redirect to ('/')
   end
 
