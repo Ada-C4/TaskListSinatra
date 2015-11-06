@@ -1,10 +1,14 @@
-require "sqlite3"
+require_relative "db_driver"
 
 module TaskList
   class Database
 
     def initialize(db_name)
-      @db = SQLite3::Database.new(db_name)
+      @db = DBDriver.new(db_name)
+    end
+
+    def delete_schema
+      @db.delete_schema
     end
 
     def create_schema
