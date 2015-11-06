@@ -22,7 +22,8 @@ table {
   width: 100%;
 }
 
-thead td {
+thead td,
+label {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 25px;
 }
@@ -36,11 +37,6 @@ h1 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 50px;
   border-bottom: 1px solid rgb(77, 77, 77);
-}
-
-.centered {
-  margin: auto;
-  padding: auto;
 }
 
 .centered-btn {
