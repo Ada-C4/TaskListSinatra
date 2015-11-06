@@ -85,3 +85,8 @@ a:hover {
   font-family: 'Gudea', sans-serif;
   font-size: 18px;
 }
+
+#header_image {
+  margin: auto;
+  display: block;
+}
