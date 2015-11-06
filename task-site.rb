@@ -43,5 +43,11 @@ class TaskSite < Sinatra::Base
     redirect to('/')
   end
 
+  get "/delete" do
+    @tasks = current_db.get_tasks
+    @title = "Delete A Task"
+    erb :delete
+  end
+
 
 end
