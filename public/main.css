@@ -39,6 +39,12 @@ h1 {
   border-bottom: 1px solid rgb(77, 77, 77);
 }
 
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 35px;
+  border-bottom: 1px solid rgb(77, 77, 77);
+}
+
 .centered-btn {
   margin: 20px;
 }
