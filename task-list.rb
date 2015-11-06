@@ -101,21 +101,20 @@ class	TaskSite < Sinatra::Base
 	end
 
 	get "/add_task" do
+		@form_title = "Add a Task!"
+		@button_value = "Add"
 		erb :add_task
 	end
 
 	post '/add_task' do
-		new_task if params[:submit] == "Create/Modify"
-
-		@title = motivation
-		current_list
-
+		new_task
 		redirect to("/")
 	end
 
 	get "/modify" do
 		@task = current_db.get_task(params[:task])
-
+		@form_title = "Modify Your Task"
+		@button_value = "Modify"
 		erb :add_task
 	end
 

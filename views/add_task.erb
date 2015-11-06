@@ -8,7 +8,7 @@
 
 <form method="post">
   <fieldset>
-    <legend>Add/Edit a Task!</legend>
+    <legend><%= @form_title %></legend>
     <label for="name">Task:</label>
     <input type="text" id="name" name="name" value="<%= @task[1] %>">
     <label for="description">Notes:</label>
@@ -16,7 +16,7 @@
     <% unless @task[0] == "" %>
       <input type="hidden" name="task" value="<%= @task[0] %>">
     <% end %>
-    <input id="submit" name="submit" type="submit" value="Create/Modify">
+    <input id="submit" name="submit" type="submit" value="<%= @button_value %>">
   </fieldset>
 </form>
 
