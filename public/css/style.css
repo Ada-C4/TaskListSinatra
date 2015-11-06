@@ -1,5 +1,8 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  background-image: url("../background.png");
+  /*background-repeat: no-repeat;*/
+  background-size: cover;
 }
 
 .new-task {
@@ -24,7 +27,9 @@ a {
   text-decoration: none;
   margin:auto;
   text-align: center;
-  color: #009999;
+  font-size: 18px;
+  /*color: #009999;*/
+  color: #EE8788;
 }
 
 a:hover { color: #747070}
@@ -35,7 +40,8 @@ a:hover { color: #747070}
 }
 
 .button {
-  background-color: #009999;
+  /*background-color: #009999;*/
+  background-color: color: #FF6E63;
   color: white;
   width: 130px;
   height: 40px;
@@ -51,10 +57,14 @@ a:hover { color: #747070}
 h1 {
   text-align: center;
   font-family: Didot;
+  font-size: 40px;
+  /*color: white;*/
 }
 
 .input-task {
   width: 300px;
+  opacity: 0.6;
+  font-size: 14px;
 }
 
 .input-descr {
@@ -62,11 +72,13 @@ h1 {
   height: 100px;
   padding-top: 0;
   padding-left: 0;
+  opacity: 0.6;
+  font-size: 14px;
 }
 
 .list {
   margin: auto;
-  width: 300px;
+  width: 400px;
   /*padding-top: 20px;*/
 }
 
@@ -87,6 +99,10 @@ h1 {
 .everything {
   display: block;
   float: none;
+  background-color: #ffffff;
+  opacity: 0.6;
+  border-radius: 5px 5px 5px 5px;
+  /*padding: 2px;*/
 }
 
 .completed {
@@ -111,7 +127,8 @@ h1 {
 }
 
 #submit-task {
-  background-color: #009999;
+  /*background-color: #009999;*/
+  background-color: #EE8788;
   color: white;
   width: 70px;
   height: 30px;
