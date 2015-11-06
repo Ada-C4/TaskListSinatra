@@ -34,7 +34,7 @@
 
       </td>
       <td>
-        <a href="/delete/<%= task[0] %>">Delete Task</a>
+        <a onclick="return confirm('Are you sure you want to delete this task?')" href="/delete/<%= task[0] %>">Delete Task</a>
       </td>
       <td>
         <a href="/update/<%= task[0] %>"> Update Task</a>
