@@ -1,14 +1,25 @@
 <h2>Goddammit, you need to:</h2>
-<ul>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Shit
+      </th>
+      <th>
+        Done?
+      </th>
+    </tr>
+  </thead>
 <% @tasks.each do |task| %>
-  <li>
-    <% if task[1] == "Type here, genius" || task[1] == nil || task[1] == "" %>
-      <%= task[0] %>
+  <tr>
+    <% if task[1] == nil || task[1] == "" %>
+    <td> <%= task[0] %>  </td>
     <% else %>
-     <%= task[0] %>: <%= task[1] %>
+    <td><%= task[0] %>: <%= task[1] %></td>
     <% end %>
-  </li>
+    <td>Button that completes</td>
+  </tr>
   <% end %>
-</ul>
+</table>
 
 <a href="/add_task" class="button">got more shit to do?</a>
