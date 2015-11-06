@@ -6,7 +6,7 @@
       <% if task[3] == nil %>
         <li>
           <label>
-            <input type="checkbox" name="complete[]" value="complete">
+            <input type="checkbox" name="complete[]" value="<%= task[2] %>">
             <%= task[0] %>: <%= task[1] %>
           </label>
         </li>
