@@ -51,6 +51,16 @@ class	TaskSite < Sinatra::Base
 		current_db.create_task(task_name, task_descr)
 	end
 
+	def update_task_name(id)
+		task_name = params[:name]
+		current_db.modify_task_name(task_name, id)
+	end
+
+	def update_task_description(id)
+		task_descr = params[:description]
+		current_db.modify_task_description(task_descr, id)
+	end
+
 	def delete_task
 		@checked = params[:checked]
 		delete_checked(@checked)
@@ -84,9 +94,12 @@ class	TaskSite < Sinatra::Base
 		if !@match.nil?
 			erb :add_task
 		else
-			new_task if params[:submit] == "Create/Modify"
 			delete_task if params[:submit] == "delete"
 			complete_task if params[:submit] == "complete"
+
+			new_task if params[:submit] == "Create/Modify"
+			update_task_name(@match) if params[:submit] == "Create/Modify"
+			update_task_description(@match) if params[:submit] == "Create/Modify"
 
 			@title = motivation
 			current_list

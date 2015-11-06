@@ -31,8 +31,18 @@ module TaskList
       ;', completed_time.to_s, task_id)
     end
 
-    def modify_task(id)
+    def modify_task_name(task_id, name)
+    	task_id = task_id.to_i
+    	@db.execute('
+    	  UPDATE tasks SET name = ? WHERE id = ?
+    	;', name, task_id)
+    end
 
+    def modify_task_description(task_id, description)
+    	task_id = task_id.to_i
+    	@db.execute('
+    	  UPDATE tasks SET description = ? WHERE id = ?
+    	;', description, task_id)
     end
 
   end

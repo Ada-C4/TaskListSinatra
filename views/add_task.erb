@@ -1,5 +1,9 @@
 <h1>You're gonna get so much stuff done!</h1>
 
+<% if @match != nil %>
+  So you want to modify <%= @match %>
+<% end %>
+
 <form action="/" method="post">
   <fieldset>
     <legend>Add/Edit a Task!</legend>
