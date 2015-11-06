@@ -1,9 +1,38 @@
+/*
+font-family: 'Architects Daughter', cursive;
+font-family: 'Gudea', sans-serif;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Reenie Beanie', cursive;*/
+
+#container {
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Gudea', sans-serif;
+
+}
+
+table {
+  margin: auto;
+  border: 8px #B2A2C6 solid;
+}
+
 table, th, td {
-  border: 1px black solid;
   border-collapse: collapse;
   text-align: left;
+  font-family: 'Architects Daughter', cursive;
 }
 
 td, th {
   padding: 5px 10px;
+  border-bottom: 2px #E5DFEC solid;
 }
+
+p {
+  text-align: center;
+}
+
+/*B2A2C6*/
