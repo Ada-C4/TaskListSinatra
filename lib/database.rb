@@ -50,5 +50,10 @@ module TaskList
       WHERE name = ?;', date, task_name)
     end
 
+    def update_task(task_name, new_name, new_description)
+      @db.execute('
+      UPDATE tasks SET name = ?, description = ? WHERE name = ?;
+      ',new_name, new_description, task_name)
+    end
   end
 end
