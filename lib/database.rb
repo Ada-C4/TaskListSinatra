@@ -9,8 +9,6 @@ module TaskList
     end
 
     def create_schema
-      # Put your ruby code here to use the @db variable
-      # to setup your schema in the databas.
       @db.execute ('
       CREATE TABLE tasks (
         id INTEGER PRIMARY KEY,
@@ -49,14 +47,13 @@ module TaskList
       FROM tasks
       WHERE id= ?;
       ',id)
-
     end
 
     def complete_task(id)
-    if return_date(id) == [[nil]]
+      if return_date(id) == [[nil]]
         puts "inside if statement"
 
-        date = "1897"
+        date = Time.now.strftime("%m/%d/%Y")
         @db.execute('
         UPDATE tasks SET comp_date=
         ?
@@ -64,6 +61,5 @@ module TaskList
         ;',date, id)
       end
     end
-
   end
 end
