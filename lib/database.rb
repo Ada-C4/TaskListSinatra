@@ -19,9 +19,9 @@ module TaskList
 
     def create_task(task_name, task_descr, task_date)
       @db.execute('
-      INSERT INTO tasks (name, description, completed_date)
-      VALUES(?, ?, ?)
-      ;', task_name, task_descr, task_date)
+      INSERT INTO tasks (name, description)
+      VALUES(?, ?)
+      ;', task_name, task_descr)
     end
 
     def get_tasks
