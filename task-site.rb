@@ -39,4 +39,17 @@ class ListofTasks < Sinatra::Base
     erb :modify
   end
 
+  get "/delete" do
+    @tasks = current_db.select_tasks
+    erb :delete
+  end
+
+  post "/delete" do
+    params[:deleted].each do |id|
+      current_db.delete_tasks(id)
+    end
+    @tasks = current_db.select_tasks
+    erb :delete
+  end
+
 end

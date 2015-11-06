@@ -1,0 +1,15 @@
+<div>
+  <h1>Task List</h1>
+  <form class="modifiers" method="post" action="#">
+    <ul>
+      <% @tasks.each do |task| %>
+        <li>
+          <label><input type="checkbox" name="deleted[]" value="<%= task[0] %>" >Delete</label>
+          <p class="modifiers">task: <%= task[1] %> description: <%= task[2] %> completed: <%= task[3] %></p>
+        </li>
+      <% end %>
+      <input type="submit" name="submit" id="submit" value="Submit Change">
+    </ul>
+  </form>
+  <a href="./">Back to Tasks</a>
+</div>
