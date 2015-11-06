@@ -53,12 +53,12 @@ class	TaskSite < Sinatra::Base
 
 	def update_task_name(id)
 		task_name = params[:name]
-		current_db.modify_task_name(task_name, id)
+		current_db.modify_task_name(id, task_name)
 	end
 
 	def update_task_description(id)
 		task_descr = params[:description]
-		current_db.modify_task_description(task_descr, id)
+		current_db.modify_task_description(id, task_descr)
 	end
 
 	def delete_task
@@ -84,27 +84,32 @@ class	TaskSite < Sinatra::Base
     erb :index
 	end
 
-	post '/' do
-		current_list
-		ids_array = task_ids
-		ids_array.each do |id|
-			@match = params.keys.find {|key| key == id.to_s}
-			break if @match != nil
-		end
-		if !@match.nil?
-			erb :add_task
-		else
+	post '/add_task' do
 			delete_task if params[:submit] == "delete"
 			complete_task if params[:submit] == "complete"
-
 			new_task if params[:submit] == "Create/Modify"
-			update_task_name(@match) if params[:submit] == "Create/Modify"
-			update_task_description(@match) if params[:submit] == "Create/Modify"
+
 
 			@title = motivation
 			current_list
-			erb :index
-		end
+
+			redirect to("/")
+	end
+
+	get "/modify" do
+		@task = current_db.get_task(params[:task])
+
+		erb :add_task
+	end
+
+	post "/modify" do
+		task_id = params[:task]
+		task = current_db.get_task(task_id)
+
+		update_task_name(task_id) if task[1] != params[:name]
+		update_task_description(task_id) if task[2] != params[:description]
+
+		redirect to("/")
 	end
 
 	get "/add_task" do

@@ -1,19 +1,21 @@
 <h1>You're gonna get so much stuff done!</h1>
 
-<% if @match != nil %>
-  So you want to modify <%= @match %>
+<% if @task %>
+  So you want to modify Task: <%= @task[1] %>!
+<% else %>
+  <% @task = ["", "", ""] %>
 <% end %>
 
-<form action="/" method="post">
+<form method="post">
   <fieldset>
     <legend>Add/Edit a Task!</legend>
     <label for="name">Task:</label>
-    <input type="text" id="name" name="name"> 
+    <input type="text" id="name" name="name" value="<%= @task[1] %>">
     <label for="description">Notes:</label>
-    <input type="text" id="description" name="description"> 
+    <input type="text" id="description" name="description" value="<%= @task[2] %>">
+    <% unless @task[0] == "" %>
+      <input type="hidden" name="task" value="<%= @task[0] %>">
+    <% end %>
     <input id="submit" name="submit" type="submit" value="Create/Modify">
   </fieldset>
 </form>
-
-<%= params %>
-<%= @match %>

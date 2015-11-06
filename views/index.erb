@@ -5,7 +5,8 @@
       <% unless @all_tasks[:todo].nil? %>
         <% @all_tasks[:todo].each do |task| %>
           <div>
-            <label><input type="checkbox" name="checked[]" value="<%= task[:id] %>"><%= task[:name] %> - <%= task[:description] %></label><input type="submit" name="<%= task[:id] %>" value= "modify">
+            <label><input type="checkbox" name="checked[]" value="<%= task[:id] %>"><%= task[:name] %> - <%= task[:description] %></label>
+            <a href="/modify?task=<%= task[:id] %>">Modify</a>
           </div>
         <% end %>
       <% end %>

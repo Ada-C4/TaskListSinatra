@@ -17,6 +17,13 @@ module TaskList
   			')
   	end
 
+    def get_task(task_id)
+      @db.execute('
+        SELECT id, name, description, completed_date
+        FROM tasks WHERE id = ?
+        ;', task_id).first
+    end
+
     def delete_task(task_id)
     	task_id = task_id.to_i
     	@db.execute('
