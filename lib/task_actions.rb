@@ -3,14 +3,10 @@ require "./lib/database"
 module TaskList
   class TaskActions < TaskList::Database
     def new_task(name, description=nil, done_date=nil)
-
       @db.execute('
       INSERT INTO tasks (name, description, done_date)
       Values(?, ?, ?)
       ;', name, description, done_date)
-    end
-
-    def existing_task
     end
 
     def show_tasks
@@ -30,6 +26,18 @@ module TaskList
       @db.execute('
       DELETE FROM tasks WHERE ID = ?;
       ', del_id)
+    end
+
+    def complete_task(id)
+      date = Time.now.strftime("%b %d, %Y")
+      @db.execute('
+      UPDATE tasks
+      SET done_date = ?
+      WHERE ID = ?;
+      ', date, id)
+    end
+
+    def edit_task
     end
 
   end

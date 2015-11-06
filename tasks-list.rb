@@ -23,18 +23,23 @@ class TasksList < Sinatra::Base
   end
 
   post "/" do
-    if params[:submit] == "delete" && params[:ids] != nil
-      ids = params[:ids]
+    ids = params[:ids]
+    if params[:submit] == "delete" && ids != nil
       @task_array = ids.map{ |id| current_db.get_task(id.to_i)}
       @method = :delete
       erb :delete_confirmation
+    elsif params[:submit] == "complete" && ids != nil
+      ids.each { |id| current_db.complete_task(id.to_i)}
+      display_tasks
+    elsif params[:submit] == "edit" && ids != nil && ids.length == 1
+
+
     else
       display_tasks
     end
   end
 
   post "/delete_confirmation" do
-    binding.pry
     if params[:submit] == "yes"
       delete_tasks(params[:ids])
     end

@@ -17,8 +17,14 @@
       <tr>
           <td><label>
           <input type="checkbox" name = "ids[]" value="<%= task[0] %>"></label></td>
-        <td><%= task[1] %></td>
-        <td><%= task[2] %></td>
+        <td <% if !task[3].nil? %>
+          class="strikethru"
+          <% end %>
+          ><%= task[1] %></td>
+        <td <% if !task[3].nil? %>
+          class="strikethru"
+          <% end %>
+          ><%= task[2] %></td>
         <td><%= task[3] %></td>
       </tr>
       <% end %>
