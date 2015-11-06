@@ -43,7 +43,7 @@ class TasksList < Sinatra::Base
     if params[:submit] == "yes"
       delete_tasks(params[:ids])
     end
-    display_tasks
+    redirect to('/')
   end
 
   get "/new" do
