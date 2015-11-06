@@ -13,11 +13,11 @@ class ListofTasks < Sinatra::Base
     erb :index
   end
 
-  get "/new" do
+  get "/task/new" do
     erb :new
   end
 
-  post "/" do
+  post "/task/new" do
     @task = params[:task]
     @description = params[:description]
     @completed_date = params[:completed_date]
@@ -26,44 +26,37 @@ class ListofTasks < Sinatra::Base
     erb :index
   end
 
-  get "/modify" do
+  get "/task/complete" do
     @tasks = current_db.select_tasks
-    erb :modify
+    erb :complete
   end
 
-  post "/modify" do
+  post "/task/complete" do
     params[:completed].each do |id|
       current_db.completed_tasks(id)
     end
     @tasks = current_db.select_tasks
-    erb :modify
+    erb :index
   end
 
-  get "/delete" do
+  get "/task/delete" do
     @tasks = current_db.select_tasks
     erb :delete
   end
 
-  post "/delete" do
+  post "/task/delete" do
     params[:deleted].each do |id|
       current_db.delete_tasks(id)
     end
     @tasks = current_db.select_tasks
-    erb :delete
+    erb :index
   end
 
   get "/edit_choice" do
-    @tasks = current_db.select_tasks
     erb :edit_choice
   end
 
-  get "/:task" do
-    @tasks = current_db.select_tasks
+  get "/task/:task" do
     erb :edit
-  end
-
-  post "/edit_choice" do
-    @tasks = current_db.select_tasks
-    erb :index
   end
 end
