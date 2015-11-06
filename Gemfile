@@ -12,5 +12,7 @@ end
 
 
 group :production do
-  gem "pg"
+  if ENV["DATABASE_URL"]
+    gem "pg"
+  end
 end
