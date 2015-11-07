@@ -2,7 +2,7 @@
   <h1>Task List</h1>
     <table class="table table-hover">
       <tr>
-        <th>
+        <th id="task">
           task
         </th>
         <th>
@@ -13,18 +13,20 @@
         </th>
       </tr>
       <% @tasks.each do |task| %>
-      <tr>
-         <td>
+        <tr>
+         <td class="checkmarkrow">
            <% if !task[3].empty? %>
-            <img class="checkmark" src="checkmark2.png" alt="checkmark"/>
+					 <img class="checkmark" src="checkmark3.png" alt="checkmark"/>
+           <% else %>
+					 <img class="nocheckmark" src="white.png" alt="no checkmark"/>
            <% end %>
-           <%= task[1] %>
+          	<div class="taskname"><%= task[1] %></div>
          </td>
-         <td>
-          <%= task[2] %>
+         <td class="checkmarkrow">
+          	<div class="taskname"><%= task[2] %></div>
          </td>
-         <td>
-          <%= task[3] %>
+         <td class="checkmarkrow">
+          	<div class="taskname"><%= task[3] %></div>
          </td>
        </tr>
       <% end %>

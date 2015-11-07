@@ -6,19 +6,56 @@ body {
 }
 
 div {
-  padding: 30px;
+  padding: 10px;
+}
+
+#task {
+  padding-left: 70px;
 }
 
 .checkmark {
   height: 20px;
   width: 20px;
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nocheckmark {
+  height: 20px;
+  width: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.checkmarkrow {
+  line-height: 100px;
+  vertical-align: middle;
+  line-height: normal;
+  display: inline-block;
+}
+
+.checkmarkrow > *, {
+  vertical-align: middle;
+  line-height: normal;
+  display: inline-block;
+  height: 100%;
 }
 
 .icon {
   height: 15px;
   width: 15px;
   margin-right: 5px
+}
+
+.taskname {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  width: 180px;
 }
 
 h1 {
@@ -45,9 +82,14 @@ th {
   width: 30%;
   font-size: 0.5cm;
   text-align: center;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
+/*td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}*/
 
 label {
   text-align: left;
@@ -84,49 +126,4 @@ a:hover {
 
 a:active {
   text-decoration: underline;
-}
-
-
-
-input, textarea {
-    padding: 9px;
-    border: solid 1px #E5E5E5;
-    outline: 0;
-    font: normal 13px/100% Verdana, Tahoma, sans-serif;
-    width: 200px;
-    background: #FFFFFF;
-    }
-
-textarea {
-    width: 400px;
-    max-width: 400px;
-    height: 150px;
-    line-height: 150%;
-    }
-
-input:hover, textarea:hover,
-input:focus, textarea:focus {
-    border-color: #C9C9C9;
-    }
-
-.form label {
-    margin-left: 10px;
-    color: #999999;
-    }
-
-.submit input {
-    width: auto;
-    padding: 9px 15px;
-    background: #617798;
-    border: 0;
-    font-size: 14px;
-    color: #FFFFFF;
-    }
-
-  input[type="checkbox"]{
-    text-align: left;
-    display:inline-block;
-    width:19px;
-    height:19px;
-    background:url(check_radio_sheet.png) left top no-repeat;
 }
