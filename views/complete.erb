@@ -1,16 +1,39 @@
 <div>
-  <h1>Task List</h1>
   <form method="post">
-    <ul>
-      <% @tasks.each do |task| %>
-        <li>
-          <label><input type="checkbox" name="completed[]" value="<%= task[0] %>" >Completed</label>
-          task: <%= task[1] %> description: <%= task[2] %> completed: <%= task[3] %>
-        </li>
-      <% end %>
-      <input type="submit" name="submit" id="submit" value="Submit Change">
-    </ul>
+    <h1>Task List</h1>
+      <table class="table table-hover">
+        <tr>
+          <th>
+            completed
+          </th>
+          <th>
+            task
+          </th>
+          <th>
+            description
+          </th>
+          <th>
+            completed
+          </th>
+        </tr>
+        <% @tasks.each do |task| %>
+        <tr>
+          <td>
+           <label><input type="checkbox" name="completed[]" value="<%= task[0] %>">Completed</label>
+          </td>
+           <td>
+            <%= task[1] %>
+           </td>
+           <td>
+            <%= task[2] %>
+           </td>
+           <td>
+            <%= task[3] %>
+           </td>
+         </tr>
+        <% end %>
+      </table>
+    <input type="submit" name="submit" id="submit" value="Submit Change">
   </form>
-
-  <a href="/">Back to Tasks</a>
+  <a class="list-inline" href="/">Back to Tasks</a>
 </div>
