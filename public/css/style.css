@@ -1,0 +1,71 @@
+/*styles for main body */
+body {
+  margin: 0 auto;
+  background-image: url("/paper.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 960px;
+}
+
+.main label {
+  font-family: "Coming Soon", sans-serif;
+  font-size: 1.5em;
+  color: black;
+
+}
+
+.main {
+  text-align: center;
+}
+
+/* styles for content */
+h1 {
+  font-family: "Pacifico", sans-serif;
+  font-size: 3.5em;
+  border: dashed black;
+  width:600px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-family: "Pacifico", sans-serif;
+  font-size: 2em;
+}
+
+a{
+  text-decoration: none;
+  color: red;
+  font-size: 2em;
+  font-family: "Pacifico", sans-serif;
+}
+
+a:hover {
+  color: orange;
+}
+
+ul li {
+  list-style-type: none;
+  font-family: "Coming Soon", sans-serif;
+  font-size: 1.5em;
+  margin-left: 300px;
+  text-align: justify;
+}
+
+.check {
+  float: left;
+  margin-right: 20px;
+   ;
+}
+
+.button {
+  color: red;
+  font-size: 1.5em;
+  padding: 2px 15px;
+  border-radius: 100px;
+  border: dashed black;
+  font-family: "Pacifico", sans-serif;
+  background-color: transparent;
+  cursor: pointer;
+}

@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Task</title>
+    <meta charset="utf-8">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class ="main">
+    <form id="task-form" method="post">
+      <fieldset>
+        <legend> Enter Task Here: </legend>
+        <label for="taskname"> Task: </label>
+        <input type="text" id="taskname" name="taskname">
+
+        <p>
+          <label for ="description">Describe Task: <br></label>
+          <textarea rows="5" cols="40" name="description" id="description"></textarea>
+        </p>
+
+        <!-- <p>
+          <label for ="date"> Date Completed: </label>
+          <input type="date" id="date" name="date">
+        </p> -->
+
+        <br>
+        <input class="button" type="submit" name="submit" value="add task">
+      </fieldset>
+    </form>
+    </div>
+  </body>
+</html>
