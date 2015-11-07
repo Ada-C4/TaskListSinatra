@@ -56,9 +56,7 @@ class TasksList < Sinatra::Base
   end
 
   post "/new" do
-    binding.pry
     if params[:submit] == "update"
-      binding.pry
       # current_db.edit_task(     )
     elsif params[:submit] == "new"
       current_db.new_task(params[:task_name], params[:description])
