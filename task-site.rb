@@ -1,6 +1,5 @@
 require "sinatra"
 require "./lib/database"
-require "pry"
 
 class ListofTasks < Sinatra::Base
 
