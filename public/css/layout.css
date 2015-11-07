@@ -72,6 +72,15 @@ h3 {
   font-weight: normal;
 }
 
+
+fieldset div {
+  vertical-align: middle;
+  line-height: normal;
+  display: inline-block;
+  height: 20%;
+}
+
+
 input {
   margin-top: 50px;
 }
