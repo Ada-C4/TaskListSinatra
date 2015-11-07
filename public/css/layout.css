@@ -82,7 +82,7 @@ fieldset div {
 
 
 input {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 table {
@@ -105,8 +105,11 @@ th {
 
 label {
   text-align: left;
-  display: inline;
   margin: 0 auto;
+  display:block;
+  height: 2px;
+  font-weight: bold;
+  font-size: 18;
 }
 
 ul {
