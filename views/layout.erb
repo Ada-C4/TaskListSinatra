@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title><%= @title %></title>
+    <link href="style.css" rel="stylesheet">
+    <link href="poo.ico" rel="shortcut icon" type="image/png">
+  </head>
+  <header>
+    <h1><%= @title %></h1>
+  </header>
+  <section>
+    <%= yield %>
+  </section>
+  <footer>
+    <p>
+      <%= "Shit you should be doing 💩 copyright #{Time.now.year}" %>
+    </p>
+  </footer>
+</html>

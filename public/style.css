@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria Hallelujah|sans-serif');
+
+* {
+  font-family: Gloria Hallelujah, sans-serif;
+  color: #1E1902;
+  text-align: center;
+}
+
+header, footer {
+  border-width: 5;
+  border-style: dotted;
+  border-color: #875424;
+  background-color: #888855;
+}
+
+section {
+  margin: 20 0;
+  background-color: #887F55;
+}
+
+body {
+  background-color: #887F55;
+  width: 600;
+}
+
+.button {
+	background-color:#888855;
+	border-radius:8px;
+	border:3px solid #875424;
+	display: inline-block;
+  color: #1E1902;
+  font-size:17px;
+	padding:6px 10px;
+	text-decoration:none;
+}
+
+.button:hover {
+	background-color:#6F7F4F;
+}
+
+ul {
+  list-style: none;
+}
+
+fieldset {
+  border-style: none;
+  font-size:20px;
+}
+
+input[type="text"] {
+  height:30;
+}
+
+input[type="text"], textarea {
+  background-color:#888855;
+  border:1px solid #875424;
+  width: 250;
+}
+
+textarea {
+  vertical-align: top;
+}
+
+::-webkit-input-placeholder {
+  color: #1E1902;
+  font-size:12px;
+}
+
+table {
+  padding-bottom: 20;
+}
+
+th {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+td {
+  padding: 0 20;
+}
+
+a {
+  text-decoration: none;
+  font-size: 25;
+}
