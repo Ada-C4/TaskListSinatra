@@ -1113,9 +1113,9 @@ a:focus {
 figure {
   margin: 0;
 }
-img {
+/*img {
   vertical-align: middle;
-}
+}*/
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,
@@ -2273,7 +2273,7 @@ th {
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
   line-height: 1.42857143;
-  vertical-align: top;
+  /*vertical-align: top;*/
   border-top: 1px solid #ddd;
 }
 .table > thead > tr > th {

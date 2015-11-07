@@ -31,10 +31,7 @@ div {
   vertical-align: middle;
 }
 
-.checkmarkrow {
-  line-height: 100px;
-  vertical-align: middle;
-  line-height: normal;
+td {
   display: inline-block;
 }
 
@@ -51,9 +48,8 @@ div {
   margin-right: 5px
 }
 
-.taskname {
+td div {
   display: inline-block;
-  height: 100%;
   vertical-align: middle;
   width: 180px;
 }
@@ -86,10 +82,6 @@ th {
   padding-right: 10px;
 }
 
-/*td {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}*/
 
 label {
   text-align: left;

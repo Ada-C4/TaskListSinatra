@@ -14,19 +14,19 @@
       </tr>
       <% @tasks.each do |task| %>
         <tr>
-         <td class="checkmarkrow">
+         <td>
            <% if !task[3].empty? %>
 					 <img class="checkmark" src="checkmark3.png" alt="checkmark"/>
            <% else %>
 					 <img class="nocheckmark" src="white.png" alt="no checkmark"/>
            <% end %>
-          	<div class="taskname"><%= task[1] %></div>
+          	<div><%= task[1] %></div>
          </td>
-         <td class="checkmarkrow">
-          	<div class="taskname"><%= task[2] %></div>
+         <td>
+          	<div><%= task[2] %></div>
          </td>
-         <td class="checkmarkrow">
-          	<div class="taskname"><%= task[3] %></div>
+         <td>
+          	<div><%= task[3] %></div>
          </td>
        </tr>
       <% end %>
