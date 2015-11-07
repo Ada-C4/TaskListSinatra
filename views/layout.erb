@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
+    <link href="site.css" rel="stylesheet">
+    <title><%= @title %></title>
+  </head>
+  <body>
+    <h1><%= @title %></h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/mark_complete">Complete Tasks</a>
+      <a href="/new">Add Task</a>
+      <a href="/delete">Delete Task</a>
+    </nav>
+    <hr />
+    <%= yield %>
+  </body>
+</html>

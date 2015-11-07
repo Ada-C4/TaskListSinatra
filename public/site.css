@@ -1,0 +1,35 @@
+body{
+    background-color: #472194;
+    color: #FFB5FA;
+    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    line-height: 25px;
+    text-align: center;
+}
+a{
+  color: #E6F7F2;
+}
+h1 {
+    font-family: 'Lobster', Georgia, Times, serif;
+    font-size: 70px;
+    line-height: 100px;
+}
+img{
+  	width: 220px;
+    border-radius: 50%;
+}
+.tasks{
+  text-align: left;
+  margin: auto;
+  width: 50%;
+}
+
+hr {
+ display: block;
+ height: 1px;
+ border: 0;
+ border-top: 5px solid;
+ border-color: #747070 ;
+ margin: 1em 0;
+ padding: 0;
+}

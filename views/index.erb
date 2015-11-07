@@ -1,0 +1,24 @@
+<img src="unicorn.jpg">
+<div class ="tasks">
+  <h3> Tasks to Do:</h3>
+  <ul>
+    <% @tasks.each do |task| %>
+      <% if task[3] == nil %>
+
+        <li><%= task[0] %>: <%= task[1] %><form method="post"><input type="hidden" name="id" id="id" value="<%= task[2] %>"><input type="submit" value="Update"></form></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<div class = "tasks">
+  <h3>Completed Tasks:</h3>
+  <ul>
+    <% @tasks.each do |task| %>
+      <% if task[3] != nil %>
+        <li><%= task[0] %>: <%= task[1] %>
+          <br>
+           Completed <%= task[3] %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
