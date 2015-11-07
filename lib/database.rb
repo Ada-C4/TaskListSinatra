@@ -48,7 +48,7 @@ module TaskList
       @db.execute('
       SELECT name, completed_date
       FROM tasks WHERE completed_date IS NOT NULL
-      OR completed_date !="";')
+      ;')
     end
     # def delete_tasks(tasks_to_delete)
     #   tasks_to_delete.each do |task_name|
