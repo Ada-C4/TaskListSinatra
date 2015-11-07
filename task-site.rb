@@ -29,11 +29,14 @@ class TaskSite < Sinatra::Base
     @name = params[:name]
     @descr = params[:descr]
     @id = params[:id]
+    #I think the below method will work for updating once other issues are resolved
     # if !@name.nil? && @id.nil?
     #   current_db.create_task(@name, @descr)
     # else
     #   current_db.update_task(@name, @descr, @id)
+    #end
 
+    #I think the error might be here, because params[:completed] is empty
     params[:completed].each do |id|
       current_db.add_completion(id)
     end
