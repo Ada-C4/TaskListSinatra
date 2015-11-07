@@ -18,6 +18,21 @@ class TaskSite < Sinatra::Base
     erb :index_christmas
   end
 
+  post "/christmas" do
+    @to_delete = params[:tasks_to_delete]
+    if !@to_delete.nil?
+      @to_delete.each do |task|
+        current_db.delete_task(task.to_i)
+      end
+    end
+    @to_edit = params[:task_to_edit]
+    if !@to_edit.nil?
+      redirect to("/edit?id=#{@to_edit}")
+    end
+    @tasks = current_db.get_tasks
+    erb :index_christmas
+  end
+
   post "/" do
     @to_delete = params[:tasks_to_delete]
     if !@to_delete.nil?
