@@ -9,6 +9,10 @@ div {
   padding: 10px;
 }
 
+form {
+  padding-bottom: 50px;
+}
+
 #task {
   padding-left: 70px;
 }
@@ -35,7 +39,7 @@ td {
   display: inline-block;
 }
 
-.checkmarkrow > *, {
+td > *, {
   vertical-align: middle;
   line-height: normal;
   display: inline-block;
@@ -68,9 +72,16 @@ h3 {
   font-weight: normal;
 }
 
+input {
+  margin-top: 50px;
+}
+
 table {
   text-align: center;
   margin: 0 auto;
+}
+
+tbody {
   padding-bottom: 50px;
 }
 
