@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair Display|Open Sans');
 
+#add_task {
+  font-family: Playfair Display;
+  font-size: 1cm;
+  font-weight: normal;
+}
+
 body {
   margin: 0 auto;
   text-align: center;
@@ -114,7 +120,7 @@ label {
   display:block;
   height: 2px;
   font-weight: bold;
-  font-size: 18;
+  font-size: 16;
 }
 
 
