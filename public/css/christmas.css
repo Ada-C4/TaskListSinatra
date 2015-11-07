@@ -15,7 +15,8 @@ body {
 
 .pusheen {
   margin: auto;
-  width: 63%;
+  width: 80%;
+  text-align: center;
 }
 
 h1, form {
