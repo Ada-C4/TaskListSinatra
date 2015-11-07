@@ -5,6 +5,11 @@ body {
   text-align: center;
 }
 
+.check {
+  width: 1;
+  height: initial;
+}
+
 div {
   padding: 10px;
 }
@@ -111,6 +116,7 @@ label {
   font-weight: bold;
   font-size: 18;
 }
+
 
 ul {
   font-family: Open Sans;
