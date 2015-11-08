@@ -16,6 +16,8 @@
     </p>
       <input id="submit-task" type="submit" name="submit" value="Submit">
 
-      <input type="hidden" name="id" value="<%= @id %>">
+      <% if !@id.nil? %>
+        <input type="hidden" name="id" value="<%= @id %>">
+      <% end %>
   </form>
 </div>

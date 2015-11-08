@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/database'
+require "pry"
 
 class TaskSite < Sinatra::Base
 
@@ -17,35 +18,51 @@ class TaskSite < Sinatra::Base
     erb :new
   end
 
-  post "/edit" do
+  get "/edit" do
+    # binding.pry
     @title = "Edit your shit"
-    @id = params[:completed]
+    @id = params[:id]
     @name = current_db.get_name(@id)
     @descr = current_db.get_descr(@id)
     erb :new
   end
 
+  # post "/edit" do
+  #   @title = "Edit your shit"
+  #   @id = params[:completed]
+  #   @name = current_db.get_name(@id)
+  #   @descr = current_db.get_descr(@id)
+  #   erb :new
+  # end
+
+
   post "/" do
+    # binding.pry
     @name = params[:name]
     @descr = params[:descr]
     @id = params[:id]
-    #I think the below method will work for updating once other issues are resolved
-    # if !@name.nil? && @id.nil?
-    #   current_db.create_task(@name, @descr)
-    # else
-    #   current_db.update_task(@name, @descr, @id)
-    #end
+    # I think the below method will work for updating once other issues are resolved
+    if !@name.nil? && @id.nil?
+      current_db.create_task(@name, @descr)
+    elsif params[:submit] == "Mark complete"
+      params[:completed].each do |id|
+        current_db.add_completion(id)
+      end
+    elsif params[:delete] == "Delete shit"
+      params[:completed].each do |id|
+        current_db.delete_task(id)
+      end
+    else
+      current_db.update_task(@name, @descr, @id)
+    end
 
-    #I think the error might be here, because params[:completed] is empty
-    params[:completed].each do |id|
-      current_db.add_completion(id)
-    end
-    params[:completed].each do |id|
-      current_db.delete_task(id)
-    end
+    # if !params[:completed].nil?
+    #   params[:completed].each do |id|
+    #     current_db.add_completion(id)
+    #   end
+
+    # end
     @tasks = current_db.get_tasks
     erb :index
   end
-
-
 end
