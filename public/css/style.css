@@ -5,11 +5,6 @@ body {
   background-size: cover;
 }
 
-.new-task {
-  margin: auto;
-  text-align: center;
-}
-
 hr {
   display: block;
   height: 1px;
@@ -121,6 +116,24 @@ h1 {
 .done {
   color: #666666;
   text-decoration: line-through;
+}
+
+.modify-task {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #EE8788;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#create-new-task {
+  padding-right: 5px;
+}
+
+.modify-task :hover { color: #747070 }
+
+.pipe {
+  color: #747070;
 }
 
 #submit-task {
