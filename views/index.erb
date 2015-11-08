@@ -1,5 +1,3 @@
-<% require "pry" %>
-
 <div id="index">
 
 <h1>Tasks List</h1>
@@ -10,7 +8,7 @@
 
 <% if @tasks == [] %>
   <p>
-     You haven't set any tasks.
+     You haven't set any tasks♡♡♡.
   </p>
 <% else %>
 <div class="theme">
@@ -43,7 +41,7 @@
         <a href ="/update/<%= task[0] %>"> Update</a>
       </td>
       <td>
-        <a onclick="return confirm('Are you sure you want to delete this task?')" href="/delete/<%= task[0] %>">Delete</a>
+        <a onclick="return confirm('Are you sure you want to delete this task?')" href="/delete/<%= task[0] %>">✖️</a>
       </td>
 
     </tr>
