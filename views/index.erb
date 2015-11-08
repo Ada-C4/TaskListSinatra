@@ -2,24 +2,27 @@
 
 <div id="index">
 
-<h1>Tasks</h1>
+<h1>Tasks List</h1>
 
+<form action="new">
+  <button type="submit" href="new" name="submit" id="submit" value="New Task">New task</button>
+</form>
 
 <% if @tasks == [] %>
   <p>
      You haven't set any tasks.
   </p>
 <% else %>
-<div class="CSSTableGenerator" >
+<div class="theme">
   <table>
-    <col width="400">
-    <col width="150">
-    <col width="150">
-    <col width="150">
+    <col width="60%">
+    <col width="20%">
+    <col width="10%">
+    <col width="10%">
     <tr>
       <th>Task</th>
-      <th>Completed time</th>
-      <th>Update</th>
+      <th id="th">Completed time </th>
+      <th></th>
       <th></th>
     </tr>
     <% @tasks.each do |task| %>
@@ -37,7 +40,7 @@
 
       </td>
       <td>
-        <a href="/update/<%= task[0] %>"> Update Task</a>
+        <a href ="/update/<%= task[0] %>"> Update</a>
       </td>
       <td>
         <a onclick="return confirm('Are you sure you want to delete this task?')" href="/delete/<%= task[0] %>">Delete</a>
@@ -47,6 +50,7 @@
     <% end %>
   </table>
 </div>
+
 
 
 
@@ -89,9 +93,7 @@
 
 <% end %>
 <!-- <p id="add_task"> -->
-  <form action="new">
-    <button type="submit" href="new" name="submit" id="submit" value="New Task">Add a new task</button>
-  </form>
+
 <!-- </p> -->
 
 </div>
