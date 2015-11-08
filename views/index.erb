@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <link href="css/main.css" rel="stylesheet">
+    <title>Tasks!</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter|Gudea|Gloria+Hallelujah|Reenie+Beanie' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div id="container">
+      <h1>My Tasks</h1>
+      <form method="post">
+        <table>
+          <tr>
+            <th>
+              Name
+            </th>
+            <th>
+              Description
+            </th>
+            <th>
+              Date
+            </th>
+            <th>
+              <input type="submit" name="submit" value="Delete Checked" class="table_button" onclick="return confirm('Are you sure? Deleting is permanent!')">
+            </th>
+            <th>
+              <input type="submit" name="submit" value="Update Selected" class="table_button">
+            </th>
+          </tr>
+          <% @tasks.each do |task| %>
+            <tr>
+              <td>
+                <%= task[1] %>
+              </td>
+              <td>
+                <%= task[2] %>
+              </td>
+              <td>
+                <%= task[3] %>
+              </td>
+              <td>
+                  <label><input type="checkbox" name="tasks_to_delete[]" value="<%= task[0] %>"></label>
+              </td>
+              <td>
+                  <label><input type="radio" name="task_to_edit" value="<%= task[0] %>"></label>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </form>
+      <p>
+        <a href="new">Click here to add a new task</a>
+      </p>
+    </div>
+  </body>
+</html>

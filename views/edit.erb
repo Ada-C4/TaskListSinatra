@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <link href="css/main.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter|Gudea|Gloria+Hallelujah|Reenie+Beanie' rel='stylesheet' type='text/css'>
+    <title>Edit a task!</title>
+  </head>
+  <body>
+
+    <h1>Update Task</h1>
+
+    <form method="post">
+      <fieldset>
+        <legend>Task information</legend>
+        <label for="name">Task name:</label>
+        <input class="input_box" type="text" id="name" name="name" value="<%= @name %>" required>
+
+        <label for="description">Task description: </label>
+        <input class="input_box" type="text" id="description" name="description" value="<%= @description %>">
+
+        <label for="date_completed">Date completed: </label>
+        <input class="input_box" type="date" id="date_completed" name="date_completed" value="<%= @date %>">
+
+        <input type="submit" name="submit" id="submit" value="Update Task!" class="form_button">
+      </fieldset>
+    </form>
+
+  </body>
+</html>

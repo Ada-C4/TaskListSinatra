@@ -1,0 +1,87 @@
+/*
+font-family: 'Architects Daughter', cursive;
+font-family: 'Gudea', sans-serif;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Reenie Beanie', cursive;*/
+
+body {
+  background-color: #F2F2F2;
+}
+
+#container {
+  width: 80%;
+  margin: auto;
+}
+
+h1, form {
+  text-align: center;
+  font-family: 'Gudea', sans-serif;
+
+}
+
+fieldset {
+  border: 4px #B2A2C6 solid;
+  font-size: 18px;
+}
+
+legend {
+  font-size: 20px;
+}
+
+table {
+  margin: auto;
+  border: 8px #B2A2C6 solid;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  text-align: left;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+}
+
+td, th {
+  padding: 5px 10px;
+  border-bottom: 2px #E5DFEC solid;
+}
+
+th {
+  background-color: #EBDDEB;
+  border-bottom: 4px #B2A2C6 solid;
+}
+
+td {
+  background-color: #fffcff;
+}
+
+p {
+  text-align: center;
+  font-family: 'Gudea', sans-serif;
+  font-size: 18px;
+}
+
+a {
+  color: #D987C8;
+}
+
+a:hover {
+  color: #94CDDB;
+}
+
+.table_button {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+  background-color: #B2A2C6;
+}
+
+.form_button {
+  font-family: 'Gudea', sans-serif;
+  font-size: 18px;
+  background-color: #B2A2C6;
+  margin: 0px 10px;
+}
+
+.input_box {
+  font-family: 'Gudea', sans-serif;
+  font-size: 18px;
+}
