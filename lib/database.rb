@@ -36,13 +36,13 @@ module TaskList
 
     def get_name(checkbox_id)
       @db.execute('
-      SELECT name WHERE id=(?)
+      SELECT name FROM tasks WHERE id=(?)
       ;', checkbox_id)
     end
 
     def get_descr(checkbox_id)
       @db.execute('
-      SELECT description WHERE id=(?)
+      SELECT description FROM tasks WHERE id=(?)
       ;', checkbox_id)
     end
 
@@ -60,7 +60,7 @@ module TaskList
 
     def update_task(name, descr, checkbox_id)
       @db.execute('
-      UPDATE tasks SET name=(?) descr=(?) WHERE id=(?)
+      UPDATE tasks SET name=(?), description=(?) WHERE id=(?)
       ;', name, descr, checkbox_id)
     end
   end

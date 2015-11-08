@@ -22,7 +22,7 @@ class TaskSite < Sinatra::Base
     # binding.pry
     @title = "Edit your shit"
     @id = params[:id]
-    @name = current_db.get_name(@id)
+    # @name = current_db.get_name(@id)
     @descr = current_db.get_descr(@id)
     erb :new
   end
@@ -34,7 +34,6 @@ class TaskSite < Sinatra::Base
   #   @descr = current_db.get_descr(@id)
   #   erb :new
   # end
-
 
   post "/" do
     # binding.pry
