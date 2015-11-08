@@ -48,7 +48,7 @@ $ bundle exec rackup
   - The home page should contain a link to Add a new task. This will give the user a form to fill out with the appropriate task fields.
   - After the new task is added, the site should take the user back to the home page which displays the full list of tasks. The new task that was just added should be included in the full list of tasks.
 
-## Optional Requirements 
+## Optional Requirements
 - Add the ability for the user to mark a task complete
   - Update the list of tasks on the home page to indicate which tasks are complete
   - Update the database interaction class to update a task's completed date

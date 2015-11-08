@@ -1,0 +1,15 @@
+<div>
+  <h1>Task List</h1>
+  <form method="post" action="/task/:task/edit">
+    <ul>
+      <% @tasks.each do |task| %>
+        <li>
+          <p>task: <%= task[1] %> description: <%= task[2] %> completed: <%= task[3] %></p>
+          <a href="/<%= task[1] %>">Edit</a>
+        </li>
+      <% end %>
+    </ul>
+  </form>
+
+  <a class="list-inline" href="/">Back to Tasks</a>
+</div>

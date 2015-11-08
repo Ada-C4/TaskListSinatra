@@ -1,0 +1,19 @@
+<div>
+  <form method="POST" action="/task/:task/edit">
+    <fieldset>
+      <legend>Edit Task:</legend>
+
+      <label for="task">Task:</label>
+      <input type="text" id="task" name="task">
+
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description">
+
+      <label for="date">Date Completed:</label>
+      <input type="text" id="date" name="date">
+    </fieldset>
+    <input type="submit" name="submit" id="submit" value="Submit Change!">
+  </form>
+
+  <a class="list-inline" href="/">Back to Tasks</a>
+</div>
