@@ -12,6 +12,7 @@ hr {
   border-top: 1px solid;
   border-color: #747070;
   text-align: center;
+  margin: auto;
   width: 700px;
   padding: 0px;
   margin-top: 25px;
@@ -23,7 +24,6 @@ a {
   margin:auto;
   text-align: center;
   font-size: 18px;
-  /*color: #009999;*/
   color: #EE8788;
 }
 
@@ -124,13 +124,15 @@ h1 {
   font-size: 16px;
   color: #EE8788;
   font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin: auto;
 }
 
 #create-new-task {
   padding-right: 5px;
 }
 
-.modify-task :hover { color: #747070 }
+.modify-task:hover { color: #747070 }
 
 .pipe {
   color: #747070;
@@ -147,4 +149,17 @@ h1 {
   -webkit-border-radius: 10px 10px 10px 10px;
   text-align: center;
   padding-bottom: 3px;
+  /*border-style: solid;
+  border-color: black;
+  border-width: 1px;*/
+}
+
+submit:focus {outline:0 !important;}
+
+.center {
+  text-align: center;
+}
+
+.edit-task {
+  font-size: 13px;
 }

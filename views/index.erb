@@ -1,17 +1,17 @@
-<header>
-  <h1>Shit to get done</h1>
-    <hr />
 
 
-</header>
 
 <form action="#" method="post">
-  <div class="list">
+  <h1>Shit to get done</h1>
+  <div class="center">
     <a class="modify-task" id="create-new-task" href= "/new">CREATE NEW TASK</a>
     <span class="pipe">|</span>
     <input class="modify-task" type="submit" name="submit" value="MARK COMPLETE">
     <span class="pipe">|</span>
     <input class="modify-task" type="submit" onclick="return confirm('Are you sure?')" name="delete" value="DELETE">
+  </div>
+    <hr />
+    <div class="list">
       <% @tasks.each do |task| %>
         <% if task[3].nil? %>
           <div class="everything">
@@ -19,7 +19,7 @@
               <input class="checkbox" type="checkbox" name="completed[]" value="<%= task[0] %>" >
               <div class="task"><%= task[1].upcase %></div>
               <div class="description"><%= task[2] %></div>
-              <a class="edit-task" href="/edit?id=<%= task[0] %>">Edit shit</a>
+              <a class="edit-task" href="/edit?id=<%= task[0] %>">EDIT</a>
             </div>
           </div>
         <% end %>
