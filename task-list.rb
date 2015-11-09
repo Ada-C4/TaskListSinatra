@@ -92,7 +92,7 @@ class	TaskSite < Sinatra::Base
 		current_list
 
 		erb :index
-	endb
+	end
 
 	get "/add_task" do
 		@form_title = "Add a Task!"
