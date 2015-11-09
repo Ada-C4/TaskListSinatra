@@ -1,0 +1,23 @@
+<h1>You're gonna get so much stuff done!</h1>
+
+<% if @task %>
+  So you want to modify Task: <%= @task[1] %>!
+<% else %>
+  <% @task = ["", "", ""] %>
+<% end %>
+
+<form method="post">
+  <fieldset>
+    <legend><%= @form_title %></legend>
+    <label for="name">Task:</label>
+    <input type="text" id="name" name="name" value="<%= @task[1] %>">
+    <label for="description">Notes:</label>
+    <input type="text" id="description" name="description" value="<%= @task[2] %>">
+    <% unless @task[0] == "" %>
+      <input type="hidden" name="task" value="<%= @task[0] %>">
+    <% end %>
+    <input id="submit" name="submit" type="submit" value="<%= @button_value %>">
+  </fieldset>
+</form>
+
+<a href="/"><img id="poodle" src="http://25.media.tumblr.com/2aae43cc44c57ea26cc9c5eb9f60058a/tumblr_n39u1oYkwq1rh94ejo1_400.gif"></a>
