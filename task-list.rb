@@ -1,6 +1,5 @@
 require 'sinatra'
 require './lib/task_creator.rb'
-require 'pry'
 
 class	TaskSite < Sinatra::Base
 
