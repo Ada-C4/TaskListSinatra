@@ -1,0 +1,165 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-image: url("../background.png");
+  /*background-repeat: no-repeat;*/
+  background-size: cover;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid;
+  border-color: #747070;
+  text-align: center;
+  margin: auto;
+  width: 700px;
+  padding: 0px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+a {
+  text-decoration: none;
+  margin:auto;
+  text-align: center;
+  font-size: 18px;
+  color: #EE8788;
+}
+
+a:hover { color: #747070}
+
+.task-box {
+  margin: auto;
+  width: 300px;
+}
+
+.button {
+  /*background-color: #009999;*/
+  background-color: color: #FF6E63;
+  color: white;
+  width: 130px;
+  height: 40px;
+  margin: auto;
+  font-size: 14px;
+  /*border-radius: 10px 10px 10px 10px;*/
+  /*-moz-border-radius: 10px 10px 10px 10px;*/
+  -webkit-border-radius: 10px 10px 10px 10px;
+  line-height: 40px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-family: Didot;
+  font-size: 40px;
+  /*color: white;*/
+}
+
+.input-task {
+  width: 300px;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.input-descr {
+  width: 300px;
+  height: 100px;
+  padding-top: 0;
+  padding-left: 0;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.list {
+  margin: auto;
+  width: 400px;
+  /*padding-top: 20px;*/
+}
+
+.task {
+  font-weight: bolder;
+}
+
+.checkbox {
+  float: left;
+  margin-top: 5px;
+}
+
+.everything {
+  display: block;
+  float: none;
+  background-color: #ffffff;
+  opacity: 0.6;
+  border-radius: 5px 5px 5px 5px;
+  padding: 10px;
+  margin: 15px;
+  word-wrap: break-word;
+}
+
+.completed {
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.date {
+  /*padding-left: 30px;*/
+  font-size: 10px;
+}
+
+/*button for completed task submit*/
+.mark-complete {
+  margin-left: 15px;
+}
+
+.done {
+  color: #666666;
+  text-decoration: line-through;
+}
+
+.modify-task {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #EE8788;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin: auto;
+}
+
+#create-new-task {
+  padding-right: 5px;
+}
+
+.modify-task:hover { color: #747070 }
+
+.pipe {
+  color: #747070;
+}
+
+#submit-task {
+  /*background-color: #009999;*/
+  background-color: #EE8788;
+  color: white;
+  width: 70px;
+  height: 30px;
+  margin: auto;
+  font-size: 14px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  text-align: center;
+  padding-bottom: 3px;
+  /*border-style: solid;
+  border-color: black;
+  border-width: 1px;*/
+}
+
+submit:focus {outline:0 !important;}
+
+.center {
+  text-align: center;
+}
+
+.edit-task {
+  font-size: 13px;
+}
