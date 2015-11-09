@@ -31,11 +31,11 @@ class TaskSite < Sinatra::Base
     @id = params[:id]
     if !@name.nil? && @id.nil?
       current_db.create_task(@name, @descr)
-    elsif params[:submit] == "MARK COMPLETE"
+    elsif params[:submit] == "MARK COMPLETE" && !params[:completed].nil?
       params[:completed].each do |id|
         current_db.add_completion(id)
       end
-    elsif params[:delete] == "DELETE"
+    elsif params[:delete] == "DELETE" && !params[:completed].nil?
       params[:completed].each do |id|
         current_db.delete_task(id)
       end
