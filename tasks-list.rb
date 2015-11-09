@@ -56,7 +56,7 @@ class TasksList < Sinatra::Base
   end
 
   post "/delete_confirmation" do
-    if params[:submit] == "yes"
+    if params[:submit] == "yes" && !params[:ids].nil?
       delete_tasks(params[:ids])
     end
     redirect to('/')
