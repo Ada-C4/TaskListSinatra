@@ -29,7 +29,7 @@
           <%= task[1] %> <% if task[2].strip != "" %> : <%= task[2] %> <% end %>
       </td>
       <td>
-        <form method="get" action="complete">
+        <form method="get" action="/complete">
           <% if task[3] != nil %>
              <%= task[3] %>
           <% else %>
@@ -49,36 +49,6 @@
   </table>
 </div>
 
-
-
-
-  <!-- <ul>
-  <% if @tasks == nil %>
-    <p>
-       You haven't set any tasks.
-    </p>
-  <% else %>
-    <form method="get" action="complete">
-    <% @tasks.each do |task| %>
-      <li>
-        <%= task[0] %> : <%= task[1] %>
-        <a href="/delete/<%= task[0] %>">Delete Task</a>
-
-        <% if task[2] != nil %>
-          Task completed <%= task[2] %>
-        <% else %>
-          <label><input type="checkbox" name="tasks[]" value="<%= task[0] %>"</label>
-        <% end %>
-
-      </li>
-
-
-    <% end %>
-  <% end %>
-  <button type="submit" name="completed_task" id="completed_task" value="completed task">Update completed task</button>
-
-  </form>
-   </ul> -->
 
    <% uncompleted = @tasks.find {|task| task[3] == nil} %>
    <% if uncompleted != nil %>

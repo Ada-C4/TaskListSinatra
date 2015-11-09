@@ -63,7 +63,7 @@ class TaskSite < Sinatra::Base
   redirect to("/new")
   end
 
-  post "/complete" do
+  get "/complete" do
     @completed_task = params[:tasks_id]
     if @completed_task != nil
       @completed_task.each do |task_id|
