@@ -7,7 +7,7 @@
         <input type="hidden" name="id" value="<%= @task[0] %>">
       <% end %>
       <label for="task_name">Task: </label>
-      <input class="form-control" type="text" id="task_name" name="task_name"
+      <input class="form-control" type="text" id="task_name" name="task_name" required
       <% if !@task.nil? %>
         value="<%=@task[1]%>"
       <% end %>>
