@@ -1,0 +1,169 @@
+body {
+  width: 900px;
+  margin-left:auto;
+  margin-right:auto;
+  font-family: Roboto, sans-serif;
+  /*background-image: url("../na.jpg");*/
+}
+
+table {
+color: #333;
+font-family: Helvetica, Arial, sans-serif;
+width: 800px;
+border-collapse:
+collapse; border-spacing: 0;
+
+}
+
+td, th {
+border: 1px solid transparent; /* No more visible border */
+height: 30px;
+transition: all 0.3s;  /* Simple transition for hover effect */
+}
+
+th {
+background: #DFDFDF;  /* Darken header a bit */
+font-weight: bold;
+font-size: 20px;
+color: #282828;
+}
+
+#th {
+  color: #FF0099;
+  font-size: 15px;
+}
+
+td {
+background: #FAFAFA;
+text-align: center;
+}
+
+/* Cells in even rows (2,4,6...) are one color */
+tr:nth-child(even) td { background: #D8D8D8; }
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */
+tr:nth-child(odd) td { background: #E0E0E0; }
+
+tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
+
+
+/*table {
+  width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: fixed;
+  /*border-collapse: collapse;}*/
+
+/*th, td {
+  padding: 20px;
+  text-align: left;
+}*/
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+
+}
+
+#completed_task {
+  font-size: 15px;
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 480px;
+  margin-bottom: 80px;
+  background-color: ##FD87E4;
+  color: #FF0099;
+}
+
+#index {
+  /*background-color: #99FF99;*/
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url("../note.jpg");
+  background-position: 50px 100px;
+  /*background-repeat:no-repeat;*/
+}
+
+
+
+
+ /*#add_task {
+  text-align: center;
+  margin-top: 75px;
+}
+
+*/
+
+textarea {
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  resize: none;
+  width: 270px;
+}
+
+#description {
+  margin-bottom: 100px;
+  height: 200px;
+
+}
+
+#name {
+  margin-bottom: 40px;
+}
+
+
+
+fieldset {
+  margin-top: 100px;
+  padding: 30px;
+  /*background-color: #C9CEC9;*/
+  background-image: url("../colorful.jpg");
+  height: 430px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+legend {
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+
+
+#name_label {
+    display: block;
+    margin-left: 270px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+/*.form {
+  text-align: center;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+
+/*.theme {
+    background-image: url("../colorful.jpg");
+    background-repeat:no-repeat;
+}*/
+
+
+#submit {
+  font-size: 20px;
+  width: 160px;
+  height: 40px;
+  display: block;
+  margin-bottom: 20px;
+  margin-left: 270px;
+  background-color: #DFDFDF;
+  font-weight: bold;
+}

@@ -1,0 +1,17 @@
+<form method="post">
+  <fieldset>
+    <legend>Task Information</legend>
+    <label class="form" id="name_label" for="name">Name: </label>
+    <textarea class="form" id="name" name="name"> <%= @name_content %> </textarea>
+    <!-- <input class="form" type="text" id="name" name="name"> -->
+
+    <label class="form" id="name_label" for="description">Description: </label>
+    <textarea class="form" id="description" name="description"> <%= @descr_content %> </textarea>
+    <!-- <input class="form" type="text" id="description" name="description"> -->
+    <% if @is_update %>
+      <button class="form" type="submit" name="submit" id="submit" value="New Task">Update Task</button>
+    <% else %>
+      <button class="form" type="submit" name="submit" id="submit" value="New Task">Add Task</button>
+    <% end %>
+  </fieldset>
+</form>

@@ -1,0 +1,67 @@
+<div id="index">
+
+<h1>Tasks List</h1>
+
+<form action="new">
+  <button type="submit" href="new" name="submit" id="submit" value="New Task">New task</button>
+</form>
+
+<% if @tasks == [] %>
+  <p>
+     You haven't set any tasks♡♡♡.
+  </p>
+<% else %>
+<div class="theme">
+  <table>
+    <col width="60%">
+    <col width="20%">
+    <col width="10%">
+    <col width="10%">
+    <tr>
+      <th>Task</th>
+      <th id="th">Completed time </th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td>
+          <%= task[1] %> <% if task[2].strip != "" %> : <%= task[2] %> <% end %>
+      </td>
+      <td>
+        <form method="get" action="/complete">
+          <% if task[3] != nil %>
+             <%= task[3] %>
+          <% else %>
+            <label><input type="checkbox" name="tasks_id[]" value="<%= task[0] %>"</label>
+          <% end %>
+
+      </td>
+      <td>
+        <a href ="/update/<%= task[0] %>"> Update</a>
+      </td>
+      <td>
+        <a onclick="return confirm('Are you sure you want to delete this task?')" href="/delete/<%= task[0] %>">❌</a>
+      </td>
+
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+
+   <% uncompleted = @tasks.find {|task| task[3] == nil} %>
+   <% if uncompleted != nil %>
+    <button type="submit" name="completed_task" id="completed_task" value="completed task">Update completed task</button>
+  <% end %>
+
+
+
+</form>
+
+<% end %>
+<!-- <p id="add_task"> -->
+
+<!-- </p> -->
+
+</div>
