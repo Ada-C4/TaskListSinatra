@@ -12,6 +12,29 @@ class TasksList < Sinatra::Base
     return params
   end
 
+  def delete_confirm(ids)
+    @task_array = ids.map{ |id| current_db.get_task(id.to_i)}
+    @method = :delete
+    erb :delete_confirmation
+  end
+
+  def update(params)
+    current_db.edit_task(params[:id], params[:task_name], params[:description])
+    redirect to('/')
+  end
+
+  def complete(ids)
+    ids.each { |id| current_db.complete_task(id.to_i)}
+    redirect to('/')
+  end
+
+  def edit(params)
+    @task = current_db.get_task(params[:ids][0].to_i)
+    @update = true
+    erb :new
+  end
+
+
   get "/" do
     @task_array = current_db.show_tasks
     erb :index
@@ -19,21 +42,14 @@ class TasksList < Sinatra::Base
 
   post "/" do
     ids = params[:ids]
-
     if params[:submit] == "delete" && ids != nil
-      @task_array = ids.map{ |id| current_db.get_task(id.to_i)}
-      @method = :delete
-      erb :delete_confirmation
+      delete_confirm(ids)
     elsif params[:submit] == "update"
-      current_db.edit_task(params[:id], params[:task_name], params[:description])
-      redirect to('/')
+      update(params)
     elsif params[:submit] == "complete" && ids != nil
-      ids.each { |id| current_db.complete_task(id.to_i)}
-      redirect to('/')
+      complete(ids)
     elsif params[:submit] == "edit" && ids != nil && ids.length == 1
-      @task = current_db.get_task(params[:ids][0].to_i)
-      @update = true
-      erb :new
+      edit(params)
     else
       redirect to('/')
     end
@@ -56,9 +72,7 @@ class TasksList < Sinatra::Base
   end
 
   post "/new" do
-    if params[:submit] == "update"
-      # current_db.edit_task(     )
-    elsif params[:submit] == "new"
+    if params[:submit] == "new"
       current_db.new_task(params[:task_name], params[:description])
     end
     redirect to('/')
