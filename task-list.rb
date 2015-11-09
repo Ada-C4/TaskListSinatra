@@ -72,7 +72,6 @@ class	TaskSite < Sinatra::Base
 
 	get '/' do
 		@title = motivation
-		# 
 
 		current_list
 
@@ -82,8 +81,12 @@ class	TaskSite < Sinatra::Base
 	post "/" do
 		@title = motivation
 		checked = params[:checked]
-		delete_checked(checked) if params[:submit] == "Delete"
-		complete_checked(checked) if params[:submit] == "Complete"
+
+		unless checked.nil?
+			delete_checked(checked) if params[:submit] == "Delete"
+			complete_checked(checked) if params[:submit] == "Complete"
+		end
+
 		delete_completed if params[:submit] == "Delete All Completed Tasks"
 
 		current_list
