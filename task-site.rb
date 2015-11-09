@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/database'
+require "pry"
 
 class TaskSite < Sinatra::Base
 
@@ -20,7 +21,8 @@ class TaskSite < Sinatra::Base
   get "/edit" do
     @title = "Edit your shit"
     @id = params[:id]
-    @descr = current_db.get_descr(@id)
+    @name = current_db.get_name(@id)[0][0]
+    @descr = current_db.get_descr(@id)[0][0]
     erb :new
   end
 
