@@ -32,7 +32,6 @@ class Tasks < Sinatra::Base
     else
       puts "first part of edit"
       @edit_id = params[:checked]
-      binding.pry
       puts "second part of edit"
       redirect to('/edit')
     end
