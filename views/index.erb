@@ -1,0 +1,28 @@
+<h1>Current Tasks</h1>
+<form method="post">
+<% @current_tasks.each do |task| %>
+  <input type="checkbox" name="checked[]" value="<%= task[2] %>">
+  <%= task[0] %>: <%= task[1] %> <%= task[3] %>
+  <br>
+<% end %>
+<h1>Completed Tasks</h1>
+<% @completed_tasks.each do |task| %>
+  <input type="checkbox" name="checked[]" value="<%= task[2] %>">
+  <%= task[0] %>: <%= task[1] %> <%= task[3] %>
+  <br>
+<% end %>
+<br>
+<input type="submit" name="submit" value="Complete Task(s)">
+<br>
+<br>
+<input type="submit" onclick="return confirm('Are you sure?')" name="submit" value="Delete Task(s)">
+<br>
+<br>
+<input type="submit" onclick="return confirm('Make sure you are only editing one thing at a time!')" name="submit" value="Edit Task">
+</form>
+<br>
+
+
+
+
+<a href="/new" >Add Task </a>
