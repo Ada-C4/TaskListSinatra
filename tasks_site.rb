@@ -46,7 +46,6 @@ class Tasks < Sinatra::Base
   post "/edit" do
     @title = "Add a new task"
     id = params[:task_id]
-    binding.pry
     name = params[:task]
     description = params[:description]
     current_db.edit_task(id, name, description)
