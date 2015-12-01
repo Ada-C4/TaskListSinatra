@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|News+Gothic|Inconsolata|Droid+Sans|Raleway|Leckerli+One');
+
+body {
+  background-color: #FFF;
+  font-family: Lato, sans-serif;
+  width: 100%;
+  margin: auto;
+
+}
+
+h1, h3 {
+  font-size: 1.6em;
+  font-family: 'Leckerli One';
+  color: #534291;
+  text-align: center;
+}
+
+form {
+  width: 600px;
+  margin: auto;
+  padding: 0px 50px 0px 50px;
+  line-height: 200%;
+}
+
+fieldset {
+  padding-bottom: 20px;
+  border: 0;
+}
+
+legend {
+  font-family: 'Leckerli One';
+  color: #534291;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+label {
+  margin-left: 10px;
+}
+
+#name {
+  border: none;
+  border-glow: none;
+  background-color: #D1D1E0;
+  outline: none;
+  padding: 5px;
+  font-family: Lato, sans-serif;
+  font-size: 1.05em;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  border: none;
+  outline: none;
+  background-color: #D1D1E0;
+  padding: 5px;
+  font-family: Lato, sans-serif;
+  font-size: 1.05em;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+.button {
+  text-align: center;
+}
+
+.submit {
+  font-size: 1.1em;
+  color: #534291;
+  margin-bottom: 2em;
+  display: inline-block;
+
+}
+
+.edit { 
+  border: none;
+  background-color:#FFF;
+  color: #FFF;
+}
+
+.edit:hover  {  
+  font-family: Lato, sans-serif;
+  color: #A3A3C2;
+  font-size: 1.1em;
+}
+
+a:link {color: #534291}
+a:visited {color: #534291}
+
+.main-nav {
+  background-color: #E5E5FF;
+  text-align:center;
+  font-size: 20px;
+  color:#8186E3;
+  height: 40px;
+  width: 100%;
+  margin-top: 10px
+  margin-bottom: 0px;
+}
+
+
+footer {
+  background-color: #E5E5FF;
+  color: #534291;
+  padding: 1em 0;
+  text-align: center;
+  width: 100%;
+}

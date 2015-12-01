@@ -1,0 +1,10 @@
+<form method="post" action="/">
+  <fieldset>
+    <label for="name">Task Name:</label>
+    <input type="hidden" id="id" name="id" value="<%= @task_array[0] %>">
+    <input type="text" id="name" name="name" value="<%= @task_array[1] %>"><br>
+    <label for="description">Task Description:</label><br>
+    <textarea type="text" rows="10" cols="50" id="description" name="description"><%= @task_array[2] %></textarea>
+  </fieldset>
+	<span class="button"><input type="submit" id="submit" name="submit" class="submit" value="Add/Update Task"></span>
+</form>

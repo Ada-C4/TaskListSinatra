@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= @title %></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+  <header>
+		<nav class="main-nav">
+			<a href="/">Your List</a> | <a href="add">Add a Task</a>
+		</nav>
+		<section>
+			<h1><%= @title %></h1>
+		</section>
+	</header>
+    <%= yield %>
+
+		<footer>
+			<p>Webpage by <a href="https://github.com/emgord">Emily Gordon</a> and <a href="https://github.com/loganmeetsworld">Logan McDonald.</a></p>
+			<p>Copyright &copy; <%= Time.now.year %> All rights reserved.</p>
+		</footer>
+  </body>
+</html>
