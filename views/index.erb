@@ -1,0 +1,11 @@
+<div class="row">
+  <h1 class="text-center">Task List</h1>
+</div>
+  <%= erb(:task_printout) %>
+  <div class="centered-btn">
+    <a class="btn btn-lg" role="button" href="new"><span class="fa fa-square-o"></span> New</a>
+    <button class="btn btn-lg" type="submit" name="submit" value="edit"><span class="fa fa-edit"></span>  Edit</button>
+    <button class="btn btn-lg" type="submit" name="submit" value="complete"><span class="fa fa-check-square-o"></span> Complete</button>
+    <button class="btn btn-lg" type="submit" name="submit" value="delete"><span class="fa fa-trash-o"></span> Delete</button>
+  </div>
+</form>

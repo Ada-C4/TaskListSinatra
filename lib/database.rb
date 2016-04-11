@@ -1,15 +1,24 @@
-require "sqlite3"
+require_relative "db_driver"
 
 module TaskList
   class Database
 
     def initialize(db_name)
-      @db = SQLite3::Database.new(db_name)
+      @db = DBDriver.new(db_name)
+    end
+
+    def delete_schema
+      @db.delete_schema
     end
 
     def create_schema
-      # Put your ruby code here to use the @db variable
-      # to setup your schema in the databas.
+      @db.execute('
+      CREATE TABLE tasks (
+      id INTEGER PRIMARY KEY,
+      name TEXT NOT NULL,
+      description TEXT NULL,
+      done_date TEXT NULL
+      );')
     end
   end
 end

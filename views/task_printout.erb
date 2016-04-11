@@ -1,0 +1,32 @@
+<form method="post"
+  <% if @method == :delete %>
+    action="/delete_confirmation"
+  <% end %>
+>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+          <td class="text-center">Done</td>
+        <td>Task</td>
+        <td>Description</td>
+        <td>Completed Date</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @task_array.each do |task| %>
+      <tr>
+          <td class="text-center"><label>
+          <input type="checkbox" name = "ids[]" value="<%= task[0] %>"></label></td>
+        <td <% if !task[3].nil? %>
+          class="strikethru"
+          <% end %>
+          ><%= task[1] %></td>
+        <td <% if !task[3].nil? %>
+          class="strikethru"
+          <% end %>
+          ><%= task[2] %></td>
+        <td><%= task[3] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>

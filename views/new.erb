@@ -1,0 +1,28 @@
+<h1 class="text-center">Add a task</h1>
+
+<form method="post">
+  <div class="form-group">
+    <fieldset>
+      <% if !@task.nil? %>
+        <input type="hidden" name="id" value="<%= @task[0] %>">
+      <% end %>
+      <label for="task_name">Task: </label>
+      <input class="form-control" type="text" id="task_name" name="task_name" required
+      <% if !@task.nil? %>
+        value="<%=@task[1]%>"
+      <% end %>>
+      <br>
+      <label for="description">Description: </label>
+      <input class="form-control" type="text" id="description" name="description"
+      <% if !@task.nil? %>
+        value="<%=@task[2]%>"
+      <% end %>>
+      <br>
+      <% if @update %>
+        <button class="btn" type="submit" name ="submit" value="update"><span class="fa fa-save"></span> Update</button>
+      <% else %>
+        <button class="btn" type="submit" name ="submit" value="new"><span class="fa fa-save"></span>  Submit</button>
+      <% end %>
+    </fieldset>
+  </div>
+</form>
